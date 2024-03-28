@@ -1,0 +1,94 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  imagePath: string;
+  altText: string;
+  title: string;
+  subtitle: string;
+}
+
+const block = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}',
+  { eager: true }
+);
+
+const imageSrc = images[block.imagePath]?.default;
+const src =
+  typeof imageSrc === 'string'
+    ? imageSrc.replace(/^\./, '/_cloudcannon')
+    : imageSrc ?? block.imagePath;
+
+if (!src) {
+  throw new Error(
+    `"${block.imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+}
+---
+
+<div class="hero">
+  <div class="hero__container">
+    <h1 class="hero__title">{block.title}</h1>
+    <p class="hero__subtitle">{block.subtitle}</p>
+  </div>
+  <Image
+    class="hero__bg-img"
+    alt={block.altText}
+    src={src}
+    width={1920}
+    height={1920}
+  />
+</div>
+
+<style>
+  .hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 96px;
+    position: relative;
+  }
+
+  .hero__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero__container {
+    display: grid;
+    grid-template-columns: $twelve-column-grid;
+    max-width: 1280px;
+    padding-block: 110px;
+    margin: 0 auto;
+    color: white;
+  }
+
+  .hero__title,
+  .hero__subtitle {
+    grid-column: 2 / -2;
+    color: inherit;
+  }
+
+  .hero__title {
+    grid-row: 1;
+    font-size: 3rem;
+    line-height: 1;
+    margin-inline-start: -3px;
+  }
+
+  .hero__subtitle {
+    grid-row: 2;
+    padding-top: 5px;
+  }
+  @media screen and (min-width: $container-md) {
+    .hero__title {
+      font-size: 5rem;
+    }
+  }
+</style>
