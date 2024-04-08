@@ -1,7 +1,74 @@
 ---
 interface Props {
   imagePath: string;
+  cards: Array<any>;
+  heading: string;
+  subheading: string;
 }
+
+const block = Astro.props;
 ---
 
-<style></style>
+<div class="card-grid">
+  <div class="card-grid__container">
+    <h2>{block.heading}</h2>
+    <p>{block.subheading}</p>
+    <div class="card-grid__cards">
+      {
+        block.cards.map((card) => {
+          return (
+            <a
+              class="card-grid__card"
+              href={card.link}
+              style={`background-image: url(${card.image});`}>
+              <h2>{card.heading}</h2>
+              <p>{card.text}</p>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .card-grid {
+    display: grid;
+    grid-template-columns: var(--twelveColumnGrid);
+    max-width: var(--largeContainer);
+    margin: 0 auto;
+  }
+  .card-grid__container {
+    grid-column: 2 / -2;
+    gap: 1rem;
+  }
+  .card-grid__container h2 {
+  }
+  .card-grid__cards {
+    display: grid;
+    grid-template-columns: repeat(3, calc(min(400px, 33%)));
+    gap: 1rem;
+  }
+  @media screen and (min-width: 800px) {
+    .card-grid__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
+    padding: 1rem;
+    min-height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  .card p {
+    font-weight: 300;
+  }
+</style>

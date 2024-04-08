@@ -22,6 +22,20 @@ content_blocks:
     subtitle: Bakery for Dunedin, New Zealand
     imagePath: /src/assets/images/flour-milling.jpg
     altText: An image
-  - _bookshop_name: text-block
-    text: text
+  - _bookshop_name: card-grid
+    heading: Card grid
+    subheading: A card grid
+    cards:
+      - heading: Where to find us
+        text: Learn where to buy our loaves to take home with you.
+        image: http://www.placekitten.com/300
+        link: '#menu'
+      - heading: Want us as your supplier?
+        text: Find out about becoming a wholesale customer.
+        image: http://www.placekitten.com/300
+        link: /wholesale
+      - heading: What we do
+        text: Learn more about what we do, and where we supply.
+        image: http://www.placekitten.com/300
+        link: /about
 ---
