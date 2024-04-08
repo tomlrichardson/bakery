@@ -1,4 +1,5 @@
 ---
+import Icon from '../icon/icon.jsx';
 interface Props {
   imagePath: string;
   cards: Array<any>;
@@ -22,6 +23,7 @@ const block = Astro.props;
               href={card.link}
               style={`background-image: url(${card.image});`}>
               <h2>{card.heading}</h2>
+              <Icon icon={card.icon} />
               <p>{card.text}</p>
             </a>
           );

@@ -115,7 +115,7 @@ _inputs:
 
 data_config:
   icons:
-    path: data/icons.yaml
+    path: data/icons.json
 
 _structures:
   features:

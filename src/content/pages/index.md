@@ -27,15 +27,18 @@ content_blocks:
     subheading: A card grid
     cards:
       - heading: Where to find us
+        icon: envelope
         text: Learn where to buy our loaves to take home with you.
         image: http://www.placekitten.com/300
         link: '#menu'
       - heading: Want us as your supplier?
         text: Find out about becoming a wholesale customer.
+        icon: envelope
         image: http://www.placekitten.com/300
         link: /wholesale
       - heading: What we do
         text: Learn more about what we do, and where we supply.
+        icon: user
         image: http://www.placekitten.com/300
         link: /about
 ---
