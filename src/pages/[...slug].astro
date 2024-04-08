@@ -23,3 +23,11 @@ if (!page.data) {
 ---
 
 <PageLayout frontmatter={page.data} />
+
+<style is:global>
+  :root {
+    --twelveColumnGrid: 1fr repeat(12, calc(min(96px, 7.78%))) 1fr;
+    --largeContainer: 1280px;
+    --headerHeight: 64px;
+  }
+</style>

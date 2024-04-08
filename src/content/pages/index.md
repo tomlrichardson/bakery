@@ -22,4 +22,6 @@ content_blocks:
     subtitle: Bakery for Dunedin, New Zealand
     imagePath: /src/assets/images/flour-milling.jpg
     altText: An image
+  - _bookshop_name: text-block
+    text: text
 ---

@@ -48,6 +48,7 @@ if (!src) {
     background-repeat: no-repeat;
     margin-bottom: 96px;
     position: relative;
+    padding-top: var(--headerHeight);
   }
 
   .hero__bg-img {
@@ -62,8 +63,8 @@ if (!src) {
 
   .hero__container {
     display: grid;
-    grid-template-columns: $twelve-column-grid;
-    max-width: 1280px;
+    grid-template-columns: var(--twelveColumnGrid);
+    max-width: var(--largeContainer);
     padding-block: 110px;
     margin: 0 auto;
     color: white;

@@ -1,0 +1,47 @@
+{
+  "logo": "/images/logo.png",
+  "logo_url": "/",
+  "header": {
+    "links": [
+      {
+        "url": "/about/",
+        "text": "About"
+      },
+      {
+        "url": "/wholesale/",
+        "text": "Wholesale"
+      },
+      {
+        "url": "/#menu",
+        "text": "Menu"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "Body of the Year Bakery. All rights reserved.",
+    "links": [
+      {
+        "url": "/about/",
+        "text": "About"
+      },
+      {
+        "url": "/wholesale/",
+        "text": "Wholesale"
+      },
+      {
+        "url": "/#menu",
+        "text": "Menu"
+      }
+    ],
+    "social": [
+      {
+        "url": "https://www.facebook.com/mycompany",
+        "social_icon": "ph-facebook-logo"
+      },
+      {
+        "url": "https://www.instagram.com/mycompany",
+        "social_icon": "ph-instagram-logo"
+      }
+    ]
+  }
+}
