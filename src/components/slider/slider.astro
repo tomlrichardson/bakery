@@ -1,0 +1,41 @@
+---
+const block = Astro.props;
+---
+
+{
+  ENV_BOOKSHOP_LIVE ? (
+    <h2 style="text-align: center;">
+      This component breaks the visual previewer - this is a fallback message.
+      The component is still editable, and builds on the real site.
+    </h2>
+  ) : (
+    <>
+      <div class="slider-container">
+        {block.heading ? <div>{block.heading}</div> : null}
+        {block.subheading ? <div>{block.subheading}</div> : null}
+        <swiper-container slides-per-view={block.number} loop="true">
+          {block.slides.map((slide: any) => {
+            return (
+              <swiper-slide class="slide-container">
+                <h3>Some hardcoded text</h3>
+              </swiper-slide>
+            );
+          })}
+        </swiper-container>
+      </div>
+    </>
+  )
+}
+
+<style>
+  .slider-container {
+    max-width: var(--largeContainer);
+    margin: 0 auto;
+    text-align: center;
+    padding-block: 96px;
+  }
+
+  .slide-container {
+    max-width: 33%;
+  }
+</style>
