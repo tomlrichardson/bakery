@@ -59,15 +59,35 @@ content_blocks:
         background_image:
   - _bookshop_name: slider
     number: 3
-    heading: >-
-      # Menu
-
-
-      A new paragraph
+    heading: Menu
     subheading: Our rotating menu of specialty breads, found at Taste Nature.
     slides:
-      - heading: Monday
-        text: Sourdough
-      - heading: Tuesday
-        text: Sourdough
+      - text: >-
+          # Monday
+
+
+          - Sourdough
+
+          - Wheat
+      - text: >-
+          # Tuesday
+
+
+          - Sourdough
+
+          - Wheat
+      - text: >-
+          # Wednesday
+
+
+          - Sourdough
+
+          - Wheat
+      - text: >-
+          # Thursday
+
+
+          - Sourdough
+
+          - Wheat
 ---

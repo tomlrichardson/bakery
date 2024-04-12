@@ -1,4 +1,5 @@
 ---
+import Markdown from '../utility/markdown.astro';
 const block = Astro.props;
 ---
 
@@ -11,13 +12,13 @@ const block = Astro.props;
   ) : (
     <>
       <div class="slider-container">
-        {block.heading ? <div>{block.heading}</div> : null}
+        {block.heading ? <h2>{block.heading}</h2> : null}
         {block.subheading ? <div>{block.subheading}</div> : null}
         <swiper-container slides-per-view={block.number} loop="true">
           {block.slides.map((slide: any) => {
             return (
               <swiper-slide class="slide-container">
-                <h3>Some hardcoded text</h3>
+                <Markdown content={slide.text} />
               </swiper-slide>
             );
           })}
