@@ -1,12 +1,19 @@
 ---
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
+import Button from '../button/button.astro';
 
 interface Props {
   imagePath: string;
   altText: string;
   title: string;
   subtitle: string;
+  button: {
+    text: string;
+    link: string;
+    background_color: string;
+    text_color: string;
+  };
 }
 
 const block = Astro.props;
@@ -32,13 +39,27 @@ if (!src) {
   <div class="hero__container">
     <h1 class="hero__title">{block.title}</h1>
     <p class="hero__subtitle">{block.subtitle}</p>
+    {
+      block.button.text ? (
+        <div class="button">
+          <Button
+            link={block.button.link}
+            text={block.button.text}
+            backgroundColor={block.button.background_color}
+            textColor={block.button.text_color}
+          />
+        </div>
+      ) : null
+    }
   </div>
   <Image
     class="hero__bg-img"
     alt={block.altText}
     src={src}
-    width={1920}
-    height={1920}
+    width={2000}
+    height={400}
+    widths={[360, 720, 1280]}
+    sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
   />
 </div>
 
@@ -54,10 +75,10 @@ if (!src) {
   .hero__bg-img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -1;
     height: 100%;
-    width: 100%;
     object-fit: cover;
   }
 
@@ -87,9 +108,15 @@ if (!src) {
     grid-row: 2;
     padding-top: 5px;
   }
-  @media screen and (min-width: $container-md) {
+  @media screen and (min-width: 800px) {
     .hero__title {
       font-size: 5rem;
     }
+  }
+
+  .button {
+    grid-column: 2 / -2;
+    grid-row: 3;
+    padding-top: 40px;
   }
 </style>

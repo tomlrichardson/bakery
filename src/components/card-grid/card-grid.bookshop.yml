@@ -9,14 +9,15 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  heading:
-  subheading:
+  type: icons
   cards:
     - heading:
       text:
-      image:
       link:
+      image:
       icon:
+      background_color:
+      background_image:
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -26,3 +27,18 @@ _inputs:
   icon:
     type: select
     values: data.icons
+    hidden: 'image'
+  type:
+    type: select
+    label: Card type
+    values:
+      - icons
+      - images
+  image:
+    hidden: 'icon'
+  background_color:
+    type: color
+    hidden: 'background_image'
+  background_image:
+    type: image
+    comment: Leave this blank to enable a background color control.

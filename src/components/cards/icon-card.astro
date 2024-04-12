@@ -1,0 +1,50 @@
+---
+import Icon from '../icon/icon.jsx';
+
+interface Props {
+  heading: string;
+  text: string;
+  icon: string;
+  link: string;
+  backgroundImage: string;
+  backgroundColor: string;
+}
+
+const block = Astro.props;
+---
+
+<a
+  class="card"
+  href={block.link}
+  style={block.backgroundImage
+    ? `background-image: url(${block.backgroundImage});`
+    : `background-color: ${block.backgroundColor}`}>
+  <div class="icon">
+    <Icon icon={block.icon} />
+  </div>
+  <h2>{block.heading}</h2>
+  <p>{block.text}</p>
+</a>
+
+<style>
+  .card {
+    padding: 1rem;
+    min-height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  .card p {
+    font-weight: 300;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+</style>
