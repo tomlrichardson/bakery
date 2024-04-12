@@ -22,7 +22,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true }
 );
 
-const imageSrc = images[block.imagePath]?.default;
+const imageSrc = images[block.imagePath];
 const src =
   typeof imageSrc === 'string'
     ? imageSrc.replace(/^\./, '/_cloudcannon')
