@@ -20,7 +20,7 @@ content_blocks:
   - _bookshop_name: hero
     title: Body of the Year
     subtitle: Bakery for Dunedin, New Zealand
-    imagePath: /src/assets/images/flour-milling.jpg
+    imagePath: /src/assets/images/flour-milling-hero.jpg
     altText: An image
     button:
       link: '/#contact'

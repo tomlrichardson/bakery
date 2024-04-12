@@ -31,9 +31,10 @@ _inputs:
   type:
     type: select
     label: Card type
-    values:
-      - icons
-      - images
+    options:
+      values:
+        - icons
+        - images
   image:
     hidden: 'icon'
   background_color:
