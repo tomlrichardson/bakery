@@ -57,16 +57,16 @@ if (!src) {
         </div>
       ) : null
     }
+    <Image
+      class="hero__bg-img"
+      alt={block.altText}
+      src={src}
+      width={2000}
+      height={400}
+      widths={[360, 720, 1280]}
+      sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
+    />
   </div>
-  <Image
-    class="hero__bg-img"
-    alt={block.altText}
-    src={src}
-    width={2000}
-    height={400}
-    widths={[360, 720, 1280]}
-    sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
-  />
 </div>
 
 <style>
