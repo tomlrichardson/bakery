@@ -15,22 +15,16 @@ interface Props {
 }
 
 const block = Astro.props;
-// const images = import.meta.glob<{ default: ImageMetadata }>(
-//   '/src/assets/*.{jpeg,jpg,png,gif,webp,avif,svg}',
-//   { eager: true }
-// );
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif,webp,avif,svg}',
+  { eager: true }
+);
 
-// const imageSrc = images[block.image.src]?.default;
-// const src =
-//   typeof imageSrc === 'string'
-//     ? imageSrc.replace(/^\./, '/_cloudcannon')
-//     : imageSrc ?? block.image.src;
-
-// if (!src) {
-//   throw new Error(
-//     `"${block.image.src}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
-//   );
-// }
+const imageSrc = images[block.image.src]?.default;
+const src =
+  typeof imageSrc === 'string'
+    ? imageSrc.replace(/^\./, '/_cloudcannon')
+    : imageSrc ?? block.image.src;
 ---
 
 <a
@@ -40,14 +34,18 @@ const block = Astro.props;
     ? `background-image: url(${block.backgroundImage});`
     : `background-color: ${block.backgroundColor}`}>
   <div class="image">
-    <Image
-      class="hero__bg-img"
-      alt={block.image.alt}
-      src={block.image.src}
-      width={2000}
-      height={400}
-    />
+    {
+      block.image.src ? (
+        <Image
+          class="hero__img"
+          alt={block.image.alt}
+          src={src}
+          width={500}
+          height={400}
+        />
+      ) : null
+    }
+    <h2>{block.heading}</h2>
+    <p>{block.text}</p>
   </div>
-  <h2>{block.heading}</h2>
-  <p>{block.text}</p>
 </a>

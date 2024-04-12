@@ -28,13 +28,14 @@ content_blocks:
       background_color: '#000000'
       text_color: '#ffffff'
   - _bookshop_name: card-grid
-    type: images
+    type: icons
     cards:
       - heading: Where to find us
         icon: envelope
         text: Learn where to buy our loaves to take home with you.
         image:
-        image_alt:
+          src: /src/assets/images/bread.png
+          alt: The bread
         link: '#menu'
         background_color:
         background_image:
@@ -42,7 +43,8 @@ content_blocks:
         text: Find out about becoming a wholesale customer.
         icon: envelope
         image:
-        image_alt:
+          src: /src/assets/images/bread.png
+          alt: The bread
         link: /wholesale
         background_color:
         background_image:
@@ -50,7 +52,8 @@ content_blocks:
         text: Learn more about what we do, and where we supply.
         icon: user
         image:
-        image_alt:
+          src: /src/assets/images/bread.png
+          alt: The bread
         link: /about
         background_color:
         background_image:
