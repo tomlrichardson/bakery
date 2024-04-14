@@ -39,6 +39,7 @@ content_blocks:
         link: '#menu'
         background_color:
         background_image:
+        column_span: 1
       - heading: Want us as your supplier?
         text: Find out about becoming a wholesale customer.
         icon: Mug
@@ -48,6 +49,7 @@ content_blocks:
         link: /wholesale
         background_color:
         background_image:
+        column_span: 1
       - heading: What we do
         text: Learn more about what we do, and where we supply.
         icon: WheatAwn
@@ -57,6 +59,7 @@ content_blocks:
         link: /about
         background_color:
         background_image:
+        column_span: 1
   - _bookshop_name: slider
     number: 3
     heading: Menu

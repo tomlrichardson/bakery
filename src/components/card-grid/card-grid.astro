@@ -10,7 +10,7 @@ const block = Astro.props;
 ---
 
 <div class="card-grid">
-  <div class="card-grid__container">
+  <div class="card-grid__container px-8">
     <div class="card-grid__cards">
       {
         block.cards.map((card) => {
@@ -21,8 +21,9 @@ const block = Astro.props;
                 text={card.text}
                 icon={card.icon}
                 link={card.link}
-                backgroundImage={card.imagePath}
-                backgroundColor={card.backgroundColor}
+                backgroundImage={card.background_image}
+                backgroundColor={card.background_color}
+                columnSpan={card.column_span}
               />
             );
           }
@@ -33,8 +34,9 @@ const block = Astro.props;
                 text={card.text}
                 image={card.image}
                 link={card.link}
-                backgroundImage={card.imagePath}
-                backgroundColor={card.backgroundColor}
+                backgroundImage={card.background_image}
+                backgroundColor={card.background_color}
+                columnSpan={card.column_span}
               />
             );
           }
@@ -46,22 +48,22 @@ const block = Astro.props;
 
 <style>
   .card-grid {
-    display: grid;
-    grid-template-columns: var(--twelveColumnGrid);
-    max-width: var(--largeContainer);
-    margin: 0 auto;
   }
   .card-grid__container {
-    grid-column: 2 / -2;
+    display: grid;
     gap: 1rem;
+    justify-content: center;
+    max-width: var(--largeContainer);
+    margin: 0 auto;
+    padding-block: 96px;
   }
   .card-grid__cards {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
   }
   @media screen and (min-width: 800px) {
     .card-grid__cards {
-      grid-template-columns: repeat(3, calc(min(400px, 33%)));
+      grid-template-columns: repeat(3, calc(min(400px, 30%)));
     }
   }
 </style>

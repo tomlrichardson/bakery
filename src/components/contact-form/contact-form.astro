@@ -2,42 +2,45 @@
 const block = Astro.props;
 ---
 
-<section class="contact-form flex px-4 py-[96px]">
-  <div class="w-1/2 px-8">
-    <h2>Contact Us</h2>
-    <p class="max-w-[24rem]">
-      Get in touch to order bread, enquire about wholesale, or ask us a
-      question!
-    </p>
-  </div>
-  <div class="w-1/2">
-    <form method="post" action="/success.html" class="flex flex-col gap-8">
-      <div class="text-input-group">
-        <label>Email Address</label>
-        <input type="text" name="email" />
-      </div>
-      <div class="text-input-group">
-        <label>Name</label>
-        <input type="text" name="name" />
-      </div>
-      <div class="text-input-group">
-        <label>Message</label>
-        <textarea name="message"></textarea>
-      </div>
-      <div class="check-input-group gap-2">
-        <label>Type of Enquiry</label>
-        <div class="flex flex-col gap-2">
-          <div class="">
-            <input type="radio" name="_subject" value="Sales Enquiry" />
-            <label>Sales</label>
-          </div>
-          <div class="">
-            <input type="radio" name="_subject" value="General Enquiry" />
-            <label>General</label>
+<section class="bg-slate-700 text-white">
+  <div
+    class="contact-form flex flex-col md:flex-row gap-8 px-8 py-[96px] items-center md:justify-between md:items-start">
+    <div class="w-full md:w-1/2 max-w-[32rem]">
+      <h2>Contact Us</h2>
+      <p class="max-w-[24rem]">
+        Get in touch to order bread, enquire about wholesale, or ask us a
+        question!
+      </p>
+      <h2>TODO: PUT A MAP HERE</h2>
+    </div>
+    <div class="w-full md:w-1/2 rounded-lg max-w-[32rem]">
+      <form method="post" action="/success.html" class="flex flex-col gap-8">
+        <div class="text-input-group">
+          <label>Email Address</label>
+          <input type="text" name="email" />
+        </div>
+        <div class="text-input-group">
+          <label>Name</label>
+          <input type="text" name="name" />
+        </div>
+        <div class="text-input-group">
+          <label>Message</label>
+          <textarea name="message"></textarea>
+        </div>
+        <div class="check-input-group gap-2">
+          <label>Type of Enquiry</label>
+          <div class="flex flex-col gap-2">
+            <div class="">
+              <input type="radio" name="_subject" value="Sales Enquiry" />
+              <label>Sales</label>
+            </div>
+            <div class="">
+              <input type="radio" name="_subject" value="General Enquiry" />
+              <label>General</label>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- <input type="hidden" name="inbox_key" value="contact_inbox" />
+        <!-- <input type="hidden" name="inbox_key" value="contact_inbox" />
       <input
         type="hidden"
         name="_to"
@@ -46,8 +49,9 @@ const block = Astro.props;
       <input type="hidden" name="_cc" value="sales.tracker@example.com" />
       <input type="text" name="_gotcha" style="display: none;" /> -->
 
-      <input type="submit" value="Send Message" />
-    </form>
+        <input class="form-button" type="submit" value="Send Message" />
+      </form>
+    </div>
   </div>
 </section>
 
@@ -55,16 +59,32 @@ const block = Astro.props;
   .contact-form {
     max-width: var(--largeContainer);
     margin: 0 auto;
+    align-self: flex-end;
   }
   input,
   textarea {
     border: 1px solid #f1f1f1;
     border-radius: 8px;
-    max-width: 32rem;
+    padding: 0.5rem 1rem;
+    color: black;
   }
   .text-input-group,
   .check-input-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+  .form-button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: white;
+  }
+  .form-button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 0 1px rgb(193, 193, 193);
+  }
+  .form-button:active {
+    box-shadow: 0 0px 0 1px white;
   }
 </style>

@@ -8,6 +8,7 @@ interface Props {
   link: string;
   backgroundImage: string;
   backgroundColor: string;
+  columnSpan: number;
 }
 
 const block = Astro.props;
@@ -17,8 +18,8 @@ const block = Astro.props;
   class="card"
   href={block.link}
   style={block.backgroundImage
-    ? `background-image: url(${block.backgroundImage});`
-    : `background-color: ${block.backgroundColor}`}>
+    ? `background-image: url(${block.backgroundImage}); grid-column: span ${block.columnSpan};`
+    : `background-color: ${block.backgroundColor}; grid-column: span ${block.columnSpan};`}>
   <div class="icon">
     <Icon icon={block.icon} />
   </div>
@@ -28,7 +29,7 @@ const block = Astro.props;
 
 <style>
   .card {
-    padding: 1rem;
+    padding: 3rem 1rem;
     min-height: 250px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -46,5 +47,10 @@ const block = Astro.props;
   .icon {
     width: 50px;
     height: 50px;
+  }
+  @media screen and (max-width: 800px) {
+    .card {
+      grid-column: span 1 !important;
+    }
   }
 </style>

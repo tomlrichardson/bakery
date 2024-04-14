@@ -18,6 +18,7 @@ blueprint:
       icon:
       background_color:
       background_image:
+      column_span: 1
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -43,3 +44,11 @@ _inputs:
   background_image:
     type: image
     comment: Leave this blank to enable a background color control.
+  column_span:
+    type: select
+    label: Column span
+    options:
+      values:
+        - 1
+        - 2
+        - 3

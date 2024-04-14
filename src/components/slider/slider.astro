@@ -76,7 +76,6 @@ const block = Astro.props;
     max-width: var(--largeContainer);
     margin: 0 auto;
     padding-block: 96px;
-    padding-inline: 2rem;
   }
 
   .slide-container {
@@ -88,18 +87,28 @@ const block = Astro.props;
   .swiper-slide-active .swiper-slide-contents {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 8px;
+    background-color: white;
+    border-radius: 8px;
   }
 
   @media only screen and (min-width: 720px) {
     .swiper-slide-next .swiper-slide-contents,
     .swiper-slide-active .swiper-slide-contents {
       box-shadow: none;
+      background-color: transparent;
+      border-radius: 8px;
     }
   }
   @media only screen and (min-width: 1024px) {
     .swiper-slide-next .swiper-slide-contents {
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: white;
     }
+  }
+
+  .swiper-container {
+    padding-inline: 2rem;
+    padding-block: 2rem;
   }
 
   .swiper-slide-contents {

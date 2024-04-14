@@ -12,6 +12,7 @@ interface Props {
   link: string;
   backgroundImage: string;
   backgroundColor: string;
+  columnSpan: number;
 }
 
 const block = Astro.props;
@@ -31,8 +32,8 @@ const src =
   class="card"
   href={block.link}
   style={block.backgroundImage
-    ? `background-image: url(${block.backgroundImage});`
-    : `background-color: ${block.backgroundColor}`}>
+    ? `background-image: url(${block.backgroundImage}); grid-column: span ${block.columnSpan};`
+    : `background-color: ${block.backgroundColor}; grid-column: ${block.columnSpan};`}>
   <div class="image">
     {
       block.image.src ? (
