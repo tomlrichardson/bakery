@@ -37,7 +37,7 @@
     "@bookshop/browser": "3.9.0",
     "@bookshop/generate": "3.9.0",
     "astro-seo": "^0.8.0",
-    "markdown-it": "^13.0.2",
+    "markdown-it": "^13.0.1",
     "sass": "^1.66.1"
   }
 }
