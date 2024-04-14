@@ -12,13 +12,17 @@ const block = Astro.props;
   ) : (
     <>
       <div class="slider-container">
-        {block.heading ? <h2>{block.heading}</h2> : null}
-        {block.subheading ? <div>{block.subheading}</div> : null}
-        <swiper-container slides-per-view={block.number} loop="true">
+        <div class="slider-heading">
+          {block.heading ? <h2>{block.heading}</h2> : null}
+          {block.subheading ? <div>{block.subheading}</div> : null}
+        </div>
+        <swiper-container init="false" class="swiper-container">
           {block.slides.map((slide: any) => {
             return (
               <swiper-slide class="slide-container">
-                <Markdown content={slide.text} />
+                <div class="swiper-slide-contents">
+                  <Markdown content={slide.text} />
+                </div>
               </swiper-slide>
             );
           })}
@@ -28,15 +32,79 @@ const block = Astro.props;
   )
 }
 
-<style>
+<script>
+  // swiper element
+  const swiperEl = document.querySelector('swiper-container');
+
+  // swiper parameters
+  const swiperParams = {
+    slidesPerView: 1,
+    loop: true,
+    breakpoints: {
+      720: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+    on: {
+      init() {
+        // ...
+      },
+    },
+  };
+
+  // now we need to assign all parameters to Swiper element
+  Object.assign(swiperEl, swiperParams);
+
+  // and now initialize it
+  swiperEl.initialize();
+</script>
+
+<style is:global>
   .slider-container {
     max-width: var(--largeContainer);
     margin: 0 auto;
-    text-align: center;
     padding-block: 96px;
+    padding-inline: 2rem;
   }
 
   .slide-container {
-    max-width: 33%;
+    padding: 36px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .swiper-slide-active .swiper-slide-contents {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 8px;
+  }
+
+  @media only screen and (min-width: 720px) {
+    .swiper-slide-next .swiper-slide-contents,
+    .swiper-slide-active .swiper-slide-contents {
+      box-shadow: none;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .swiper-slide-next .swiper-slide-contents {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+  }
+
+  .swiper-slide-contents {
+    padding: 2rem 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
   }
 </style>

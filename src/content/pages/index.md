@@ -63,31 +63,106 @@ content_blocks:
     subheading: Our rotating menu of specialty breads, found at Taste Nature.
     slides:
       - text: >-
-          # Monday
+          ### Tuesday
 
 
-          - Sourdough
+          - Organic Yeasted Variety ( All Tin Loafs )
 
-          - Wheat
+
+          - Soft White Loaf 
+
+
+          - Purple Wheat Loaf
+
+
+          - Multigrain Loaf
       - text: >-
-          # Tuesday
+          ### Wednesday
 
 
-          - Sourdough
+          - Wheat 
 
-          - Wheat
+
+          - Polenta, Sunflower and Pumpkin Seeds
+
+
+          - 100% Rye ( Pumpernickel)
+
+
+          - Seven Seed
+
+
+          - 100 % Wholemeal Wheat
+
+
+          - Spelt and Sesame
+
+
+          - Ciabatta
       - text: >-
-          # Wednesday
+          ### Thursday
 
-
-          - Sourdough
 
           - Wheat
+
+
+          - Olive & Rosemary
+
+
+          - 100% Spelt
+
+
+          - 100% Wholemeal Spelt
+
+
+          - Country Rye
+
+
+          - Turmeric & linseed
+
+
+          - Date and Walnut
+
+
+          - Purple Wheat 
+
+
+          - Ciabatta
       - text: >-
-          # Thursday
+          ### Friday
 
 
-          - Sourdough
+          - Wheat 
+
+
+          - Polenta, Sunflower and Pumpkin Seeds
+
+
+          - 100% Rye ( Pumpernickel)
+
+
+          - Seven Seed
+
+
+          - 100 % Wholemeal Wheat
+
+
+          - Spelt and Sesame
+
+
+          - Ciabatta
+      - text: >-
+          ### Saturday
+
 
           - Wheat
+
+
+          - Olive and Rosemary
+
+
+          - Oat Porridge
+
+
+          - Ciabatta
 ---
