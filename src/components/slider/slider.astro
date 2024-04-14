@@ -26,6 +26,13 @@ const block = Astro.props;
               </swiper-slide>
             );
           })}
+
+          <div class="swiper-pagination" />
+
+          <div class="swiper-button-prev" />
+          <div class="swiper-button-next" />
+
+          <div class="swiper-scrollbar" />
         </swiper-container>
       </div>
     </>
@@ -40,6 +47,8 @@ const block = Astro.props;
   const swiperParams = {
     slidesPerView: 1,
     loop: true,
+    pagination: true,
+    navigation: true,
     breakpoints: {
       720: {
         slidesPerView: 2,

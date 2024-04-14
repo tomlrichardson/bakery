@@ -55,16 +55,13 @@ const block = Astro.props;
     grid-column: 2 / -2;
     gap: 1rem;
   }
-  .card-grid__container h2 {
-  }
   .card-grid__cards {
     display: grid;
-    grid-template-columns: repeat(3, calc(min(400px, 33%)));
     gap: 1rem;
   }
   @media screen and (min-width: 800px) {
-    .card-grid__container {
-      grid-template-columns: repeat(3, 1fr);
+    .card-grid__cards {
+      grid-template-columns: repeat(3, calc(min(400px, 33%)));
     }
   }
 </style>

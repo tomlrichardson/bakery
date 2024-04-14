@@ -31,7 +31,7 @@ content_blocks:
     type: icons
     cards:
       - heading: Where to find us
-        icon: envelope
+        icon: Bread
         text: Learn where to buy our loaves to take home with you.
         image:
           src: /src/assets/images/bread.png
@@ -41,7 +41,7 @@ content_blocks:
         background_image:
       - heading: Want us as your supplier?
         text: Find out about becoming a wholesale customer.
-        icon: MugSaucer
+        icon: Mug
         image:
           src: /src/assets/images/bread.png
           alt: The bread
@@ -50,7 +50,7 @@ content_blocks:
         background_image:
       - heading: What we do
         text: Learn more about what we do, and where we supply.
-        icon: user
+        icon: WheatAwn
         image:
           src: /src/assets/images/bread.png
           alt: The bread
