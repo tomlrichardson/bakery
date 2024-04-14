@@ -36,11 +36,11 @@
     "social": [
       {
         "url": "https://www.facebook.com/mycompany",
-        "social_icon": "ph-facebook-logo"
+        "social_icon": "Facebook"
       },
       {
         "url": "https://www.instagram.com/mycompany",
-        "social_icon": "ph-instagram-logo"
+        "social_icon": "Instagram"
       }
     ]
   }

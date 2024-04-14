@@ -1,13 +1,12 @@
 ---
-import data from '../../../data/navigation.json';
-const block = Astro.props;
+import { header, logo, logo_url } from '../../../data/navigation.json';
 ---
 
 <header class="header" x-data="{ open: false }">
   <div class="header__container">
     <nav class="header__nav">
-      <a class="header__logo-link" href={data.logo_url}>
-        <img class="header__logo-image" src={data.logo} alt="Logo" />
+      <a class="header__logo-link" href={logo_url}>
+        <img class="header__logo-image" src={logo} alt="Logo" />
       </a>
       <button class="hamburger" @click="open = ! open">
         <a class="hamburger__inner"></a>
@@ -18,7 +17,7 @@ const block = Astro.props;
         x-transition
         @click.outside="open = false">
         {
-          data.header.links.map((link) => {
+          header.links.map((link) => {
             return (
               <li class="header__nav-item">
                 <a class="header__nav-link" href={link.url}>
