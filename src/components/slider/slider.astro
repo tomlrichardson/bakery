@@ -49,6 +49,7 @@ const block = Astro.props;
     loop: true,
     pagination: true,
     navigation: true,
+    spaceBetween: 30,
     breakpoints: {
       720: {
         slidesPerView: 2,
@@ -79,13 +80,13 @@ const block = Astro.props;
   }
 
   .slide-container {
-    padding: 36px;
-    height: 100%;
+    padding-block: 96px;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 1;
   }
   .swiper-slide-active .swiper-slide-contents {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 8px;
     background-color: white;
     border-radius: 8px;
@@ -97,12 +98,26 @@ const block = Astro.props;
       box-shadow: none;
       background-color: transparent;
       border-radius: 8px;
+      filter: blur(0);
     }
   }
   @media only screen and (min-width: 1024px) {
+    .swiper-slide-contents {
+      filter: blur(2px);
+    }
     .swiper-slide-next .swiper-slide-contents {
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 32px;
       background-color: white;
+      scale: 1.25;
+      transition:
+        scale 0.75s ease,
+        box-shadow 0.5s ease;
+      filter: blur(0);
+      position: relative;
+      z-index: 99;
+    }
+    .swiper-slide-active .swiper-slide-contents {
+      filter: blur(2px);
     }
   }
 
@@ -112,11 +127,13 @@ const block = Astro.props;
   }
 
   .swiper-slide-contents {
-    padding: 2rem 4rem;
+    padding: 2rem 5rem;
     width: 100%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   }
 
   .slider-heading {

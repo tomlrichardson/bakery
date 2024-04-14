@@ -66,6 +66,20 @@ content_blocks:
     subheading: Our rotating menu of specialty breads, found at Taste Nature.
     slides:
       - text: >-
+          ### Saturday
+
+
+          - Wheat
+
+
+          - Olive and Rosemary
+
+
+          - Oat Porridge
+
+
+          - Ciabatta
+      - text: >-
           ### Tuesday
 
 
@@ -151,20 +165,6 @@ content_blocks:
 
 
           - Spelt and Sesame
-
-
-          - Ciabatta
-      - text: >-
-          ### Saturday
-
-
-          - Wheat
-
-
-          - Olive and Rosemary
-
-
-          - Oat Porridge
 
 
           - Ciabatta

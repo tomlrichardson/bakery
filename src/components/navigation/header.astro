@@ -61,6 +61,18 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
 
   .header__logo-image {
     width: 64px;
+    rotate: 0deg;
+  }
+  .header__logo-image:hover {
+    rotate: -10deg;
+    transition: rotate 0.25s;
+  }
+  .header__logo-image:not(:hover) {
+    transition: rotate 0.25s;
+  }
+  .header__logo-image: {
+    rotate: -10deg;
+    transition: rotate 0.5s;
   }
 
   .header__nav-links {

@@ -13,20 +13,25 @@ All commands are run from the root of the project, from a terminal:
 
 ## TODO:
 
-- Individual 'stat' page for every bread
-- Some kind of ordering system, if not a full shop with help from a serverless function
-- Logos either side of headings on slider
+- ### Homepage
+  - Contact form information
+  - bg and text color for diff sections
+  - CC landing page style rounded corners for sections
+  - Less padding at smaller screens
 - ### Where to buy our loaves
   - Cafe base menu L/R
   - Taste nature menu Slider with cta
-  - Cafe grid
-  - Map
+  - Map with all the places you can buy a loaf (peek at ventures)
     - Different (custom?) icons for Taste Nature and the cafes
 - ### Wholesale
   - Information with cta to form
   - Full Wholesale Menu
   - Cafe grid
+  - Map with all the wholesale customers
   - Form
 - ### What
   - What we do left rights
   - Cafe grid
+- ### Stretch goals
+  - Individual 'stat' page for every bread
+  - Some kind of ordering system, if not a full shop with help from a serverless function

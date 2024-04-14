@@ -8,7 +8,11 @@ import Icon from '../utility/icon';
     <p>&#169; {new Date().getFullYear()} {footer.copyright}</p>
     <div class="flex flex-col gap-8 items-center">
       <a href={logo_url}>
-        <img class="w-[64px]" src={logo} alt="Body of the Year Logo" />
+        <img
+          class="footer__logo-image"
+          src={logo}
+          alt="Body of the Year Logo"
+        />
       </a>
       <ul class="flex gap-4">
         {
@@ -43,5 +47,21 @@ import Icon from '../utility/icon';
     max-width: var(--largeContainer);
     display: grid;
     margin: 0 auto;
+  }
+  .footer__logo-image {
+    display: block;
+    width: 64px;
+    rotate: 0deg;
+  }
+  .footer__logo-image:hover {
+    rotate: -10deg;
+    transition: rotate 0.25s;
+  }
+  .footer__logo-image:not(:hover) {
+    transition: rotate 0.25s;
+  }
+  .footer__logo-image: {
+    rotate: -10deg;
+    transition: rotate 0.5s;
   }
 </style>
