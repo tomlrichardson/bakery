@@ -41,7 +41,7 @@ content_blocks:
         background_image:
       - heading: Want us as your supplier?
         text: Find out about becoming a wholesale customer.
-        icon: envelope
+        icon: MugSaucer
         image:
           src: /src/assets/images/bread.png
           alt: The bread
