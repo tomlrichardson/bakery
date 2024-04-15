@@ -62,7 +62,7 @@ content_blocks:
         column_span: 1
   - _bookshop_name: slider
     number: 3
-    heading: Menu
+    heading: Specialty Loaf Menu
     subheading: Our rotating menu of specialty breads, found at Taste Nature.
     slides:
       - text: >-
@@ -169,4 +169,36 @@ content_blocks:
 
           - Ciabatta
   - _bookshop_name: contact-form
+    heading: Contact Us
+    subheading: Get in touch to order bread, enquire about wholesale, or ask us a question!
+    contact_details:
+      - label: Address
+        icon: LocationPin
+        text: >-
+          [123 Bakery Street](/where/#map)
+      - label: Email
+        icon: Envelope
+        text: botybakery@gmail.com
+    form:
+      form_fields:
+        - label: Email Address
+          name: email
+          type: text
+          options: []
+        - label: Name
+          name: name
+          type: text
+          options: []
+        - label: Message
+          name: message
+          type: textarea
+          options: []
+        - label: Type of Enquiry
+          name: subject
+          type: radio
+          options:
+            - label: General
+              value: General Enquiry
+            - label: Wholesale
+              value: Wholesale Enquiry
 ---

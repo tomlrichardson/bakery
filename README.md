@@ -14,10 +14,13 @@ All commands are run from the root of the project, from a terminal:
 ## TODO:
 
 - ### Homepage
-  - Contact form information
+  - Contact form
+    - hook the form up to CC
+  - Map below form
   - bg and text color for diff sections
   - CC landing page style rounded corners for sections
   - Less padding at smaller screens
+  - Slider-by-day component that requires a date input that we use JS to grab the correct slide for each day
 - ### Where to buy our loaves
   - Cafe base menu L/R
   - Taste nature menu Slider with cta

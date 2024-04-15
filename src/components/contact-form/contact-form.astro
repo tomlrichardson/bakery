@@ -1,4 +1,6 @@
 ---
+import Icon from '../utility/icon';
+import Markdown from '../utility/markdown.astro';
 const block = Astro.props;
 ---
 
@@ -6,40 +8,78 @@ const block = Astro.props;
   <div
     class="contact-form flex flex-col md:flex-row gap-8 px-8 py-[96px] items-center md:justify-between md:items-start">
     <div class="w-full md:w-1/2 max-w-[32rem]">
-      <h2>Contact Us</h2>
+      <h2>{block.heading}</h2>
       <p class="max-w-[24rem]">
-        Get in touch to order bread, enquire about wholesale, or ask us a
-        question!
+        {block.subheading}
       </p>
-      <h2>TODO: Put contact info list here</h2>
+      <div class="flex flex-col gap-8 mt-8">
+        {
+          block.contact_details.map(
+            (item: { icon?: string; label?: string; text?: string }) => {
+              return (
+                <div class="flex flex-col gap-1">
+                  <p class="flex gap-2 items-center font-bold space-between">
+                    {item.icon && (
+                      <span class="w-4">
+                        <Icon icon={item.icon} />
+                      </span>
+                    )}
+                    {item.label}
+                  </p>
+                  <div>
+                    <Markdown content={item.text} />
+                  </div>
+                </div>
+              );
+            }
+          )
+        }
+      </div>
     </div>
     <div class="w-full md:w-1/2 rounded-lg max-w-[32rem]">
       <form method="post" action="/success.html" class="flex flex-col gap-8">
-        <div class="text-input-group">
-          <label>Email Address</label>
-          <input type="text" name="email" />
-        </div>
-        <div class="text-input-group">
-          <label>Name</label>
-          <input type="text" name="name" />
-        </div>
-        <div class="text-input-group">
-          <label>Message</label>
-          <textarea name="message"></textarea>
-        </div>
-        <div class="check-input-group gap-2">
-          <label>Type of Enquiry</label>
-          <div class="flex flex-col gap-2">
-            <div class="">
-              <input type="radio" name="_subject" value="Sales Enquiry" />
-              <label>Sales</label>
-            </div>
-            <div class="">
-              <input type="radio" name="_subject" value="General Enquiry" />
-              <label>General</label>
-            </div>
-          </div>
-        </div>
+        {
+          block.form.form_fields.map(
+            (item: {
+              label?: string;
+              type?: string;
+              name?: string;
+              options?: [{ value: string; label: string }];
+            }) => {
+              return item.type === 'text' ? (
+                <div class="text-input-group">
+                  <label>{item.label}</label>
+                  <input type={item.type} name={item.name} />
+                </div>
+              ) : item.type === 'textarea' ? (
+                <div class="text-input-group">
+                  <label>{item.label}</label>
+                  <textarea name={item.name} />
+                </div>
+              ) : item.type === 'radio' ? (
+                <div class="check-input-group gap-2">
+                  <label>{item.label}</label>
+                  <div class="flex flex-col gap-2">
+                    {item.options?.map(
+                      (option: { value?: string; label?: string }) => {
+                        return (
+                          <div class="">
+                            <input
+                              type="radio"
+                              name={item.name}
+                              value={option.value}
+                            />
+                            <label>{option.label}</label>
+                          </div>
+                        );
+                      }
+                    )}
+                  </div>
+                </div>
+              ) : null;
+            }
+          )
+        }
         <!-- <input type="hidden" name="inbox_key" value="contact_inbox" />
       <input
         type="hidden"

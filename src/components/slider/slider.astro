@@ -12,11 +12,15 @@ const block = Astro.props;
   ) : (
     <>
       <div class="slider-container">
-        <div class="slider-heading">
-          {block.heading ? <h2>{block.heading}</h2> : null}
-          {block.subheading ? <div>{block.subheading}</div> : null}
+        <div class="slider-text">
+          {block.heading ? (
+            <h2 class="slider-heading">{block.heading}</h2>
+          ) : null}
+          {block.subheading ? (
+            <div class="md:max-w-[24rem]">{block.subheading}</div>
+          ) : null}
         </div>
-        <swiper-container init="false" class="swiper-container">
+        <swiper-container class="swiper-container">
           {block.slides.map((slide: any) => {
             return (
               <swiper-slide class="slide-container">
@@ -50,19 +54,6 @@ const block = Astro.props;
     pagination: true,
     navigation: true,
     spaceBetween: 30,
-    breakpoints: {
-      720: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-    on: {
-      init() {
-        // ...
-      },
-    },
   };
 
   // now we need to assign all parameters to Swiper element
@@ -77,14 +68,29 @@ const block = Astro.props;
     max-width: var(--largeContainer);
     margin: 0 auto;
     padding-block: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .swiper-container {
+    width: 100%;
   }
 
-  .slide-container {
-    padding-block: 96px;
+  .slider-text {
     display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 4rem;
+  }
+  .slider-heading {
+    font-size: 2.5rem;
+  }
+
+  .swiper-slide-contents {
+    padding-inline: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .swiper-slide-active .swiper-slide-contents {
     border-radius: 8px;
@@ -92,54 +98,26 @@ const block = Astro.props;
     border-radius: 8px;
   }
 
-  @media only screen and (min-width: 720px) {
-    .swiper-slide-next .swiper-slide-contents,
-    .swiper-slide-active .swiper-slide-contents {
-      box-shadow: none;
-      background-color: transparent;
-      border-radius: 8px;
-      filter: blur(0);
+  @media only screen and (min-width: 700px) {
+    .slider-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .swiper-container {
+      width: 50%;
+    }
+    .swiper-slide-contents {
+      align-items: center;
+    }
+  }
+  @media only screen and (min-width: 850px) {
+    .slider-heading {
+      font-size: 3rem;
     }
   }
   @media only screen and (min-width: 1024px) {
-    .swiper-slide-contents {
-      filter: blur(2px);
+    .slider-heading {
+      font-size: 4rem;
     }
-    .swiper-slide-next .swiper-slide-contents {
-      box-shadow: rgba(149, 157, 165, 0.4) 0px 0px 32px;
-      background-color: white;
-      scale: 1.25;
-      transition:
-        scale 0.75s ease,
-        box-shadow 0.5s ease;
-      filter: blur(0);
-      position: relative;
-      z-index: 99;
-    }
-    .swiper-slide-active .swiper-slide-contents {
-      filter: blur(2px);
-    }
-  }
-
-  .swiper-container {
-    padding-inline: 2rem;
-    padding-block: 2rem;
-  }
-
-  .swiper-slide-contents {
-    padding: 2rem 5rem;
-    width: 100%;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-  }
-
-  .slider-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2rem;
   }
 </style>
