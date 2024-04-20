@@ -10,7 +10,7 @@ const block = Astro.props;
 ---
 
 <div class="card-grid">
-  <div class="card-grid__container px-8">
+  <div class="card-grid__container">
     <div class="card-grid__cards">
       {
         block.cards.map((card) => {
@@ -56,10 +56,12 @@ const block = Astro.props;
     max-width: var(--largeContainer);
     margin: 0 auto;
     padding-block: 96px;
+    padding-inline: var(--pagePadding);
   }
   .card-grid__cards {
     display: grid;
-    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
   }
   @media screen and (min-width: 800px) {
     .card-grid__cards {

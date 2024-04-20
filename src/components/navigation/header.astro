@@ -38,14 +38,15 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
     top: 0;
     z-index: 10;
     display: grid;
-    grid-template-columns: var(--twelveColumnGrid);
     min-width: 100vw;
     height: var(--headerHeight);
   }
 
   .header__container {
-    max-width: var(--largeContainer);
-    grid-column: 2 / -2;
+    width: min(var(--largeContainer), 100%);
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-inline: var(--pagePadding);
   }
 
   .header li {

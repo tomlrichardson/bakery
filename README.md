@@ -17,15 +17,27 @@ All commands are run from the root of the project, from a terminal:
   - Contact form
     - hook the form up to CC
   - Map below form
-  - bg and text color for diff sections
-  - CC landing page style rounded corners for sections
+  - Setup color variables data file
+  - BG and text color for diff sections
+  - Setup style variables file and write it to pages/[\...slug]
+    - Page max width
+    - Header height
   - Less padding at smaller screens
+  - Animation on hero text
+    - Fade in
+    - Shadow subtly popping out
+  - Add secondary button on hero
+  - Video bg on hero
+  - Add hover states to hero buttons
+  - Add hover states to icons in icon grid
+  - Make hamburger full screen and do lil animation
   - Slider-by-day component that requires a date input that we use JS to grab the correct slide for each day
 - ### Where to buy our loaves
   - Cafe base menu L/R
-  - Taste nature menu Slider with cta
-  - Map with all the places you can buy a loaf (peek at ventures)
-    - Different (custom?) icons for Taste Nature and the cafes
+    - Each cafe has contact info including an address which links to the map below
+  - Taste nature menu Slider with cta, with link to map
+  - Map with all the places you can buy a loaf (peek at Venture template's map)
+    - Different (custom?) map icons for Taste Nature and the cafes
 - ### Wholesale
   - Information with cta to form
   - Full Wholesale Menu
@@ -35,6 +47,7 @@ All commands are run from the root of the project, from a terminal:
 - ### What
   - What we do left rights
   - Cafe grid
+  - Gallery
 - ### Stretch goals
   - Individual 'stat' page for every bread
   - Some kind of ordering system, if not a full shop with help from a serverless function

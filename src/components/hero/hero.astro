@@ -90,16 +90,15 @@ if (!src) {
 
   .hero__container {
     display: grid;
-    grid-template-columns: var(--twelveColumnGrid);
     max-width: var(--largeContainer);
     padding-block: 110px;
+    padding-inline: var(--pagePadding);
     margin: 0 auto;
     color: white;
   }
 
   .hero__title,
   .hero__subtitle {
-    grid-column: 2 / -2;
     color: inherit;
     text-shadow: 0px 2px 1px #00000047;
   }

@@ -4,7 +4,7 @@ import Icon from '../utility/icon';
 ---
 
 <footer class="bg-slate-700 text-white">
-  <div class="footer grid grid-cols-3 items-end px-8 py-[48px]">
+  <div class="footer grid grid-cols-3 items-end py-[48px]">
     <p>&#169; {new Date().getFullYear()} {footer.copyright}</p>
     <div class="flex flex-col gap-8 items-center">
       <a href={logo_url}>
@@ -45,6 +45,7 @@ import Icon from '../utility/icon';
 <style>
   .footer {
     max-width: var(--largeContainer);
+    padding-inline: var(--pagePadding);
     display: grid;
     margin: 0 auto;
   }
