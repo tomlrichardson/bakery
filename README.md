@@ -37,8 +37,14 @@ All commands are run from the root of the project, from a terminal:
   - Cafe base menu L/R
     - Each cafe has contact info including an address which links to the map below
   - Taste nature menu Slider with cta, with link to map
+  - Sliders need to be flippable, but still display text first on mobile 🥲
+  - Sliders need more controls eg. autoplay, pagination, next & prev.
   - Map with all the places you can buy a loaf (peek at Venture template's map)
-    - Different (custom?) map icons for Taste Nature and the cafes
+    - Different (custom?) map icons for
+      - Taste Nature
+      - Maggies, Duck, Goodfoodco
+      - All the places we supply
+    - Pins need to have links for the cards above to anchor link to
 - ### Wholesale
   - Information with cta to form
   - Full Wholesale Menu
@@ -51,4 +57,5 @@ All commands are run from the root of the project, from a terminal:
   - Gallery
 - ### Stretch goals
   - Individual 'stat' page for every bread
+  - Some kind of archive or gallery
   - Some kind of ordering system, if not a full shop with help from a serverless function

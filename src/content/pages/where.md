@@ -21,26 +21,46 @@ content_blocks:
       text_color: '#ffffff'
   - _bookshop_name: locations-slider
     heading: Take home loaves
-    subheading: You can purchase take home loaves from these local cafes.
+    subheading: You can purchase take home loaves from our core range, at these local cafes.
     flipped: false
     locations:
       - name: Maggies
         details: Wheat, classic sourdough, rye, and baguettes.
         image:
-          src: src/assets/images/wheat.png
+          src: /images/logo.png
           alt: A picture of the outside of Maggies
         location: '131 High Street, Dunedin'
         link: /#map
       - name: The Duck
         details: Wheat, classic sourdough, rye, and baguettes.
         image:
-          src: src/assets/images/wheat.png
+          src: /images/logo.png
           alt: A picture of the outside of Maggies
         location: '131 High Street, Dunedin'
         link: /#map
+  - _bookshop_name: locations-slider
+    heading: Eating out?
+    subheading: We supply bread to these fine establishments.
+    flipped: true
+    locations:
+      - name: Maggies
+        details: Cafe & bar.
+        image:
+          src: /images/logo.png
+          alt: A picture of the outside of Maggies
+        location: '131 High Street, Dunedin'
+        link: /#map
+      - name: The Duck
+        details: Cafe & bar.
+        image:
+          src: /images/logo.png
+          alt: A picture of the outside of The Duck
+        location: '131 High Street, Dunedin'
+        link: /#map
   - _bookshop_name: slider
-    heading: Specialty Loaf Menu
-    subheading: Find our more extensive rotating menu of specialty breads, found at Taste Nature.
+    heading: Specialty Loaves
+    subheading: Find our more extensive range of specialty breads at Taste Nature.
+    flipped: false
     slides:
       - text: >-
           ### Saturday

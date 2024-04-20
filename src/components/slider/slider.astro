@@ -13,14 +13,6 @@ const block = Astro.props;
     <>
       {block.flipped ? (
         <div class="slider-container">
-          <div class="slider-text">
-            {block.heading ? (
-              <h2 class="slider-heading">{block.heading}</h2>
-            ) : null}
-            {block.subheading ? (
-              <div class="md:max-w-[24rem]">{block.subheading}</div>
-            ) : null}
-          </div>
           <swiper-container class="swiper-container">
             {block.slides.map((slide: any) => {
               return (
@@ -39,9 +31,25 @@ const block = Astro.props;
 
             <div class="swiper-scrollbar" />
           </swiper-container>
+          <div class="slider-text">
+            {block.heading ? (
+              <h2 class="slider-heading">{block.heading}</h2>
+            ) : null}
+            {block.subheading ? (
+              <div class="md:max-w-[24rem]">{block.subheading}</div>
+            ) : null}
+          </div>
         </div>
       ) : (
         <div class="slider-container">
+          <div class="slider-text">
+            {block.heading ? (
+              <h2 class="slider-heading">{block.heading}</h2>
+            ) : null}
+            {block.subheading ? (
+              <div class="md:max-w-[24rem]">{block.subheading}</div>
+            ) : null}
+          </div>
           <swiper-container class="swiper-container">
             {block.slides.map((slide: any) => {
               return (
@@ -60,14 +68,6 @@ const block = Astro.props;
 
             <div class="swiper-scrollbar" />
           </swiper-container>
-          <div class="slider-text">
-            {block.heading ? (
-              <h2 class="slider-heading">{block.heading}</h2>
-            ) : null}
-            {block.subheading ? (
-              <div class="md:max-w-[24rem]">{block.subheading}</div>
-            ) : null}
-          </div>
         </div>
       )}
     </>

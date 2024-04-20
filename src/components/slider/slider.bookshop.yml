@@ -3,14 +3,18 @@ spec:
   structures:
     - content_blocks
   label: Slider
-  description: Left Right block
+  description: Plain text slider
   icon: 'chrome_reader_mode'
-  tags: []
+  tags:
+    - Slider
+    - Text
+    - Left Right
 
 # Defines the structure of this component, as well as the default values
 blueprint:
   heading: Specialty Loaf Menu
   subheading: Our rotating menu of specialty breads, found at Taste Nature.
+  flipped: false
   slides:
     - text: >-
         ### Saturday

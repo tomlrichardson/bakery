@@ -19,7 +19,7 @@ const block = Astro.props;
                 return (
                   <swiper-slide class="slide-container">
                     <div class="swiper-slide-contents">
-                      <img src={slide.image.src} alt={slide.image.alt} />
+                      <img class="max-w-[200px]" src={slide.image.src} alt={slide.image.alt} />
                       <h3>{slide.name}</h3>
                       <p>{slide.details}</p>
                       <p class="flex items-center gap-3">
@@ -40,7 +40,7 @@ const block = Astro.props;
 
               <div class="swiper-scrollbar" />
             </swiper-container>
-            <div class="slider-text">
+            <div class="slider-text items-end">
               {block.heading ? (
                 <h2 class="slider-heading">{block.heading}</h2>
               ) : null}
@@ -62,7 +62,7 @@ const block = Astro.props;
                 return (
                   <swiper-slide class="slide-container">
                     <div class="swiper-slide-contents">
-                      <img src={slide.image.src} alt={slide.image.alt} />
+                      <img class="max-w-[200px]" src={slide.image.src} alt={slide.image.alt} />
                       <h3>{slide.name}</h3>
                       <p>{slide.details}</p>
                       <p class="flex items-center gap-3">

@@ -3,7 +3,7 @@ spec:
   structures:
     - content_blocks
   label: Locations Slider
-  description: Left Right with locations slider
+  description: Locations slider
   icon: 'chrome_reader_mode'
   tags:
     - Slider
