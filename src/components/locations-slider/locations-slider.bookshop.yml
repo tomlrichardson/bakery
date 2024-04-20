@@ -14,6 +14,7 @@ spec:
 blueprint:
   heading: Our core range
   subheading: You can purchase take home loaves from these local cafes.
+  flipped: false
   locations:
     - name: Maggies
       details: Wheat, classic sourdough, rye, and baguettes.

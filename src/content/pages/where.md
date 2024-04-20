@@ -22,6 +22,7 @@ content_blocks:
   - _bookshop_name: locations-slider
     heading: Take home loaves
     subheading: You can purchase take home loaves from these local cafes.
+    flipped: false
     locations:
       - name: Maggies
         details: Wheat, classic sourdough, rye, and baguettes.

@@ -11,34 +11,65 @@ const block = Astro.props;
     </h2>
   ) : (
     <>
-      <div class="slider-container">
-        <div class="slider-text">
-          {block.heading ? (
-            <h2 class="slider-heading">{block.heading}</h2>
-          ) : null}
-          {block.subheading ? (
-            <div class="md:max-w-[24rem]">{block.subheading}</div>
-          ) : null}
+      {block.flipped ? (
+        <div class="slider-container">
+          <div class="slider-text">
+            {block.heading ? (
+              <h2 class="slider-heading">{block.heading}</h2>
+            ) : null}
+            {block.subheading ? (
+              <div class="md:max-w-[24rem]">{block.subheading}</div>
+            ) : null}
+          </div>
+          <swiper-container class="swiper-container">
+            {block.slides.map((slide: any) => {
+              return (
+                <swiper-slide class="slide-container">
+                  <div class="swiper-slide-contents">
+                    <Markdown content={slide.text} />
+                  </div>
+                </swiper-slide>
+              );
+            })}
+
+            <div class="swiper-pagination" />
+
+            <div class="swiper-button-prev" />
+            <div class="swiper-button-next" />
+
+            <div class="swiper-scrollbar" />
+          </swiper-container>
         </div>
-        <swiper-container class="swiper-container">
-          {block.slides.map((slide: any) => {
-            return (
-              <swiper-slide class="slide-container">
-                <div class="swiper-slide-contents">
-                  <Markdown content={slide.text} />
-                </div>
-              </swiper-slide>
-            );
-          })}
+      ) : (
+        <div class="slider-container">
+          <swiper-container class="swiper-container">
+            {block.slides.map((slide: any) => {
+              return (
+                <swiper-slide class="slide-container">
+                  <div class="swiper-slide-contents">
+                    <Markdown content={slide.text} />
+                  </div>
+                </swiper-slide>
+              );
+            })}
 
-          <div class="swiper-pagination" />
+            <div class="swiper-pagination" />
 
-          <div class="swiper-button-prev" />
-          <div class="swiper-button-next" />
+            <div class="swiper-button-prev" />
+            <div class="swiper-button-next" />
 
-          <div class="swiper-scrollbar" />
-        </swiper-container>
-      </div>
+            <div class="swiper-scrollbar" />
+          </swiper-container>
+          <div class="slider-text">
+            {block.heading ? (
+              <h2 class="slider-heading">{block.heading}</h2>
+            ) : null}
+            {block.subheading ? (
+              <div class="md:max-w-[24rem]">{block.subheading}</div>
+            ) : null}
+          </div>
+        </div>
+      )}
     </>
   )
 }

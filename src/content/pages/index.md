@@ -56,6 +56,7 @@ content_blocks:
   - _bookshop_name: slider
     heading: Specialty Loaf Menu
     subheading: Our rotating menu of specialty breads, found at Taste Nature.
+    flipped: true
     slides:
       - text: >-
           ### Saturday
