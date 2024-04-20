@@ -38,6 +38,13 @@ content_blocks:
           alt: A picture of the outside of Maggies
         location: '131 High Street, Dunedin'
         link: /#map
+      - name: Taste Nature
+        details: Wheat, classic sourdough, rye, and baguettes.
+        image:
+          src: /images/logo.png
+          alt: A picture of the outside of Maggies
+        location: '131 High Street, Dunedin'
+        link: /#map
   - _bookshop_name: locations-slider
     heading: Where we supply
     subheading: We're proud to be the supplier for these local eateries.
@@ -57,38 +64,5 @@ content_blocks:
           alt: A picture of the outside of The Duck
         location: '131 High Street, Dunedin'
         link: /#map
-  - _bookshop_name: slider
-    heading: Specialty Loaves
-    subheading: Find our more extensive range of specialty breads at Taste Nature.
-    flipped: false
-    slides:
-      - text: >-
-          ### Saturday
-
-
-          - Wheat
-
-
-          - Olive and Rosemary
-
-
-          - Oat Porridge
-
-
-          - Ciabatta
-      - text: >-
-          ### Tuesday
-
-
-          - Organic Yeasted Variety ( All Tin Loafs )
-
-
-          - Soft White Loaf 
-
-
-          - Purple Wheat Loaf
-
-
-          - Multigrain Loaf
   - _bookshop_name: map
 ---

@@ -46,15 +46,13 @@ All commands are run from the root of the project, from a terminal:
       - All the places we supply
     - Pins need to have links for the cards above to anchor link to
 - ### Wholesale
-  - TextBlock Full Wholesale Menu
+  - Left Right with an explanation & Wholesale Menu
   - Cafe grid
   - Map with all the wholesale customers
   - Form
 - ### What
   - What we do left rights
-  - Cafe grid
   - Gallery
 - ### Stretch goals
   - Individual 'stat' page for every bread
-  - Some kind of archive or gallery
   - Some kind of ordering system, if not a full shop with help from a serverless function
