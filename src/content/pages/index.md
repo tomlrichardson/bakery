@@ -1,15 +1,8 @@
 ---
-_schema: page
 title: Home
-description: >-
-  We believe that a good email marketing strategy is the key to growth. So we’re
-  helping you grow your business with tools and resources that make email
-  marketing easy.
 seo:
   page_description: >-
-    We believe that a good email marketing strategy is the key to growth. So
-    we’re helping you grow your business with tools and resources that make
-    email marketing easy.
+    Body of the year bakery
   canonical_url:
   featured_image:
   featured_image_alt:
@@ -36,7 +29,7 @@ content_blocks:
         image:
           src: /src/assets/images/bread.png
           alt: The bread
-        link: '#menu'
+        link: '/where/'
         background_color:
         background_image:
         column_span: 1
@@ -61,7 +54,6 @@ content_blocks:
         background_image:
         column_span: 1
   - _bookshop_name: slider
-    number: 3
     heading: Specialty Loaf Menu
     subheading: Our rotating menu of specialty breads, found at Taste Nature.
     slides:

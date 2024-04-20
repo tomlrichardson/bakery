@@ -1,0 +1,30 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  structures:
+    - content_blocks
+  label: Locations Slider
+  description: Left Right with locations slider
+  icon: 'chrome_reader_mode'
+  tags:
+    - Slider
+    - Locations
+    - Left Right
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  heading: Our core range
+  subheading: You can purchase take home loaves from these local cafes.
+  locations:
+    - name: Maggies
+      details: Wheat, classic sourdough, rye, and baguettes.
+      image:
+        src: /images/locations-slider/locations-slider-1.jpg
+        alt: A picture of the outside of Maggies
+      location: '131 High Street, Dunedin'
+      link: /#map
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:

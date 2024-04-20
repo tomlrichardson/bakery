@@ -1,0 +1,134 @@
+---
+import Icon from '../utility/icon';
+const block = Astro.props;
+---
+
+{
+  ENV_BOOKSHOP_LIVE ? (
+    <h2 style="text-align: center;">
+      This component breaks the visual previewer - this is a fallback message.
+      The component is still editable, and builds on the real site.
+    </h2>
+  ) : (
+    <>
+      <div class="slider-container">
+        <swiper-container class="swiper-container swiper-locations">
+          {block.locations.map((slide: any) => {
+            return (
+              <swiper-slide class="slide-container">
+                <div class="swiper-slide-contents">
+                  <img src={slide.image.src} alt={slide.image.alt} />
+                  <h3>{slide.name}</h3>
+                  <p>{slide.details}</p>
+                  <p class="flex items-center gap-3">
+                    <span class="w-3 h-3">
+                      <Icon icon={'LocationPin'} />
+                    </span>
+                    {slide.location}
+                  </p>
+                </div>
+              </swiper-slide>
+            );
+          })}
+
+          <div class="swiper-pagination swiper-pagination-2" />
+
+          <div class="swiper-button-prev swiper-pagination-2" />
+          <div class="swiper-button-next swiper-pagination-2" />
+
+          <div class="swiper-scrollbar" />
+        </swiper-container>
+        <div class="slider-text">
+          {block.heading ? (
+            <h2 class="slider-heading">{block.heading}</h2>
+          ) : null}
+          {block.subheading ? (
+            <div class="md:max-w-[24rem]">{block.subheading}</div>
+          ) : null}
+        </div>
+      </div>
+    </>
+  )
+}
+
+<script>
+  // swiper element
+  const swiperLocEl = document.querySelector('swiper-locations');
+
+  // swiper parameters
+  const swiperParams = {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      enabled: true,
+      el: '.swiper-pagination-2',
+    },
+    navigation: true,
+    spaceBetween: 30,
+  };
+
+  // now we need to assign all parameters to Swiper element
+  Object.assign(swiperLocEl, swiperParams);
+
+  // and now initialize it
+  swiperLocEl.initialize();
+</script>
+
+<style is:global>
+  .slider-container {
+    max-width: var(--largeContainer);
+    margin: 0 auto;
+    padding-block: 96px;
+    padding-inline: var(--pagePadding);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .swiper-container {
+    width: 100%;
+  }
+
+  .slider-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .slider-heading {
+    font-size: 2.5rem;
+  }
+
+  .swiper-slide-contents {
+    padding-inline: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .swiper-slide-active .swiper-slide-contents {
+    border-radius: 8px;
+    background-color: white;
+    border-radius: 8px;
+  }
+
+  @media only screen and (min-width: 700px) {
+    .slider-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .swiper-container {
+      width: 50%;
+    }
+    .swiper-slide-contents {
+      align-items: center;
+    }
+  }
+  @media only screen and (min-width: 850px) {
+    .slider-heading {
+      font-size: 3rem;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    .slider-heading {
+      font-size: 4rem;
+    }
+  }
+</style>

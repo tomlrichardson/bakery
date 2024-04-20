@@ -22,6 +22,7 @@ All commands are run from the root of the project, from a terminal:
   - Setup style variables file and write it to pages/[\...slug]
     - Page max width
     - Header height
+    - Page padding
   - Less padding at smaller screens
   - Animation on hero text
     - Fade in

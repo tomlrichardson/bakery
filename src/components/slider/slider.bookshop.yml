@@ -9,13 +9,37 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
+  heading: Specialty Loaf Menu
+  subheading: Our rotating menu of specialty breads, found at Taste Nature.
   slides:
-    - text: Some text
-      image: https://placebear.com/300/200
-    - text: Diff text
-      image: https://placebear.com/300/200
-    - text: Different text
-      image: https://placebear.com/300/200
+    - text: >-
+        ### Saturday
+
+
+        - Wheat
+
+
+        - Olive and Rosemary
+
+
+        - Oat Porridge
+
+
+        - Ciabatta
+    - text: >-
+        ### Tuesday
+
+
+        - Organic Yeasted Variety ( All Tin Loafs )
+
+
+        - Soft White Loaf 
+
+
+        - Purple Wheat Loaf
+
+
+        - Multigrain Loaf
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
