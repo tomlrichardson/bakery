@@ -1,6 +1,7 @@
 ---
 import IconCard from '../cards/icon-card.astro';
 import ImageCard from '../cards/image-card.astro';
+import LocationCard from '../cards/location-card.astro';
 interface Props {
   type: string;
   cards: Array<any>;
@@ -30,6 +31,19 @@ const block = Astro.props;
           if (block.type === 'images') {
             return (
               <ImageCard
+                heading={card.heading}
+                text={card.text}
+                image={card.image}
+                link={card.link}
+                backgroundImage={card.background_image}
+                backgroundColor={card.background_color}
+                columnSpan={card.column_span}
+              />
+            );
+          }
+          if (block.type === 'locations') {
+            return (
+              <LocationCard
                 heading={card.heading}
                 text={card.text}
                 image={card.image}

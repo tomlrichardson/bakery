@@ -46,8 +46,7 @@ All commands are run from the root of the project, from a terminal:
       - All the places we supply
     - Pins need to have links for the cards above to anchor link to
 - ### Wholesale
-  - Information with cta to form
-  - Full Wholesale Menu
+  - TextBlock Full Wholesale Menu
   - Cafe grid
   - Map with all the wholesale customers
   - Form
