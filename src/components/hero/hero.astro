@@ -53,15 +53,21 @@ if (!src) {
       ) : null
     }
   </div>
-  <Image
-    class="hero__bg-img"
-    alt={block.altText}
-    src={src}
-    width={4000}
-    height={400}
-    widths={[360, 720, 1280]}
-    sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
-  />
+  {
+    ENV_BOOKSHOP_LIVE ? (
+      <img class="hero__bg-img" alt={block.altText} src={src} />
+    ) : (
+      <Image
+        class="hero__bg-img"
+        alt={block.altText}
+        src={src}
+        width={4000}
+        height={400}
+        widths={[360, 720, 1280]}
+        sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
+      />
+    )
+  }
 </div>
 
 <style>
@@ -72,7 +78,7 @@ if (!src) {
     padding-top: var(--headerHeight);
   }
 
-  .hero > img {
+  .hero__bg-img {
     position: absolute;
     top: 0;
     left: 50%;
