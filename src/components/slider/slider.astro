@@ -5,10 +5,53 @@ const block = Astro.props;
 
 {
   ENV_BOOKSHOP_LIVE ? (
-    <h2 style="text-align: center;">
-      This component breaks the visual previewer - this is a fallback message.
-      The component is still editable, and builds on the real site.
-    </h2>
+    <>
+      {block.flipped ? (
+        <div class="slider-container">
+          <div class="swiper-container">
+            {block.slides.map((slide: any) => {
+              return (
+                <div class="slide-container">
+                  <div class="swiper-slide-contents">
+                    <Markdown content={slide.text} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div class="slider-text">
+            {block.heading ? (
+              <h2 class="slider-heading">{block.heading}</h2>
+            ) : null}
+            {block.subheading ? (
+              <div class="md:max-w-[24rem]">{block.subheading}</div>
+            ) : null}
+          </div>
+        </div>
+      ) : (
+        <div class="slider-container">
+          <div class="slider-text">
+            {block.heading ? (
+              <h2 class="slider-heading">{block.heading}</h2>
+            ) : null}
+            {block.subheading ? (
+              <div class="md:max-w-[24rem]">{block.subheading}</div>
+            ) : null}
+          </div>
+          <div class="swiper-container">
+            {block.slides.map((slide: any) => {
+              return (
+                <div class="slide-container">
+                  <div class="swiper-slide-contents">
+                    <Markdown content={slide.text} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
   ) : (
     <>
       {block.flipped ? (
