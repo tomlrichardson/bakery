@@ -39,8 +39,8 @@ content_blocks:
         location: '131 High Street, Dunedin'
         link: /#map
   - _bookshop_name: locations-slider
-    heading: Eating out?
-    subheading: We supply bread to these fine establishments.
+    heading: Where we supply
+    subheading: We're proud to be the supplier for these local eateries.
     flipped: true
     locations:
       - name: Maggies
