@@ -1,10 +1,12 @@
 ---
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
+import Icon from '../../utility/icon';
 
 interface Props {
   heading: string;
   text: string;
+  location: string;
   image: {
     src: string;
     alt: string;
@@ -47,6 +49,7 @@ const src =
       ) : null
     }
     <h2>{block.heading}</h2>
+    <p><span><Icon icon={'locationPin'} /></span>{block.location}</p>
     <p>{block.text}</p>
   </div>
 </a>

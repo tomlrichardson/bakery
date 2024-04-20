@@ -10,17 +10,15 @@ interface Props {
     alt: string;
   };
   link: string;
-  backgroundImage: string;
   backgroundColor: string;
   columnSpan: number;
 }
 
 const block = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/*.{jpeg,jpg,png,gif,webp,avif,svg}',
+  '/src/assets/images/*.{jpeg,jpg,png,gif,webp,avif,svg}',
   { eager: true }
 );
-
 const imageSrc = images[block.image.src]?.default;
 const src =
   typeof imageSrc === 'string'
@@ -31,9 +29,7 @@ const src =
 <a
   class="card"
   href={block.link}
-  style={block.backgroundImage
-    ? `background-image: url(${block.backgroundImage}); grid-column: span ${block.columnSpan};`
-    : `background-color: ${block.backgroundColor}; grid-column: span ${block.columnSpan};`}>
+  style={`background-color: ${block.backgroundColor}; grid-column: span ${block.columnSpan};`}>
   <div class="image">
     {
       block.image.src ? (
@@ -41,13 +37,12 @@ const src =
           class="hero__img"
           alt={block.image.alt}
           src={src}
-          width={500}
+          width={200}
           height={400}
         />
       ) : null
     }
     <h2>{block.heading}</h2>
-    <p>{block.location}</p>
     <p>{block.text}</p>
   </div>
 </a>

@@ -21,34 +21,27 @@ content_blocks:
       background_color: '#000000'
       text_color: '#ffffff'
   - _bookshop_name: card-grid
-    type: icons
     cards:
-      - heading: Where to find us
+      - _bookshop_name: icon-card
+        heading: Where to find us
         icon: Bread
         text: Learn where to buy our loaves to take home with you.
-        image:
-          src: /src/assets/images/bread.png
-          alt: The bread
         link: '/where/'
         background_color:
         background_image:
         column_span: 1
-      - heading: Want us as your supplier?
+      - _bookshop_name: icon-card
+        heading: Want us as your supplier?
         text: Find out about becoming a wholesale customer.
         icon: Mug
-        image:
-          src: /src/assets/images/bread.png
-          alt: The bread
         link: /wholesale
         background_color:
         background_image:
         column_span: 1
-      - heading: What we do
+      - _bookshop_name: icon-card
+        heading: What we do
         text: Learn more about what we do, and where we supply.
         icon: WheatAwn
-        image:
-          src: /src/assets/images/bread.png
-          alt: The bread
         link: /about
         background_color:
         background_image:

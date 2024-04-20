@@ -1,13 +1,16 @@
 ---
-import IconCard from '../cards/icon-card.astro';
-import ImageCard from '../cards/image-card.astro';
-import LocationCard from '../cards/location-card.astro';
+import IconCard from '../cards/icon-card/icon-card.astro';
+import ImageCard from '../cards/image-card/image-card.astro';
+import LocationCard from '../cards/location-card/location-card.astro';
 interface Props {
   type: string;
   cards: Array<any>;
 }
 
 const block = Astro.props;
+const cards = import.meta.glob('/src/components/cards/**/*.astro', {
+  eager: true,
+});
 ---
 
 <div class="card-grid">
@@ -15,51 +18,14 @@ const block = Astro.props;
     <div class="card-grid__cards">
       {
         block.cards.map((card) => {
-          if (block.type === 'icons') {
-            return (
-              <IconCard
-                heading={card.heading}
-                text={card.text}
-                icon={card.icon}
-                link={card.link}
-                backgroundImage={card.background_image}
-                backgroundColor={card.background_color}
-                columnSpan={card.column_span}
-              />
-            );
-          }
-          if (block.type === 'images') {
-            return (
-              <ImageCard
-                heading={card.heading}
-                text={card.text}
-                image={card.image}
-                link={card.link}
-                backgroundImage={card.background_image}
-                backgroundColor={card.background_color}
-                columnSpan={card.column_span}
-              />
-            );
-          }
-          if (block.type === 'locations') {
-            return (
-              <LocationCard
-                heading={card.heading}
-                text={card.text}
-                image={card.image}
-                link={card.link}
-                backgroundImage={card.background_image}
-                backgroundColor={card.background_color}
-                columnSpan={card.column_span}
-              />
-            );
-          }
+          const name = `/src/components/cards/${card._bookshop_name}/${card._bookshop_name}.astro`;
+          const Component = cards[name].default;
+          return <Component {...card} />;
         })
       }
     </div>
   </div>
 </div>
-
 <style>
   .card-grid__container {
     display: grid;
