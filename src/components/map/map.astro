@@ -2,7 +2,9 @@
 const block = Astro.props;
 ---
 
-<div style="width: 1000px; height: 500px; margin: 0 auto;" id="map"></div>
+<div class="map-container">
+  <div id="map"></div>
+</div>
 <!-- prettier-ignore -->
 <script is:inline>
   ((g) => {
@@ -41,3 +43,18 @@ const block = Astro.props;
       : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
   })({ key: 'AIzaSyCc6yt-zcJast7OYBKifXufR1ztdP8XA00', v: 'weekly' });
 </script>
+
+<style>
+  .map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 48px var(--pagePadding);
+  }
+  #map {
+    width: 100%;
+    max-width: var(--largeContainer);
+    height: 500px;
+    border-radius: 4px;
+  }
+</style>

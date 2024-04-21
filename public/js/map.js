@@ -1,9 +1,8 @@
+import companies from '../../../data/companies.json' with { type: 'json' };
 // Initialize and add the map
 let map;
 
 async function initMap() {
-  // The location of Uluru
-  const position = { lat: -45.87812217800709, lng: 170.50064563932202 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary('maps');
@@ -11,50 +10,41 @@ async function initMap() {
 
   const buttons = document.getElementsByClassName('map-button');
   const button = buttons[0];
-  // console.log(button);
+  const position = {
+      lat: -45.87478178590666,
+      lng: 170.50699989699243,
+    };
 
-  // The map, centered at Uluru
   map = new Map(document.getElementById('map'), {
     zoom: 15,
     center: position,
     mapId: '614bc5cb27da88d4',
   });
 
-  // The marker, positioned at Uluru
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
     title: 'Taste Nature',
   });
-  // google.maps.event.addDomListener(window, 'load', initialize);
-  button.addEventListener('click', (event) => {
-    // console.log('clicked', id);
-    panTo(event, map);
-  });
-
-  // map.addListener('click', (e) => {
-  //   placeMarkerAndPanTo(e.latLng, map);
-  // });
+  for (let i = 0; i < buttons.length; i++) {
+    const button = buttons[i];
+    
+    button.addEventListener('click', (event) => {
+      panTo(event, map);
+    });
+  }
 }
-
-// function placeMarkerAndPanTo(latLng, map) {
-//   console.log('latLong Obj', latLng);
-//   new google.maps.marker.AdvancedMarkerElement({
-//     position: latLng,
-//     map: map,
-//   });
-//   map.panTo(latLng);
-// }
 
 function panTo(event, map) {
   console.log('panning to', event.srcElement.id);
   let latLng = { lat: null, lng: null };
-
-  if (event.srcElement.id === 'maggies') {
-    latLng = {
-      lat: -45.87478178590666,
-      lng: 170.50699989699243,
-    };
+  for (let i = 0; i < companies.length; i++) {
+    if (event.srcElement.id === companies[i].id) {
+      latLng = {
+        lat: companies[i].location.lat,
+        lng: companies[i].location.lng,
+      };
+    }
   }
   console.log('latLong Obj', latLng);
   map.panTo(latLng);

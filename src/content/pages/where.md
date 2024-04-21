@@ -11,7 +11,7 @@ seo:
 content_blocks:
   - _bookshop_name: hero
     title: Where to find us
-    subtitle: You can find our core range from Maggies, The Duck, and The Good Food co. Find our more extensive range of loaves at Taste Nature.
+    subtitle: Find out how to buy take home bread, and where we supply.
     imagePath: /src/assets/images/flour-milling-hero.jpg
     altText: An image
     button:
@@ -21,7 +21,7 @@ content_blocks:
       text_color: '#ffffff'
   - _bookshop_name: locations-slider
     heading: Take home loaves
-    subheading: You can purchase take home loaves from our core range, at these local cafes.
+    subheading: You can purchase take home loaves at these local cafes.
     flipped: false
     locations:
       - name: Maggies
@@ -39,7 +39,7 @@ content_blocks:
         location: '131 High Street, Dunedin'
         link: /#map
       - name: Taste Nature
-        details: Wheat, classic sourdough, rye, and baguettes.
+        details: Our core range, and a rotating menu of specialty loaves. See the daily menu [here](/#menu)
         image:
           src: /images/logo.png
           alt: A picture of the outside of Maggies
