@@ -1,12 +1,13 @@
 ---
 const block = Astro.props;
+const mapAPIKey = import.meta.env.PUBLIC_API_KEY;
 ---
 
 <div class="map-container">
   <div id="map"></div>
 </div>
 <!-- prettier-ignore -->
-<script is:inline>
+<script define:vars={{ mapAPIKey }}>
   ((g) => {
     var h,
       a,
@@ -41,7 +42,7 @@ const block = Astro.props;
     d[l]
       ? console.warn(p + ' only loads once. Ignoring:', g)
       : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-  })({ key: 'AIzaSyCc6yt-zcJast7OYBKifXufR1ztdP8XA00', v: 'weekly' });
+  })({ key: mapAPIKey, v: 'weekly' });
 </script>
 
 <style>
