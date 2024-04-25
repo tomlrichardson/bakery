@@ -9,7 +9,6 @@ async function initMap() {
 
   const buttons = document.getElementsByClassName('map-button');
 
-  const button = buttons[0];
   const position = {
     lat: -45.87478178590666,
     lng: 170.50699989699243,
@@ -36,13 +35,27 @@ async function initMap() {
 }
 
 function panTo(event, map) {
-  console.log('panning to', event.srcElement.id);
+  console.log('event', event.srcElement.id);
   const companies = [
     {
-      id: 'maggies',
+      id: 'Maggies',
+      location: {
+        lat: -45.874729497809945,
+        lng: 170.50702135478062,
+      },
+    },
+    {
+      id: 'Taste Nature',
       location: {
         lat: -45.87478178590666,
         lng: 170.50699989699243,
+      },
+    },
+    {
+      id: 'The Duck',
+      location: {
+        lat: -45.86893298402782,
+        lng: 170.59789016827284,
       },
     },
   ];
