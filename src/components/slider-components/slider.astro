@@ -3,7 +3,7 @@ import Markdown from '../utility/markdown.astro';
 const { slides } = Astro.props;
 ---
 
-<swiper-container class="swiper-container">
+<swiper-container navigation="true" loop="true" class="swiper-container slider">
   {
     slides.map((slide: any) => {
       return (
@@ -15,11 +15,4 @@ const { slides } = Astro.props;
       );
     })
   }
-
-  <div class="swiper-pagination"></div>
-
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <div class="swiper-scrollbar"></div>
 </swiper-container>

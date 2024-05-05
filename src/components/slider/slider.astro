@@ -57,26 +57,6 @@ const block = Astro.props;
   )
 }
 
-<script>
-  // swiper element
-  const swiperEl = document.querySelector('swiper-container');
-
-  // swiper parameters
-  const swiperParams = {
-    slidesPerView: 1,
-    loop: true,
-    pagination: true,
-    navigation: true,
-    spaceBetween: 30,
-  };
-
-  // now we need to assign all parameters to Swiper element
-  Object.assign(swiperEl, swiperParams);
-
-  // and now initialize it
-  swiperEl.initialize();
-</script>
-
 <style is:global>
   .slider-container {
     max-width: var(--largeContainer);

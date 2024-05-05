@@ -8,8 +8,8 @@
     "address": "46 Stuart Street, Central Dunedin, Dunedin",
     "details": "Wheat, classic sourdough, rye, and baguettes.",
     "image": {
-      "image_path": "",
-      "alt": ""
+      "image_path": "/images/companies/maggies.jpg",
+      "alt": "A shot of a rooster with a sign around it's neck saying 'No riff raff', with the entrance to Maggies unfocused in the background."
     }
   },
   {
@@ -21,8 +21,8 @@
     "address": "494 Portobello Road, Macandrew Bay, Dunedin",
     "details": "Wheat, classic sourdough, rye, and baguettes.",
     "image": {
-      "image_path": "",
-      "alt": ""
+      "image_path": "/images/companies/the-duck.jpeg",
+      "alt": "A shot of the inside of The Duck cafe, looking out to Macandrew Bay on a sunny day in Dunedin."
     }
   },
   {
@@ -34,8 +34,8 @@
     "address": "131 High Street, Central Dunedin, Dunedin",
     "details": "Wheat, classic sourdough, rye, and baguettes.",
     "image": {
-      "image_path": "",
-      "alt": ""
+      "image_path": "/images/companies/taste-nature.jpeg",
+      "alt": "Taste Nature Logo"
     }
   }
 ]
