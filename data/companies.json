@@ -1,9 +1,41 @@
 [
   {
-    "id": "maggies",
-    "location": {
+    "id": "Maggies",
+    "coords": {
       "lat": -45.87478178590666,
       "lng": 170.50699989699243
+    },
+    "address": "46 Stuart Street, Central Dunedin, Dunedin",
+    "details": "Wheat, classic sourdough, rye, and baguettes.",
+    "image": {
+      "image_path": "",
+      "alt": ""
+    }
+  },
+  {
+    "id": "The Duck",
+    "coords": {
+      "lat": -45.86893298402782,
+      "lng": 170.59791162594448
+    },
+    "address": "494 Portobello Road, Macandrew Bay, Dunedin",
+    "details": "Wheat, classic sourdough, rye, and baguettes.",
+    "image": {
+      "image_path": "",
+      "alt": ""
+    }
+  },
+  {
+    "id": "Taste Nature",
+    "coords": {
+      "lat": -45.87816699364225,
+      "lng": 170.50064563943752
+    },
+    "address": "131 High Street, Central Dunedin, Dunedin",
+    "details": "Wheat, classic sourdough, rye, and baguettes.",
+    "image": {
+      "image_path": "",
+      "alt": ""
     }
   }
 ]
