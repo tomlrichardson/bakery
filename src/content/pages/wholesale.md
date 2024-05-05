@@ -10,8 +10,8 @@ seo:
   no_index: false
 content_blocks:
   - _bookshop_name: hero
-    title: Where to find us
-    subtitle: You can find our core range from Maggies, The Duck, and The Good Food co. Find our more extensive range of loaves at Taste Nature.
+    title: Want to buy our bread wholesale?
+    subtitle: We provide wholesale bread to local eateries. Find our full menu below. Enquire for special requests.
     imagePath: /src/assets/images/flour-milling-hero.jpg
     altText: An image
     button:

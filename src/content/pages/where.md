@@ -29,10 +29,11 @@ content_blocks:
       - The Duck
   - _bookshop_name: locations-slider
     heading: Where we supply
-    subheading: We're proud to be the supplier for these local eateries.
+    subheading: We're proud to be the supplier for these local eateries. Eat our bread as part of their menu.
     flipped: true
     locations:
       - Maggies
       - The Duck
+      - Vanguard Specialty Coffee
   - _bookshop_name: map
 ---
