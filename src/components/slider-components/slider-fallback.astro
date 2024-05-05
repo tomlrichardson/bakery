@@ -1,0 +1,18 @@
+---
+import Markdown from '../utility/markdown.astro';
+const { slides } = Astro.props;
+---
+
+<div class="swiper-container">
+  {
+    slides.map((slide: any) => {
+      return (
+        <div class="slide-container">
+          <div class="swiper-slide-contents">
+            <Markdown content={slide.text} />
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

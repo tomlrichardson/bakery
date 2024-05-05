@@ -1,6 +1,6 @@
 [
   {
-    "id": "Maggies",
+    "name": "Maggies",
     "coords": {
       "lat": -45.87478178590666,
       "lng": 170.50699989699243
@@ -13,7 +13,7 @@
     }
   },
   {
-    "id": "The Duck",
+    "name": "The Duck",
     "coords": {
       "lat": -45.86893298402782,
       "lng": 170.59791162594448
@@ -26,7 +26,7 @@
     }
   },
   {
-    "id": "Taste Nature",
+    "name": "Taste Nature",
     "coords": {
       "lat": -45.87816699364225,
       "lng": 170.50064563943752

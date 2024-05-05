@@ -1,0 +1,39 @@
+---
+import Icon from '../utility/icon';
+const { locations } = Astro.props;
+---
+
+<swiper-container class="swiper-container swiper-locations">
+  {
+    locations.map((slide: any) => {
+      return (
+        <swiper-slide class="slide-container">
+          <div class="swiper-slide-contents">
+            <img
+              class="max-w-[200px]"
+              src={slide.image.src}
+              alt={slide.image.alt}
+            />
+            <h3>{slide.name}</h3>
+            <p>{slide.details}</p>
+            <a href="#map" class="flex items-center gap-3">
+              <button class="map-button" id={slide.name}>
+                <span class="location-pin">
+                  <Icon icon={'LocationPin'} />
+                </span>
+                {slide.address}
+              </button>
+            </a>
+          </div>
+        </swiper-slide>
+      );
+    })
+  }
+
+  <div class="swiper-pagination swiper-pagination-2"></div>
+
+  <div class="swiper-button-prev swiper-pagination-2"></div>
+  <div class="swiper-button-next swiper-pagination-2"></div>
+
+  <div class="swiper-scrollbar"></div>
+</swiper-container>

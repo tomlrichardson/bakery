@@ -35,7 +35,7 @@ async function initMap() {
 }
 
 function panTo(event, map) {
-  console.log('event', event.srcElement.id);
+  // console.log('event', event.srcElement.id);
   const companies = [
     {
       id: 'Maggies',
@@ -68,7 +68,7 @@ function panTo(event, map) {
       };
     }
   }
-  console.log('latLong Obj', latLng);
+  // console.log('latLong Obj', latLng);
   map.panTo(latLng);
 }
 

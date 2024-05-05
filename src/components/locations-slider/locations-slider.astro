@@ -1,6 +1,20 @@
 ---
-import Icon from '../utility/icon';
+import LocationsSliderComponent from '../slider-components/locations-slider.astro';
+import LocationsSliderFallback from '../slider-components/locations-slider-fallback.astro';
+import LocationsSliderHeading from '../slider-components/slider-heading.astro';
+import companies from '../../../data/companies.json';
 const block = Astro.props;
+let locations = [];
+for (let i = 0; i < block.locations.length; i++) {
+  const location = block.locations[i];
+  for (let j = 0; j < companies.length; j++) {
+    const company = companies[j];
+    if (company.name === location) {
+      locations.push(company);
+    }
+  }
+}
+console.log(locations);
 ---
 
 {
@@ -8,65 +22,15 @@ const block = Astro.props;
      <div class="slider-container">
       {
         block.flipped ? (
-          <div class="swiper-container swiper-locations">
-            {block.locations.map((slide: any) => {
-              return (
-                <div class="slide-container">
-                  <div class="swiper-slide-contents">
-                    <img class="max-w-[200px]" src={slide.image.src} alt={slide.image.alt} />
-                    <h3>{slide.name}</h3>
-                    <p>{slide.details}</p>
-                    <a href="#map" class="flex items-center gap-3">
-                      <button class="map-button" id={slide.name}>
-                      <span class="location-pin">
-                        <Icon icon={'LocationPin'} />
-                      </span>
-                      {slide.location}
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <LocationsSliderFallback locations={locations} /> 
           <div class="slider-text items-end">
-            {block.heading ? (
-              <h2 class="slider-heading">{block.heading}</h2>
-            ) : null}
-            {block.subheading ? (
-              <div class="md:max-w-[26rem]">{block.subheading}</div>
-            ) : null}
+            <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
           </div>
         ) : (
           <div class="slider-text">
-            {block.heading ? (
-              <h2 class="slider-heading">{block.heading}</h2>
-            ) : null}
-            {block.subheading ? (
-              <div class="md:max-w-[26rem]">{block.subheading}</div>
-            ) : null}
+            <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
           </div>
-          <div class="swiper-container swiper-locations">
-            {block.locations.map((slide: any) => {
-              return (
-                <div class="slide-container">
-                  <div class="swiper-slide-contents">
-                    <img class="max-w-[200px]" src={slide.image.src} alt={slide.image.alt} />
-                    <h3>{slide.name}</h3>
-                    <p>{slide.details}</p>
-                    <a href="#map" class="flex items-center gap-3">
-                      <button class="map-button" id={slide.name}>
-                      <span class="location-pin">
-                        <Icon icon={'LocationPin'} />
-                      </span>
-                      {slide.location}
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <LocationsSliderFallback locations={locations} /> 
           )
         }
     </div>
@@ -75,79 +39,15 @@ const block = Astro.props;
       <div class="slider-container">
         {
           block.flipped ? (
-            <swiper-container class="swiper-container swiper-locations">
-              {block.locations.map((slide: any) => {
-                return (
-                  <swiper-slide class="slide-container">
-                    <div class="swiper-slide-contents">
-                      <img class="max-w-[200px]" src={slide.image.src} alt={slide.image.alt} />
-                      <h3>{slide.name}</h3>
-                      <p>{slide.details}</p>
-                      <a href="#map" class="flex items-center gap-3">
-                      <button class="map-button" id={slide.name}>
-                      <span class="location-pin">
-                        <Icon icon={'LocationPin'} />
-                      </span>
-                      {slide.location}
-                      </button>
-                    </a>
-                    </div>
-                  </swiper-slide>
-                );
-              })}
-
-              <div class="swiper-pagination swiper-pagination-2" />
-
-              <div class="swiper-button-prev swiper-pagination-2" />
-              <div class="swiper-button-next swiper-pagination-2" />
-
-              <div class="swiper-scrollbar" />
-            </swiper-container>
+            <LocationsSliderComponent locations={locations} />
             <div class="slider-text items-end">
-              {block.heading ? (
-                <h2 class="slider-heading">{block.heading}</h2>
-              ) : null}
-              {block.subheading ? (
-                <div class="md:max-w-[26rem]">{block.subheading}</div>
-              ) : null}
+             <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
             </div>
           ) : (
             <div class="slider-text">
-              {block.heading ? (
-                <h2 class="slider-heading">{block.heading}</h2>
-              ) : null}
-              {block.subheading ? (
-                <div class="md:max-w-[26rem]">{block.subheading}</div>
-              ) : null}
+             <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
             </div>
-            <swiper-container class="swiper-container swiper-locations">
-              {block.locations.map((slide: any) => {
-                return (
-                  <swiper-slide class="slide-container">
-                    <div class="swiper-slide-contents">
-                      <img class="max-w-[200px]" src={slide.image.src} alt={slide.image.alt} />
-                      <h3>{slide.name}</h3>
-                      <p>{slide.details}</p>
-                      <a href="#map" class="flex items-center gap-3">
-                      <button class="map-button flex items-center gap-2" id={slide.name}>
-                      <span class="location-pin">
-                        <Icon icon={'LocationPin'} />
-                      </span>
-                      {slide.location}
-                      </button>
-                    </a>
-                    </div>
-                  </swiper-slide>
-                );
-              })}
-
-              <div class="swiper-pagination swiper-pagination-2" />
-
-              <div class="swiper-button-prev swiper-pagination-2" />
-              <div class="swiper-button-next swiper-pagination-2" />
-
-              <div class="swiper-scrollbar" />
-            </swiper-container>
+            <LocationsSliderComponent locations={locations} />
           )
         }
       </div>
@@ -157,25 +57,22 @@ const block = Astro.props;
 
 <script>
   // swiper element
-  const swiperLocEl = document.querySelector('swiper-locations');
+  const swiperEl = document.querySelector('swiper-locations');
 
   // swiper parameters
   const swiperParams = {
     slidesPerView: 1,
     loop: true,
-    pagination: {
-      enabled: true,
-      el: '.swiper-pagination',
-    },
+    pagination: true,
     navigation: true,
     spaceBetween: 30,
   };
 
   // now we need to assign all parameters to Swiper element
-  Object.assign(swiperLocEl, swiperParams);
+  Object.assign(swiperEl, swiperParams);
 
   // and now initialize it
-  swiperLocEl.initialize();
+  swiperEl.initialize();
 </script>
 
 <style is:global>

@@ -1,0 +1,6 @@
+---
+const { heading, subheading } = Astro.props;
+---
+
+{heading ? <h2 class="slider-heading">{heading}</h2> : null}
+{subheading ? <div class="md:max-w-[26rem]">{subheading}</div> : null}

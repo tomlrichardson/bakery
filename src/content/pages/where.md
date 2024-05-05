@@ -25,26 +25,14 @@ content_blocks:
     flipped: false
     locations:
       - Maggies
-      - The Duck
       - Taste Nature
-  # - _bookshop_name: locations-slider
-  #   heading: Where we supply
-  #   subheading: We're proud to be the supplier for these local eateries.
-  #   flipped: true
-  #   locations:
-  #     - name: Maggies
-  #       details: Cafe & bar.
-  #       image:
-  #         src: /images/logo.png
-  #         alt: A picture of the outside of Maggies
-  #       location: '131 High Street, Dunedin'
-  #       link: /#map
-  #     - name: The Duck
-  #       details: Cafe & bar.
-  #       image:
-  #         src: /images/logo.png
-  #         alt: A picture of the outside of The Duck
-  #       location: '131 High Street, Dunedin'
-  #       link: /#map
+      - The Duck
+  - _bookshop_name: locations-slider
+    heading: Where we supply
+    subheading: We're proud to be the supplier for these local eateries.
+    flipped: true
+    locations:
+      - Maggies
+      - The Duck
   - _bookshop_name: map
 ---
