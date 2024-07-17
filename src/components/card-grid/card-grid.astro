@@ -69,7 +69,7 @@ const cardsMaxWidth = block.cards_max_width + 'rem';
   .card-grid__container {
     max-width: var(--pageContainer);
     margin: 0 auto;
-    padding-block: 128px;
+    padding-block: 96px;
     padding-inline: var(--pagePadding);
     display: flex;
     flex-direction: column;
@@ -79,6 +79,7 @@ const cardsMaxWidth = block.cards_max_width + 'rem';
     gap: 2rem;
     justify-content: center;
     width: 100%;
+    grid-template-columns: 1fr;
   }
   .button {
     display: inline-flex;
