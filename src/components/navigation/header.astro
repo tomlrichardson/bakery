@@ -22,7 +22,8 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
         class="header__nav-links"
         x-show="open"
         x-transition
-        @click.outside="open = false">
+        @click.outside="open = false"
+        x-on:click.outside="color = '#ffffff'">
         {
           header.links.map((link) => {
             return (
