@@ -20,7 +20,16 @@ content_blocks:
       background_color: '#000000'
       text_color: '#ffffff'
   - _bookshop_name: card-grid
-    type: images
+    background_color: '#fff0f4'
+    heading:
+      heading_text:
+      heading_color: '#000000'
+    grid_columns: 2
+    cards_max_width: 26
+    button:
+      button_text:
+      background_color:
+      text_color:
     cards:
       - _bookshop_name: image-card
         heading: Where to find us

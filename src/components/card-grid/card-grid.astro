@@ -1,9 +1,17 @@
 ---
-import IconCard from '../cards/icon-card/icon-card.astro';
-import ImageCard from '../cards/image-card/image-card.astro';
-import LocationCard from '../cards/location-card/location-card.astro';
 interface Props {
-  type: string;
+  heading: {
+    heading_text: string;
+    heading_color: string;
+  };
+  background_color: string;
+  grid_columns: number;
+  cards_max_width: number;
+  button: {
+    button_text: string;
+    background_color: string;
+    text_color: string;
+  };
   cards: Array<any>;
 }
 
@@ -11,39 +19,97 @@ const block = Astro.props;
 const cards = import.meta.glob('/src/components/cards/**/*.astro', {
   eager: true,
 });
+
+const gridColumns = block.grid_columns;
+const cardsMaxWidth = block.cards_max_width + 'rem';
 ---
 
-<div class="card-grid">
+<div class="card-grid" style={`background-color: ${block.background_color};`}>
   <div class="card-grid__container">
+    {
+      block.heading.heading_text ? (
+        <h2
+          class="text-[1.825rem] font-semibold mb-3 text-center"
+          style={`color: ${block.heading.heading_color};`}>
+          {block.heading.heading_text}
+        </h2>
+      ) : null
+    }
     <div class="card-grid__cards">
       {
         block.cards.map((card) => {
-          const name = `/src/components/cards/${card._bookshop_name}/${card._bookshop_name}.astro`;
+          const bookshopNameArr = card._bookshop_name.split('/');
+          const bookshopName = bookshopNameArr[bookshopNameArr.length - 1];
+          const name = `/src/components/cards/${bookshopName}/${bookshopName}.astro`;
           const Component = cards[name].default;
           return <Component {...card} />;
         })
       }
     </div>
+    {
+      block.button.button_text ? (
+        <button
+          class="button"
+          style={`background-color: ${block.button.background_color}; color: ${block.button.text_color};`}>
+          {block.button.button_text}
+        </button>
+      ) : null
+    }
   </div>
 </div>
-<style>
+<style
+  define:vars={{
+    gridColumns,
+    cardsMaxWidth,
+  }}
+>
+  .card-grid {
+    position: relative;
+  }
   .card-grid__container {
-    display: grid;
-    gap: 1rem;
-    justify-content: center;
-    max-width: var(--largeContainer);
+    max-width: var(--pageContainer);
     margin: 0 auto;
-    padding-block: 96px;
+    padding-top: 54px;
+    padding-bottom: 54px;
     padding-inline: var(--pagePadding);
+    display: flex;
+    flex-direction: column;
   }
   .card-grid__cards {
     display: grid;
-    justify-content: space-between;
+    gap: 2rem;
+    justify-content: center;
     width: 100%;
+  }
+  .button {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6.25rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    background-color: #031419;
+    padding-inline: 1.5rem;
+    padding-block: 0.75rem;
+    color: #ffffff;
+    align-self: center;
+    margin-top: 2rem;
   }
   @media screen and (min-width: 800px) {
     .card-grid__cards {
-      grid-template-columns: repeat(3, calc(min(400px, 30%)));
+      justify-content: space-between;
+
+      grid-template-columns: repeat(
+        var(--gridColumns),
+        min(
+          var(--cardsMaxWidth),
+          calc((100% - (2rem * (var(--gridColumns) - 1))) / var(--gridColumns))
+        )
+      );
     }
   }
 </style>
+
+<!-- - (2rem * (var(--gridColumns) - 1)) -->

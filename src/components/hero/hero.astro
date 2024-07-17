@@ -18,22 +18,11 @@ interface Props {
 
 const block = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/images/*.{jpeg,jpg,png,gif}',
+  '/src/assets/**/*.{jpeg,jpg,png,gif,svg}',
   { eager: true }
 );
 
-const imageSrc = images[block.imagePath]?.default;
-
-const src =
-  typeof imageSrc === 'string'
-    ? imageSrc.replace(/^\./, '/_cloudcannon')
-    : imageSrc ?? block.imagePath;
-
-if (!src) {
-  throw new Error(
-    `"${block.imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
-  );
-}
+const imageSrc = images[block.imagePath]?.default ?? block.imagePath;
 ---
 
 <div class="hero">
@@ -53,21 +42,16 @@ if (!src) {
       ) : null
     }
   </div>
-  {
-    ENV_BOOKSHOP_LIVE ? (
-      <img class="hero__bg-img" alt={block.altText} src={src} />
-    ) : (
-      <Image
-        class="hero__bg-img"
-        alt={block.altText}
-        src={src}
-        width={4000}
-        height={400}
-        widths={[360, 720, 1280]}
-        sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
-      />
-    )
-  }
+
+  <Image
+    class="hero__bg-img"
+    alt={block.altText}
+    src={imageSrc}
+    width={4000}
+    height={400}
+    widths={[360, 720, 1280]}
+    sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
+  />
 </div>
 
 <style>

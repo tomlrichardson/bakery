@@ -2,35 +2,24 @@
 spec:
   structures:
     - cards
-  label: Card Grid
-  description: Icon card
+  label: Background Image Card
+  description:
   icon: 'style'
   tags:
     - Card
-    - Icon
+    - Image
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  heading:
-  text:
-  icon:
-  link:
+  heading: ''
+  text: ''
+  image:
+    src: ''
+    alt: ''
+  link: ''
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-  icon:
-    type: select
-    values: data.icons
-    hidden: 'image'
-  type:
-    type: select
-    label: Card type
-    options:
-      values:
-        - icons
-        - images
-  image:
-    hidden: 'icon'

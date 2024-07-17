@@ -21,139 +21,27 @@ content_blocks:
       background_color: '#000000'
       text_color: '#ffffff'
   - _bookshop_name: card-grid
+    background_color: '#fff0f4'
+    heading:
+      heading_text:
+      heading_color: '#000000'
+    grid_columns: 2
+    cards_max_width: 42
+    button:
+      button_text:
+      background_color:
+      text_color:
     cards:
       - _bookshop_name: icon-card
-        heading: Where to find us
-        icon: Bread
-        text: Learn where to buy our loaves to take home with you.
-        link: '/where/'
-        background_color:
-        background_image:
-        column_span: 1
-      - _bookshop_name: icon-card
-        heading: Want us as your supplier?
-        text: Find out about becoming a wholesale customer.
-        icon: Mug
-        link: /wholesale
-        background_color:
-        background_image:
-        column_span: 1
-      - _bookshop_name: icon-card
-        heading: What we do
-        text: Learn more about what we do, and where we supply.
+        heading: About us
         icon: WheatAwn
-        link: /about
-        background_color:
-        background_image:
-        column_span: 1
-  - _bookshop_name: slider
-    heading: Specialty Loaf Menu
-    subheading: Our rotating menu of specialty breads, found at Taste Nature.
-    flipped: true
-    slides:
-      - text: >-
-          ### Saturday
-
-
-          - Wheat
-
-
-          - Olive and Rosemary
-
-
-          - Oat Porridge
-
-
-          - Ciabatta
-      - text: >-
-          ### Tuesday
-
-
-          - Organic Yeasted Variety ( All Tin Loafs )
-
-
-          - Soft White Loaf 
-
-
-          - Purple Wheat Loaf
-
-
-          - Multigrain Loaf
-      - text: >-
-          ### Wednesday
-
-
-          - Wheat 
-
-
-          - Polenta, Sunflower and Pumpkin Seeds
-
-
-          - 100% Rye ( Pumpernickel)
-
-
-          - Seven Seed
-
-
-          - 100 % Wholemeal Wheat
-
-
-          - Spelt and Sesame
-
-
-          - Ciabatta
-      - text: >-
-          ### Thursday
-
-
-          - Wheat
-
-
-          - Olive & Rosemary
-
-
-          - 100% Spelt
-
-
-          - 100% Wholemeal Spelt
-
-
-          - Country Rye
-
-
-          - Turmeric & linseed
-
-
-          - Date and Walnut
-
-
-          - Purple Wheat 
-
-
-          - Ciabatta
-      - text: >-
-          ### Friday
-
-
-          - Wheat 
-
-
-          - Polenta, Sunflower and Pumpkin Seeds
-
-
-          - 100% Rye ( Pumpernickel)
-
-
-          - Seven Seed
-
-
-          - 100 % Wholemeal Wheat
-
-
-          - Spelt and Sesame
-
-
-          - Ciabatta
+        text: Learn about what we do.
+        link: '/about/'
+      - _bookshop_name: icon-card
+        heading: Want bread?
+        text: Where to find our loaves.
+        icon: Bread
+        link: /bread/
   - _bookshop_name: contact-form
     heading: Contact Us
     subheading: Get in touch to order bread, enquire about wholesale, or ask us a question!
