@@ -12,20 +12,6 @@ const seoSchema = z
   })
   .optional();
 
-const blogCollection = defineCollection({
-  schema: z.object({
-    date: z.string(),
-    title: z.string(),
-    tags: z.array(z.string()),
-    author: z.string(),
-    thumb_image_path: z.string(),
-    thumb_image_alt: z.string(),
-    image: z.string(),
-    image_alt: z.string(),
-    seo: seoSchema,
-  }),
-});
-
 const pageSchema = z.object({
   _schema: z.string().optional(),
   title: z.string(),
@@ -35,20 +21,10 @@ const pageSchema = z.object({
   seo: seoSchema,
 });
 
-const paginatedCollectionSchema = z.object({
-  _schema: z.literal('paginated_collection'),
-  title: z.string(),
-  description: z.string().optional(),
-  page_size: z.number().positive(),
-  content_blocks: z.undefined(),
-  seo: seoSchema,
-});
-
 const pagesCollection = defineCollection({
-  schema: z.union([paginatedCollectionSchema, pageSchema]),
+  schema: pageSchema,
 });
 
 export const collections = {
-  blog: blogCollection,
   pages: pagesCollection,
 };

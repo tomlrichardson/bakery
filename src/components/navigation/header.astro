@@ -2,14 +2,21 @@
 import { header, logo, logo_url } from '../../../data/navigation.json';
 ---
 
-<header class="header" x-data="{ open: false }">
+<header class="header" x-data="{ open: false, color: '#ffffff' }">
   <div class="header__container">
     <nav class="header__nav">
       <a class="header__logo-link" href={logo_url}>
         <img class="header__logo-image" src={logo} alt="Logo" />
       </a>
-      <button class="hamburger" @click="open = ! open">
-        <a class="hamburger__inner"></a>
+      <button
+        class="hamburger"
+        @click="open = ! open"
+        x-on:click="if(color === '#ffffff'){color = '#000000'}else{color = '#ffffff'}">
+        <div
+          class="hamburger__inner"
+          x-bind:style="'background-color: ' + color"
+          x-transition>
+        </div>
       </button>
       <ul
         class="header__nav-links"
@@ -78,23 +85,27 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
 
   .header__nav-links {
     position: absolute;
-    z-index: 20;
+    z-index: 99;
+    background-color: white;
     right: 0;
+    bottom: 0;
     top: 0;
+    left: 0;
+    height: min-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-    min-width: 200px;
-    padding: 1rem;
-    padding-top: calc(var(--headerHeight) + 2rem);
-    border-radius: 6px;
-    background-color: black;
+    align-items: center;
+    gap: 1.5rem;
+    padding-inline: 1rem;
+    padding-block: 6rem;
+  }
+  .header__nav-link {
+    cursor: pointer;
+  }
+  .header__nav-link:hover {
+    color: #034ad8;
   }
 
-  .header__nav-link {
-    color: white;
-  }
   @media screen and (min-width: 800px) {
     .header__nav-links {
       position: static;
@@ -104,6 +115,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
       padding: 0;
       min-width: none;
       background-color: transparent;
+      color: white;
     }
   }
 
@@ -115,7 +127,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
 
   .hamburger {
     position: relative;
-    z-index: 30;
+    z-index: 999;
     border: none;
     cursor: pointer;
     height: 2rem;
@@ -133,7 +145,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
     display: block;
     width: 2rem;
     height: 0.25rem;
-    background-color: #fff;
+    background-color: inherit;
   }
   .hamburger__inner::before,
   .hamburger__inner::after {

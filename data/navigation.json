@@ -8,12 +8,8 @@
         "text": "About"
       },
       {
-        "url": "/wholesale/",
-        "text": "Wholesale"
-      },
-      {
-        "url": "/#menu",
-        "text": "Menu"
+        "url": "/bread/",
+        "text": "Bread"
       }
     ]
   },
@@ -25,12 +21,8 @@
         "text": "About"
       },
       {
-        "url": "/wholesale/",
-        "text": "Wholesale"
-      },
-      {
-        "url": "/#menu",
-        "text": "Menu"
+        "url": "/bread/",
+        "text": "Bread"
       }
     ],
     "social": [
