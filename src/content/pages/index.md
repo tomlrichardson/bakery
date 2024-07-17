@@ -32,16 +32,26 @@ content_blocks:
       background_color:
       text_color:
     cards:
-      - _bookshop_name: icon-card
-        heading: About us
-        icon: WheatAwn
-        text: Learn about what we do.
-        link: '/about/'
-      - _bookshop_name: icon-card
+      - _bookshop_name: background-image-card
         heading: Want bread?
         text: Where to find our loaves.
-        icon: Bread
-        link: /bread/
+        background_image:
+          src: /images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
+          alt: ''
+          filters:
+            brightness: 0.6
+            grayscale: 0.2
+        link: '/bread/'
+      - _bookshop_name: background-image-card
+        heading: About us
+        text: Learn about what we do.
+        background_image:
+          src: /images/bakery/2114BA8A-DBB7-475E-ACF1-DCA06107A23F.JPG
+          alt: ''
+          filters:
+            brightness: 0.8
+            grayscale: 1
+        link: '/about/'
   - _bookshop_name: contact-form
     heading: Contact Us
     subheading: Get in touch to order bread, enquire about wholesale, or ask us a question!

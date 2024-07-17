@@ -1,0 +1,81 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  heading: string;
+  text: string;
+  background_image: {
+    src: string;
+    alt: string;
+    filters: {
+      brightness: number;
+      grayscale: number;
+    };
+  };
+  link: string;
+}
+
+const block = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{jpeg,jpg,png,gif,svg}',
+  { eager: true }
+);
+
+const imageSrc =
+  images[block.background_image.src]?.default ?? block.background_image.src;
+
+const backgroundImageBrightness = `brightness(${block.background_image.filters.brightness});`;
+const backgroundImageGrayscale = `grayscale(${block.background_image.filters.grayscale});`;
+---
+
+<a class="card" href={block.link}>
+  <div class="image">
+    {
+      block.background_image.src ? (
+        <Image
+          class="hero__img"
+          alt={block.background_image.alt}
+          src={imageSrc}
+          width={200}
+          height={400}
+        />
+      ) : null
+    }
+  </div>
+  <div class="card-content">
+    <h2>{block.heading}</h2>
+    <p>{block.text}</p>
+  </div>
+</a>
+
+<style define:vars={{ backgroundImageBrightness, backgroundImageGrayscale }}>
+  .card {
+    position: relative;
+    min-height: 300px;
+  }
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: var(--backgroundImageBrightness) var(--backgroundImageGrayscale);
+  }
+  .card-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+  }
+</style>
