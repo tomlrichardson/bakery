@@ -8,6 +8,9 @@ seo:
   author_twitter_handle: ''
   open_graph_type: website
   no_index: false
+header_styles:
+  background_color: transparent
+  text_color: '#000000'
 content_blocks:
   - _bookshop_name: left-right
     background_color: '#ffffff'

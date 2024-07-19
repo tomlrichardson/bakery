@@ -1,8 +1,13 @@
 ---
 import { header, logo, logo_url } from '../../../data/navigation.json';
+const { header_styles } = Astro.props;
+const backgroundColor = header_styles.background_color;
+const textColor = header_styles.text_color;
 ---
 
-<header class="header" x-data="{ open: false, color: '#ffffff' }">
+<header
+  class="header"
+  x-data={`{ open: false, color: '${header_styles.text_color}' }`}>
   <div class="header__container">
     <nav class="header__nav">
       <a class="header__logo-link" href={logo_url}>
@@ -11,7 +16,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
       <button
         class="hamburger"
         @click="open = ! open"
-        x-on:click="if(color === '#ffffff'){color = '#000000'}else{color = '#ffffff'}">
+        x-on:click={`if(color === '${header_styles.text_color}'){color = '#000000'}else{color = '${header_styles.text_color}'}`}>
         <div
           class="hamburger__inner"
           x-bind:style="'background-color: ' + color"
@@ -23,7 +28,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
         x-show="open"
         x-transition
         @click.outside="open = false"
-        x-on:click.outside="color = '#ffffff'">
+        x-on:click.outside={`color = '${header_styles.text_color}'`}>
         {
           header.links.map((link) => {
             return (
@@ -40,7 +45,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
   </div>
 </header>
 
-<style>
+<style define:vars={{ backgroundColor, textColor }}>
   .header {
     position: absolute;
     top: 0;
@@ -91,6 +96,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
     position: absolute;
     z-index: 99;
     background-color: white;
+    color: black;
     right: 0;
     bottom: 0;
     top: 0;
@@ -106,9 +112,6 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
   .header__nav-link {
     cursor: pointer;
   }
-  .header__nav-link:hover {
-    color: #034ad8;
-  }
 
   @media screen and (min-width: 800px) {
     .header__nav-links {
@@ -118,8 +121,8 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
       justify-content: flex-end;
       padding: 0;
       min-width: none;
-      background-color: transparent;
-      color: white;
+      background-color: var(--backgroundColor);
+      color: var(--textColor);
     }
   }
 

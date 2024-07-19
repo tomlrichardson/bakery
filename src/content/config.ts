@@ -15,10 +15,12 @@ const seoSchema = z
 const pageSchema = z.object({
   _schema: z.string().optional(),
   title: z.string(),
-  content_blocks: z.array(z.any()),
-  page_size: z.undefined(),
-  description: z.string().optional(),
   seo: seoSchema,
+  header_styles: z.object({
+    background_color: z.string().nullable(),
+    text_color: z.string().nullable(),
+  }),
+  content_blocks: z.array(z.any()),
 });
 
 const pagesCollection = defineCollection({

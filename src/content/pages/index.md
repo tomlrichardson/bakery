@@ -9,6 +9,9 @@ seo:
   author_twitter_handle:
   open_graph_type:
   no_index: false
+header_styles:
+  background_color: 'transparent'
+  text_color: '#ffffff'
 content_blocks:
   - _bookshop_name: hero
     title: Body of the Year

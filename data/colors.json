@@ -1,0 +1,9 @@
+[
+  { "name": "White", "value": "#FFFFFF" },
+  { "name": "Black", "value": "#000000" },
+  { "name": "Gray", "value": "#808080" },
+  { "name": "Light Gray", "value": "#E1E0DC" },
+  { "name": "Dark Gray", "value": "#555354" },
+  { "name": "BlackGray", "value": "#101010" },
+  { "name": "Transparent", "value": "transparent" }
+]

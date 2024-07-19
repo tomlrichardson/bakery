@@ -55,6 +55,30 @@ collection_groups:
     collections:
       - data
 _inputs:
+  heading_color:
+    type: select
+    options:
+      values: data.colors
+      value_key: value
+      preview:
+        text:
+          - key: name
+  background_color:
+    type: select
+    options:
+      values: data.colors
+      value_key: value
+      preview:
+        text:
+          - key: name
+  text_color:
+    type: select
+    options:
+      values: data.colors
+      value_key: value
+      preview:
+        text:
+          - key: name
   image_path:
     type: image
     options:
@@ -122,6 +146,8 @@ _inputs:
 data_config:
   icons:
     path: data/icons.json
+  colors:
+    path: data/colors.json
 
 _structures:
   features:

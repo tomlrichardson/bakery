@@ -17,10 +17,14 @@ export interface SEOProps {
 
 export interface Props {
   title: string;
+  header_styles: {
+    background_color: string;
+    text_color: string;
+  };
   seo?: SEOProps;
 }
 
-const { seo } = Astro.props;
+const { seo, header_styles } = Astro.props;
 const baseUrl = Astro.site;
 const title = Astro.props.title
   ? `${Astro.props.title} | ${site.site_title}`
@@ -85,7 +89,7 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
     />
   </head>
   <body>
-    <Header />
+    <Header {header_styles} />
     <slot />
 
     <Footer />

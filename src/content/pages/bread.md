@@ -8,6 +8,9 @@ seo:
   author_twitter_handle: ''
   open_graph_type: website
   no_index: false
+header_styles:
+  background_color: transparent
+  text_color: '#ffffff'
 content_blocks:
   - _bookshop_name: slider
     heading: A rotating range of specialty loaves
