@@ -53,6 +53,7 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
   .header__container {
     width: min(var(--pageContainer), 100%);
     margin: 0 auto;
+
     justify-content: space-between;
     padding-inline: var(--pagePadding);
   }
@@ -71,6 +72,8 @@ import { header, logo, logo_url } from '../../../data/navigation.json';
   .header__logo-image {
     width: 64px;
     rotate: 0deg;
+    position: relative;
+    z-index: 999;
   }
   .header__logo-image:hover {
     rotate: -10deg;
