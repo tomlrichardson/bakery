@@ -31,7 +31,9 @@ const imageSrc =
   images[block.image.image_path]?.default ?? block.image.image_path;
 ---
 
-<div class="left-right" style={`background-color: ${block.background_color};`}>
+<section
+  class="left-right"
+  style={`background-color: ${block.background_color};`}>
   {
     block.flipped ? (
       <div class="left-right__wrapper">
@@ -70,7 +72,7 @@ const imageSrc =
       </div>
     )
   }
-</div>
+</section>
 
 <style>
   .left-right {

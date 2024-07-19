@@ -19,14 +19,16 @@ const { locations } = Astro.props;
             />
             <h3>{slide.name}</h3>
             <p>{slide.details}</p>
-            <a href="#map" class="flex items-center gap-3">
-              <button class="map-button" id={slide.name}>
-                <span class="location-pin">
-                  <Icon icon={'LocationPin'} />
-                </span>
-                {slide.address}
-              </button>
-            </a>
+            <div class="flex">
+              <span class="location-pin mr-2">
+                <Icon icon={'LocationPin'} />
+              </span>
+              <a href="#map" class="flex items-center gap-3">
+                <button class="map-button" id={slide.name}>
+                  {slide.address}
+                </button>
+              </a>
+            </div>
           </div>
         </swiper-slide>
       );

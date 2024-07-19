@@ -24,7 +24,9 @@ const gridColumns = block.grid_columns;
 const cardsMaxWidth = block.cards_max_width + 'rem';
 ---
 
-<div class="card-grid" style={`background-color: ${block.background_color};`}>
+<section
+  class="card-grid"
+  style={`background-color: ${block.background_color};`}>
   <div class="card-grid__container">
     {
       block.heading.heading_text ? (
@@ -56,7 +58,7 @@ const cardsMaxWidth = block.cards_max_width + 'rem';
       ) : null
     }
   </div>
-</div>
+</section>
 <style
   define:vars={{
     gridColumns,

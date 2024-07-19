@@ -73,16 +73,15 @@ function panTo(event, map) {
       };
     }
   }
-  // console.log('latLong Obj', latLng);
   map.panTo(latLng);
 }
 
-function toggleBounce() {
-  if (marker.getAnimation() !== null) {
-    marker.setAnimation(null);
-  } else {
-    marker.setAnimation(google.maps.Animation.BOUNCE);
-  }
-}
+// function toggleBounce() {
+//   if (marker.getAnimation() !== null) {
+//     marker.setAnimation(null);
+//   } else {
+//     marker.setAnimation(google.maps.Animation.BOUNCE);
+//   }
+// }
 
 initMap();

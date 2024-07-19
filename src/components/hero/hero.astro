@@ -25,7 +25,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 const imageSrc = images[block.image_path]?.default ?? block.image_path;
 ---
 
-<div class="hero">
+<section class="hero">
   <div class="hero__container">
     <h1 class="hero__title">{block.title}</h1>
     <p class="hero__subtitle">{block.subtitle}</p>
@@ -52,7 +52,7 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     widths={[360, 720, 1280]}
     sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px`}
   />
-</div>
+</section>
 
 <style>
   .hero {
@@ -76,7 +76,10 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
   }
 
   .hero__container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     max-width: var(--pageContainer);
     padding-block: 96px;
     padding-inline: var(--pagePadding);

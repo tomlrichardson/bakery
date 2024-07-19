@@ -10,7 +10,7 @@ seo:
   no_index: false
 header_styles:
   background_color: transparent
-  text_color: '#ffffff'
+  text_color: '#000000'
 content_blocks:
   - _bookshop_name: slider
     heading: A rotating range of specialty loaves

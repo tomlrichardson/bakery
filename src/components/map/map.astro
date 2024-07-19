@@ -3,9 +3,9 @@ const block = Astro.props;
 const mapAPIKey = import.meta.env.PUBLIC_API_KEY;
 ---
 
-<div class="map-container">
+<section class="map-container">
   <div id="map"></div>
-</div>
+</section>
 <!-- prettier-ignore -->
 <script define:vars={{ mapAPIKey }}>
   ((g) => {
