@@ -6,8 +6,8 @@ interface Props {
   heading: string;
   text: string;
   background_image: {
-    src: string;
-    alt: string;
+    image_path: string;
+    image_alt: string;
     filters: {
       brightness: number;
       grayscale: number;
@@ -18,12 +18,13 @@ interface Props {
 
 const block = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/**/*.{jpeg,jpg,png,gif,svg}',
+  '/src/assets/**/*.{jpeg,jpg,png,gif,svg,JPG}',
   { eager: true }
 );
 
 const imageSrc =
-  images[block.background_image.src]?.default ?? block.background_image.src;
+  images[block.background_image.image_path]?.default ??
+  block.background_image.image_path;
 
 const backgroundImageBrightness = `brightness(${block.background_image.filters.brightness});`;
 const backgroundImageGrayscale = `grayscale(${block.background_image.filters.grayscale});`;
@@ -32,10 +33,10 @@ const backgroundImageGrayscale = `grayscale(${block.background_image.filters.gra
 <a class="card" href={block.link}>
   <div class="image">
     {
-      block.background_image.src ? (
+      block.background_image.image_path ? (
         <Image
           class="hero__img"
-          alt={block.background_image.alt}
+          alt={block.background_image.image_alt}
           src={imageSrc}
           width={200}
           height={400}

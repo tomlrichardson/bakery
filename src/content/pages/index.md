@@ -13,8 +13,8 @@ content_blocks:
   - _bookshop_name: hero
     title: Body of the Year
     subtitle: Bakery for Dunedin, New Zealand
-    imagePath: /src/assets/images/flour-milling-hero.jpg
-    altText: An image
+    image_path: /src/assets/images/flour-milling-hero.jpg
+    image_alt: An image
     button:
       link: '/#contact'
       text: Contact Us
@@ -36,7 +36,7 @@ content_blocks:
         heading: Want bread?
         text: Where to find our loaves.
         background_image:
-          src: /images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
+          image_path: /src/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
           alt: ''
           filters:
             brightness: 0.6
@@ -46,7 +46,7 @@ content_blocks:
         heading: About us
         text: Learn about what we do.
         background_image:
-          src: /images/bakery/2114BA8A-DBB7-475E-ACF1-DCA06107A23F.JPG
+          image_path: /src/images/bakery/2114BA8A-DBB7-475E-ACF1-DCA06107A23F.JPG
           alt: ''
           filters:
             brightness: 0.8

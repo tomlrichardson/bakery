@@ -4,8 +4,8 @@ import { Image } from 'astro:assets';
 import Button from '../utility/button.astro';
 
 interface Props {
-  imagePath: string;
-  altText: string;
+  image_path: string;
+  image_alt: string;
   title: string;
   subtitle: string;
   button: {
@@ -18,11 +18,11 @@ interface Props {
 
 const block = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/**/*.{jpeg,jpg,png,gif,svg}',
+  '/src/assets/**/*.{jpeg,jpg,png,gif,svg,JPG}',
   { eager: true }
 );
 
-const imageSrc = images[block.imagePath]?.default ?? block.imagePath;
+const imageSrc = images[block.image_path]?.default ?? block.image_path;
 ---
 
 <div class="hero">
@@ -45,7 +45,7 @@ const imageSrc = images[block.imagePath]?.default ?? block.imagePath;
 
   <Image
     class="hero__bg-img"
-    alt={block.altText}
+    alt={block.image_alt}
     src={imageSrc}
     width={4000}
     height={400}

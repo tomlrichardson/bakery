@@ -55,6 +55,12 @@ collection_groups:
     collections:
       - data
 _inputs:
+  image_path:
+    type: image
+    options:
+      paths:
+        static: ''
+        uploads: 'src/assets/images'
   layout:
     hidden: true
   date:

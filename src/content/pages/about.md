@@ -9,53 +9,42 @@ seo:
   open_graph_type: website
   no_index: false
 content_blocks:
-  - _bookshop_name: hero
-    title: Want to buy our bread wholesale?
-    subtitle: We provide wholesale bread to local eateries. Find our full menu below. Enquire for special requests.
-    imagePath: /src/assets/images/flour-milling-hero.jpg
-    altText: An image
-    button:
-      link: '/#contact'
-      text: Contact Us
-      background_color: '#000000'
-      text_color: '#ffffff'
-  - _bookshop_name: card-grid
-    background_color: '#fff0f4'
+  - _bookshop_name: left-right
+    background_color: '#ffffff'
     heading:
-      heading_text:
-      heading_color: '#000000'
-    grid_columns: 2
-    cards_max_width: 26
-    button:
-      button_text:
-      background_color:
-      text_color:
-    cards:
-      - _bookshop_name: image-card
-        heading: Where to find us
-        text: Learn where to buy our loaves to take home with you.
-        image:
-          src: /src/assets/images/bread.png
-          alt: The bread
-        link: '/where/'
-        background_color:
-        column_span: 1
-      - _bookshop_name: image-card
-        heading: Want us as your supplier?
-        text: Find out about becoming a wholesale customer.
-        image:
-          src: /src/assets/images/bread.png
-          alt: The bread
-        link: /wholesale
-        background_color:
-        column_span: 1
-      - _bookshop_name: image-card
-        heading: What we do
-        text: Learn more about what we do, and where we supply.
-        image:
-          src: /src/assets/images/bread.png
-          alt: The bread
-        link: /about
-        background_color:
-        column_span: 1
+      heading_text: Keep what you need. Delete the rest.
+      color: '#393939'
+    text:
+      markdown_content: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+      color: '#393939'
+    image:
+      image_path: /src/assets/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
+      alt_text: An image
+    flipped: false
+  - _bookshop_name: left-right
+    background_color: '#ffffff'
+    heading:
+      heading_text: Keep what you need. Delete the rest.
+      color: '#393939'
+    text:
+      markdown_content: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+      color: '#393939'
+    image:
+      image_path: /src/assets/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
+      alt_text: An image
+    flipped: true
 ---

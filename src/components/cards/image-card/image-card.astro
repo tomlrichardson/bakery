@@ -6,28 +6,29 @@ interface Props {
   heading: string;
   text: string;
   image: {
-    src: string;
-    alt: string;
+    image_path: string;
+    image_alt: string;
   };
   link: string;
 }
 
 const block = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/**/*.{jpeg,jpg,png,gif,svg}',
+  '/src/assets/**/*.{jpeg,jpg,png,gif,svg,JPG}',
   { eager: true }
 );
 
-const imageSrc = images[block.image.src]?.default ?? block.image.src;
+const imageSrc =
+  images[block.image.image_path]?.default ?? block.image.image_path;
 ---
 
 <a class="card" href={block.link}>
   <div class="image">
     {
-      block.image.src ? (
+      block.image.image_path ? (
         <Image
           class="hero__img"
-          alt={block.image.alt}
+          alt={block.image.image_alt}
           src={imageSrc}
           width={200}
           height={400}
