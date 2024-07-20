@@ -1,152 +1,136 @@
 ---
-title: 'Bread'
+title: Bread
 seo:
-  page_description: ''
-  canonical_url: ''
-  featured_image: ''
-  featured_image_alt: ''
-  author_twitter_handle: ''
-  open_graph_type: website
-  no_index: false
+    page_description: ''
+    canonical_url: ''
+    featured_image: ''
+    featured_image_alt: ''
+    author_twitter_handle: ''
+    open_graph_type: website
+    no_index: false
 header_styles:
-  background_color: transparent
-  text_color: '#000000'
+    background_color: transparent
+    text_color: '#000000'
 content_blocks:
-  - _bookshop_name: slider
-    heading:
-      heading_text: A rotating range of specialty loaves
-      heading_color: '#000000'
-    subheading:
-      subheading_text: We sell our core menu and a changing range of specialty loaves, which can be purchased to take home from Taste Nature.
-      subheading_color: '#000000'
-    flipped: true
-    slides:
-      - text: >-
-          ### Saturday
+    -
+        _bookshop_name: slider
+        heading:
+            heading_text: Rotating range of specialty loaves
+            heading_color: '#000000'
+        subheading:
+            subheading_text: >-
+                We sell our core menu and a changing range of specialty loaves,
+                which can be purchased to take home from Taste Nature.
+            subheading_color: '#000000'
+        flipped: false
+        slides:
+            -
+                text: |-
+                    ### Tuesday
 
+                    - Organic Yeasted Variety ( All Tin Loafs )
 
-          - Wheat
+                    - Soft White Loaf 
 
+                    - Purple Wheat Loaf
 
-          - Olive and Rosemary
+                    - Multigrain Loaf
+            -
+                text: |-
+                    ### Wednesday
 
+                    - Wheat 
 
-          - Oat Porridge
+                    - Polenta, Sunflower and Pumpkin Seeds
 
+                    - 100% Rye ( Pumpernickel)
 
-          - Ciabatta
-      - text: >-
-          ### Tuesday
+                    - Seven Seed
 
+                    - 100 % Wholemeal Wheat
 
-          - Organic Yeasted Variety ( All Tin Loafs )
+                    - Spelt and Sesame
 
+                    - Ciabatta
+            -
+                text: |-
+                    ### Thursday
 
-          - Soft White Loaf 
+                    - Wheat
 
+                    - Olive & Rosemary
 
-          - Purple Wheat Loaf
+                    - 100% Spelt
 
+                    - 100% Wholemeal Spelt
 
-          - Multigrain Loaf
-      - text: >-
-          ### Wednesday
+                    - Country Rye
 
+                    - Turmeric & linseed
 
-          - Wheat 
+                    - Date and Walnut
 
+                    - Purple Wheat 
 
-          - Polenta, Sunflower and Pumpkin Seeds
+                    - Ciabatta
+            -
+                text: |-
+                    ### Friday
 
+                    - Wheat 
 
-          - 100% Rye ( Pumpernickel)
+                    - Polenta, Sunflower and Pumpkin Seeds
 
+                    - 100% Rye ( Pumpernickel)
 
-          - Seven Seed
+                    - Seven Seed
 
+                    - 100 % Wholemeal Wheat
 
-          - 100 % Wholemeal Wheat
+                    - Spelt and Sesame
 
+                    - Ciabatta
+            -
+                text: |-
+                    ### Saturday
 
-          - Spelt and Sesame
+                    - Wheat
 
+                    - Olive and Rosemary
 
-          - Ciabatta
-      - text: >-
-          ### Thursday
+                    - Oat Porridge
 
-
-          - Wheat
-
-
-          - Olive & Rosemary
-
-
-          - 100% Spelt
-
-
-          - 100% Wholemeal Spelt
-
-
-          - Country Rye
-
-
-          - Turmeric & linseed
-
-
-          - Date and Walnut
-
-
-          - Purple Wheat 
-
-
-          - Ciabatta
-      - text: >-
-          ### Friday
-
-
-          - Wheat 
-
-
-          - Polenta, Sunflower and Pumpkin Seeds
-
-
-          - 100% Rye ( Pumpernickel)
-
-
-          - Seven Seed
-
-
-          - 100 % Wholemeal Wheat
-
-
-          - Spelt and Sesame
-
-
-          - Ciabatta
-  - _bookshop_name: locations-slider
-    heading:
-      heading_text: Loaves for sale
-      heading_color: '#000000'
-    subheading:
-      subheading_text: Pick up a loaf from our core range to take home from these local legénds.
-      subheading_color: '#000000'
-    flipped: true
-    locations:
-      - Maggies
-      - The Duck
-      - Vanguard Specialty Coffee
-  - _bookshop_name: locations-slider
-    heading:
-      heading_text: Where we supply
-      heading_color: '#000000'
-    subheading:
-      subheading_text: We're proud to be the supplier for these local eateries. Eat our bread as part of their menu.
-      subheading_color: '#000000'
-    flipped: false
-    locations:
-      - Maggies
-      - The Duck
-      - Vanguard Specialty Coffee
-  - _bookshop_name: map
+                    - Ciabatta
+    -
+        _bookshop_name: locations-slider
+        heading:
+            heading_text: Loaves for sale
+            heading_color: '#000000'
+        subheading:
+            subheading_text: >-
+                Pick up a loaf from our core range to take home from these local
+                legénds.
+            subheading_color: '#000000'
+        flipped: true
+        locations:
+            - Maggies
+            - The Duck
+            - Vanguard Specialty Coffee
+    -
+        _bookshop_name: locations-slider
+        heading:
+            heading_text: Where we supply
+            heading_color: '#000000'
+        subheading:
+            subheading_text: >-
+                We're proud to be the supplier for these local eateries. Eat our
+                bread as part of their menu.
+            subheading_color: '#000000'
+        flipped: false
+        locations:
+            - Maggies
+            - The Duck
+            - Vanguard Specialty Coffee
+    -
+        _bookshop_name: map
 ---
