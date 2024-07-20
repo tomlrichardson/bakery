@@ -28,7 +28,7 @@ content_blocks:
         est laborum.
       color: '#393939'
     image:
-      image_path: /src/assets/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
+      image_path: /src/assets/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.jpg
       alt_text: An image
     flipped: false
   - _bookshop_name: left-right
@@ -47,7 +47,7 @@ content_blocks:
         est laborum.
       color: '#393939'
     image:
-      image_path: /src/assets/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.JPG
+      image_path: /src/assets/images/bakery/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.jpg
       alt_text: An image
     flipped: true
 ---
