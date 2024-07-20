@@ -13,8 +13,12 @@ header_styles:
   text_color: '#000000'
 content_blocks:
   - _bookshop_name: slider
-    heading: A rotating range of specialty loaves
-    subheading: We sell our core menu and a changing range of specialty loaves, which can be purchased to take home from Taste Nature.
+    heading:
+      heading_text: A rotating range of specialty loaves
+      heading_color: '#000000'
+    subheading:
+      subheading_text: We sell our core menu and a changing range of specialty loaves, which can be purchased to take home from Taste Nature.
+      subheading_color: '#000000'
     flipped: true
     slides:
       - text: >-
@@ -121,16 +125,24 @@ content_blocks:
 
           - Ciabatta
   - _bookshop_name: locations-slider
-    heading: Loaves for sale
-    subheading: Pick up a loaf from our core range to take home from these local legénds.
+    heading:
+      heading_text: Loaves for sale
+      heading_color: '#000000'
+    subheading:
+      subheading_text: Pick up a loaf from our core range to take home from these local legénds.
+      subheading_color: '#000000'
     flipped: true
     locations:
       - Maggies
       - The Duck
       - Vanguard Specialty Coffee
   - _bookshop_name: locations-slider
-    heading: Where we supply
-    subheading: We're proud to be the supplier for these local eateries. Eat our bread as part of their menu.
+    heading:
+      heading_text: Where we supply
+      heading_color: '#000000'
+    subheading:
+      subheading_text: We're proud to be the supplier for these local eateries. Eat our bread as part of their menu.
+      subheading_color: '#000000'
     flipped: false
     locations:
       - Maggies

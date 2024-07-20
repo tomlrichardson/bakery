@@ -1,6 +1,22 @@
 ---
 import SliderComponent from '../slider-components/slider.astro';
 import SliderHeading from '../slider-components/slider-heading.astro';
+interface Props {
+  flipped: boolean;
+  heading: {
+    heading_text: string;
+    heading_color: string;
+  };
+  subheading: {
+    subheading_text: string;
+    subheading_color: string;
+  };
+  slides: [
+    {
+      text: string;
+    },
+  ];
+}
 const block = Astro.props;
 ---
 

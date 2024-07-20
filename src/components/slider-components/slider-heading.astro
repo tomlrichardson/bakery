@@ -1,14 +1,32 @@
 ---
+interface Props {
+  heading: {
+    heading_text: string;
+    heading_color: string;
+  };
+  subheading: {
+    subheading_text: string;
+    subheading_color: string;
+  };
+}
 const { heading, subheading } = Astro.props;
 ---
 
 {
   heading ? (
-    <h2 class="slider-heading text-center sm:text-left">{heading}</h2>
+    <h2
+      class="slider-heading text-center sm:text-left"
+      style={`color: ${heading.heading_color}`}>
+      {heading.heading_text}
+    </h2>
   ) : null
 }
 {
   subheading ? (
-    <div class="md:max-w-[26rem] text-center sm:text-left">{subheading}</div>
+    <div
+      class="md:max-w-[26rem] text-center sm:text-left"
+      style={`color: ${subheading.subheading_color}`}>
+      {subheading.subheading_text}
+    </div>
   ) : null
 }
