@@ -1,21 +1,33 @@
 ---
 import Markdown from '../utility/markdown.astro';
 const { slides } = Astro.props;
+const firstSlide = slides[0];
 ---
 
-<swiper-container navigation="true" loop="true" class="swiper-container slider">
-  {
-    slides.map((slide: any) => {
-      return (
-        <swiper-slide class="slide-container">
-          <div class="swiper-slide-contents">
-            <Markdown content={slide.text} />
-          </div>
-        </swiper-slide>
-      );
-    })
-  }
-</swiper-container>
+{
+  ENV_BOOKSHOP_LIVE ? (
+    <div class="slide-container">
+      <div class="swiper-slide-contents">
+        <Markdown content={firstSlide.text} />
+      </div>
+    </div>
+  ) : (
+    <swiper-container
+      navigation="true"
+      loop="true"
+      class="swiper-container slider">
+      {slides.map((slide: any) => {
+        return (
+          <swiper-slide class="slide-container">
+            <div class="swiper-slide-contents">
+              <Markdown content={slide.text} />
+            </div>
+          </swiper-slide>
+        );
+      })}
+    </swiper-container>
+  )
+}
 
 <style>
   .slide-container {

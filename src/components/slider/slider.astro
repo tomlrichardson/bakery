@@ -1,68 +1,35 @@
 ---
 import SliderComponent from '../slider-components/slider.astro';
-import SliderFallback from '../slider-components/slider-fallback.astro';
 import SliderHeading from '../slider-components/slider-heading.astro';
 const block = Astro.props;
 ---
 
 <section>
   {
-    ENV_BOOKSHOP_LIVE ? (
-      <>
-        {block.flipped ? (
-          <div class="slider-container">
-            <div class="order-2 w-full sm:w-1/2 ">
-              <SliderFallback slides={block.slides} />
-            </div>
-            <div class="slider-text order-1">
-              <SliderHeading
-                heading={block.heading}
-                subheading={block.subheading}
-              />
-            </div>
-          </div>
-        ) : (
-          <div class="slider-container">
-            <div class="slider-text">
-              <SliderHeading
-                heading={block.heading}
-                subheading={block.subheading}
-              />
-            </div>
-            <div class="w-full sm:w-1/2 ">
-              <SliderFallback slides={block.slides} />
-            </div>
-          </div>
-        )}
-      </>
+    block.flipped ? (
+      <div class="slider-container">
+        <div class="order-2 w-full sm:w-1/2 ">
+          <SliderComponent slides={block.slides} />
+        </div>
+        <div class="slider-text order-1">
+          <SliderHeading
+            heading={block.heading}
+            subheading={block.subheading}
+          />
+        </div>
+      </div>
     ) : (
-      <>
-        {block.flipped ? (
-          <div class="slider-container">
-            <div class="order-2 w-full sm:w-1/2 ">
-              <SliderComponent slides={block.slides} />
-            </div>
-            <div class="slider-text order-1">
-              <SliderHeading
-                heading={block.heading}
-                subheading={block.subheading}
-              />
-            </div>
-          </div>
-        ) : (
-          <div class="slider-container">
-            <div class="slider-text">
-              <SliderHeading
-                heading={block.heading}
-                subheading={block.subheading}
-              />
-            </div>
-            <div class="w-full sm:w-1/2 ">
-              <SliderComponent slides={block.slides} />
-            </div>
-          </div>
-        )}
-      </>
+      <div class="slider-container">
+        <div class="slider-text">
+          <SliderHeading
+            heading={block.heading}
+            subheading={block.subheading}
+          />
+        </div>
+        <div class="w-full sm:w-1/2 ">
+          <SliderComponent slides={block.slides} />
+        </div>
+      </div>
     )
   }
 </section>

@@ -1,8 +1,7 @@
 # Metadata about this component, to be used in the CMS
 spec:
   structures:
-    - cards
-  label: Card Grid
+  label: Icon Card
   description: Icon card
   icon: 'style'
   tags:

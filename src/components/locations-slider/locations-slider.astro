@@ -1,9 +1,10 @@
 ---
 import SliderComponent from '../slider-components/locations-slider.astro';
-import LocationsSliderFallback from '../slider-components/locations-slider-fallback.astro';
 import LocationsSliderHeading from '../slider-components/slider-heading.astro';
 import companies from '../../../data/companies.json';
+
 const block = Astro.props;
+
 let locations = [];
 for (let i = 0; i < block.locations.length; i++) {
   const location = block.locations[i];
@@ -14,51 +15,36 @@ for (let i = 0; i < block.locations.length; i++) {
     }
   }
 }
-// console.log(locations);
 ---
 
 <section>
-{
-  ENV_BOOKSHOP_LIVE ? (
-     <div class="slider-container">
-      {
-        block.flipped ? (
-          <LocationsSliderFallback locations={locations} /> 
-          <div class="slider-text">
-            <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
+  <div class="slider-container">
+    {
+      block.flipped ? (
+        <>
+          <div class="order-2 w-full sm:order-1 sm:w-1/2">
+            <SliderComponent locations={locations} />
           </div>
-        ) : (
-          <div class="slider-text">
-            <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
+          <div class="slider-text order-1 sm:order-2">
+            <LocationsSliderHeading
+              heading={block.heading}
+              subheading={block.subheading}
+            />
           </div>
-          <LocationsSliderFallback locations={locations} /> 
-          )
-        }
-    </div>
-  ) : (
-    <>
-      <div class="slider-container">
-        {
-          block.flipped ? (
-            <div class="order-2 w-full sm:order-1 sm:w-1/2">
-              <SliderComponent locations={locations} />
-            </div>
-            <div class="slider-text order-1 sm:order-2">
-             <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
-            </div>
-          ) : (
-            <div class="slider-text">
-             <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
-            </div>
-            <div class="w-full sm:w-1/2">
-              <SliderComponent locations={locations} />
-            </div>
-          )
-        }
-      </div>
-    </>
-  )
-}
+        </>
+      ) : (
+        <>
+          <div class="slider-text">
+            <LocationsSliderHeading
+              heading={block.heading}
+              subheading={block.subheading}
+            />
+          </div>
+          <div class="w-full sm:w-1/2">
+            <SliderComponent locations={locations} />
+          </div>
+        </>
+      )
+    }
+  </div>
 </section>
-
-

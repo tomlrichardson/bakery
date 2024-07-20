@@ -1,40 +1,67 @@
 ---
 import Icon from '../utility/icon';
 const { locations } = Astro.props;
+const location = locations[0];
 ---
 
-<swiper-container
-  navigation="true"
-  loop="true"
-  class="swiper-container locations-slider">
-  {
-    locations.map((slide: any) => {
-      return (
-        <swiper-slide class="slide-container">
-          <div class="swiper-slide-contents text-center lg:text-left">
-            <img
-              class="max-w-[200px] rounded-md"
-              src={slide.image.image_path}
-              alt={slide.image.alt}
-            />
-            <h3>{slide.name}</h3>
-            <p>{slide.sells}</p>
-            <div class="flex mt-3">
-              <span class="location-pin mr-2">
-                <Icon icon={'LocationPin'} />
-              </span>
-              <a href="#map" class="flex items-center gap-3 ">
-                <button class="map-button" id={slide.name}>
-                  {slide.address}
-                </button>
-              </a>
-            </div>
+{
+  ENV_BOOKSHOP_LIVE ? (
+    <div class="swiper-container swiper-locations">
+      <div class="slide-container">
+        <div class="swiper-slide-contents text-center lg:text-left">
+          <img
+            class="max-w-[200px] rounded-md"
+            src={location.image.image_path}
+            alt={location.image.alt}
+          />
+          <h3>{location.name}</h3>
+          <p>{location.sells}</p>
+          <div class="flex mt-3">
+            <span class="location-pin mr-2">
+              <Icon icon={'LocationPin'} />
+            </span>
+            <a href="#map" class="flex items-center gap-3">
+              <button class="map-button" id={location.name}>
+                {location.address}
+              </button>
+            </a>
           </div>
-        </swiper-slide>
-      );
-    })
-  }
-</swiper-container>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <swiper-container
+      navigation="true"
+      loop="true"
+      class="swiper-container locations-slider">
+      {locations.map((slide: any) => {
+        return (
+          <swiper-slide class="slide-container">
+            <div class="swiper-slide-contents text-center lg:text-left">
+              <img
+                class="max-w-[200px] rounded-md"
+                src={slide.image.image_path}
+                alt={slide.image.alt}
+              />
+              <h3>{slide.name}</h3>
+              <p>{slide.sells}</p>
+              <div class="flex mt-3">
+                <span class="location-pin mr-2">
+                  <Icon icon={'LocationPin'} />
+                </span>
+                <a href="#map" class="flex items-center gap-3 ">
+                  <button class="map-button" id={slide.name}>
+                    {slide.address}
+                  </button>
+                </a>
+              </div>
+            </div>
+          </swiper-slide>
+        );
+      })}
+    </swiper-container>
+  )
+}
 
 <style is:global>
   .location-pin {

@@ -119,8 +119,15 @@ _inputs:
     comment: Link for the logo in the top left of the footer
   copyright:
     comment: Automatically prefixed with the current year
-  isActive:
-    type: switch
+  seo:
+    options:
+      preview:
+        icon: query_stats
+        text:
+          - 'Search engine optimization'
+        subtext:
+          - key: page_description
+          - 'Update SEO values for the page'
   page_description:
     comment: Defaults to the description set in the Site SEO data file
   favicon_icon:
@@ -142,6 +149,24 @@ _inputs:
     comment:
       When selected this removes the page from your sitemap and adds the noindex
       robots meta tag
+  button_icon:
+    type: select
+    options:
+      values: data.icons
+  button_link:
+    type: url
+  hover_brightness:
+    type: range
+    options:
+      min: 0
+      max: 1.5
+      step: 0.05
+  header_styles:
+    options:
+      preview:
+        icon: menu
+        text: Header Styles
+        subtext: Set header colors per page
 
 data_config:
   icons:
@@ -150,8 +175,3 @@ data_config:
     path: data/colors.json
 
 _structures:
-  features:
-    values:
-      - value:
-          item:
-          isActive:
