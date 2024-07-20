@@ -6,8 +6,14 @@ import Button from '../utility/button.astro';
 interface Props {
   image_path: string;
   image_alt: string;
-  title: string;
-  subtitle: string;
+  heading: {
+    heading_text: string;
+    heading_color: string;
+  };
+  subheading: {
+    subheading_text: string;
+    subheading_color: string;
+  };
   button: {
     button_text: string;
     button_icon: string;
@@ -29,8 +35,14 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
 
 <section class="hero">
   <div class="hero__container">
-    <h1 class="hero__title">{block.title}</h1>
-    <p class="hero__subtitle">{block.subtitle}</p>
+    <h1 class="hero__title" style={`color: ${block.heading.heading_color}`}>
+      {block.heading.heading_text}
+    </h1>
+    <p
+      class="hero__subtitle"
+      style={`color: ${block.subheading.subheading_color}`}>
+      {block.subheading.subheading_text}
+    </p>
     {
       block.button.button_text ? (
         <div class="button">
@@ -87,7 +99,6 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     padding-block: 24px;
     padding-inline: var(--pagePadding);
     margin: 0 auto;
-    color: white;
   }
 
   .hero__title,

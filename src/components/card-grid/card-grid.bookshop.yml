@@ -12,10 +12,10 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  background_color: '#fff0f4'
   heading:
     heading_text: A heading
     heading_color: '#000000'
+  background_color: '#fff0f4'
   grid_columns: 3
   cards_max_width: 26
   button:
@@ -29,20 +29,6 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-  button:
-    options:
-      preview:
-        icon: smart_button
-  heading:
-    options:
-      preview:
-        icon: 'short_text'
-        text:
-          - key: 'heading_text'
-          - Heading
-        subtext:
-          - key: heading_color
-          - 'Update heading and popover.'
   grid_columns:
     comment: Sets the amount of columns in the grid.
     type: range
@@ -57,3 +43,7 @@ _inputs:
       step: 1
       max: 37
       min: 5
+  cards[*]:
+    options:
+      preview:
+        icon: style

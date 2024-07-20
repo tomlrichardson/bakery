@@ -55,7 +55,33 @@ collection_groups:
     collections:
       - data
 _inputs:
+  button:
+    options:
+      preview:
+        icon: smart_button
+  heading:
+    options:
+      preview:
+        icon: 'short_text'
+        text:
+          - key: 'heading_text'
+          - Heading
+        subtext:
+          - key: heading_color
+          - 'Update heading and popover.'
   heading_color:
+    type: select
+    options:
+      values: data.colors
+      value_key: value
+      preview:
+        text:
+          - key: name
+  heading_text:
+    type: textarea
+  subheading_text:
+    type: textarea
+  subheading_color:
     type: select
     options:
       values: data.colors

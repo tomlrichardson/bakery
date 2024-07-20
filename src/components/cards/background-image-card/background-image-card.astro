@@ -1,10 +1,17 @@
 ---
 import type { ImageMetadata } from 'astro';
+import type { string } from 'astro/zod';
 import { Image } from 'astro:assets';
 
 interface Props {
-  heading: string;
-  text: string;
+  heading: {
+    heading_text: string;
+    heading_color: string;
+  };
+  subheading: {
+    subheading_text: string;
+    subheading_color: string;
+  };
   background_image: {
     image_path: string;
     image_alt: string;
@@ -45,8 +52,12 @@ const backgroundImageGrayscale = `grayscale(${block.background_image.filters.gra
     }
   </div>
   <div class="card-content">
-    <h2>{block.heading}</h2>
-    <p>{block.text}</p>
+    <h2 style={`color: ${block.heading.heading_color}`}>
+      {block.heading.heading_text}
+    </h2>
+    <p style={`color: ${block.subheading.subheading_color}`}>
+      {block.subheading.subheading_text}
+    </p>
   </div>
 </a>
 
@@ -77,6 +88,5 @@ const backgroundImageGrayscale = `grayscale(${block.background_image.filters.gra
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: white;
   }
 </style>
