@@ -71,6 +71,8 @@ content_blocks:
             grayscale: 1
         link: /about/
   - _bookshop_name: contact-form
+    background_color: '#334154'
+    links_color: '#ffffff'
     heading:
       heading_text: Contact Us
       heading_color: '#ffffff'
@@ -82,7 +84,7 @@ content_blocks:
     contact_details:
       - label: Address
         icon: LocationPin
-        text: '[123 Bakery Street](/where/#map)'
+        text: 123 Bakery Street
         color: '#FFFFFF'
       - label: Email
         icon: Envelope

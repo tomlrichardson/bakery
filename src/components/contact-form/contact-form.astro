@@ -2,6 +2,8 @@
 import Icon from '../utility/icon';
 import Markdown from '../utility/markdown.astro';
 interface Props {
+  background_color: string;
+  links_color: string;
   heading: {
     heading_text: string;
     heading_color: string;
@@ -29,9 +31,10 @@ interface Props {
   ];
 }
 const block = Astro.props;
+const links_color_var = block.links_color;
 ---
 
-<section class="bg-slate-700 text-white" id="contact">
+<section id="contact" style={`background-color: ${block.background_color}`}>
   <div
     class="contact-form flex flex-col md:flex-row gap-8 px-8 py-[96px] items-center md:justify-between md:items-start">
     <div class="w-full md:w-1/2 max-w-[32rem]">
@@ -43,7 +46,7 @@ const block = Astro.props;
         style={`color: ${block.subheading.subheading_color};`}>
         {block.subheading.subheading_text}
       </p>
-      <div class="flex flex-col gap-8 mt-8">
+      <div class="flex flex-col gap-4 mt-8">
         {
           block.contact_details.map((item) => {
             return (
@@ -71,13 +74,17 @@ const block = Astro.props;
           block.form.map((item) => {
             return item.type === 'text' ? (
               <div class="text-input-group">
-                <label style={`color: ${item.color}`}>{item.label}</label>
-                <input type={item.type} name={item.name} />
+                <label for={item.name} style={`color: ${item.color}`}>
+                  {item.label}
+                </label>
+                <input type={item.type} id={item.name} name={item.name} />
               </div>
             ) : item.type === 'textarea' ? (
               <div class="text-input-group">
-                <label style={`color: ${item.color}`}>{item.label}</label>
-                <textarea name={item.name} />
+                <label for={item.name} style={`color: ${item.color}`}>
+                  {item.label}
+                </label>
+                <textarea id={item.name} name={item.name} />
               </div>
             ) : item.type === 'radio' ? (
               <div class="check-input-group gap-2">
@@ -86,13 +93,18 @@ const block = Astro.props;
                   {item.radio_options?.map(
                     (option: { value?: string; label?: string }) => {
                       return (
-                        <div class="">
+                        <div class="flex gap-3">
                           <input
                             type="radio"
+                            id={option.label}
                             name={item.name}
                             value={option.value}
                           />
-                          <label>{option.label}</label>
+                          <label
+                            style={`color: ${item.color}`}
+                            for={option.label}>
+                            {option.label}
+                          </label>
                         </div>
                       );
                     }
@@ -117,12 +129,19 @@ const block = Astro.props;
   </div>
 </section>
 
+<style is:global define:vars={{ links_color_var }}>
+  .contact-form .markdown-text a {
+    color: var(--links_color_var);
+  }
+</style>
+
 <style>
   .contact-form {
     max-width: var(--pageContainer);
     margin: 0 auto;
     align-self: flex-end;
   }
+
   input,
   textarea {
     border: 1px solid #f1f1f1;

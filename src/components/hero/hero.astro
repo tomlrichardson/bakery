@@ -112,7 +112,7 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     margin-inline-start: -3px;
   }
   .hero__container h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .hero__subtitle {
@@ -127,9 +127,29 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
   .button {
     padding-top: 48px;
   }
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 340px) {
+    .hero__container h1 {
+      font-size: 4rem;
+    }
+  }
+  @media screen and (min-width: 380px) {
+    .hero__container h1 {
+      font-size: 5rem;
+    }
+  }
+  @media screen and (min-width: 460px) {
+    .hero__container h1 {
+      font-size: 5.5rem;
+    }
+  }
+  @media screen and (min-width: 500px) {
     .hero__container h1 {
       font-size: 6rem;
+    }
+  }
+  @media screen and (min-width: 540px) {
+    .hero__container h1 {
+      font-size: 4rem;
     }
   }
   @media screen and (min-width: 768px) {
@@ -137,15 +157,21 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
       padding-block: 48px;
     }
     .hero__container h1 {
-      font-size: 8rem;
+      font-size: 6rem;
     }
+
     .button {
       padding-top: 64px;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 980px) {
     .hero__container h1 {
-      font-size: 10rem;
+      font-size: 8rem;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .hero__container h1 {
+      font-size: 10.5rem;
     }
   }
 </style>
