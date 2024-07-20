@@ -128,9 +128,9 @@ content_blocks:
             subheading_color: '#000000'
         flipped: false
         locations:
+            - Vanguard Specialty Coffee
             - Maggies
             - The Duck
-            - Vanguard Specialty Coffee
     -
         _bookshop_name: map
 ---
