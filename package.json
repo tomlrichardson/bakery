@@ -27,6 +27,7 @@
     "alpinejs": "^3.13.8",
     "astro": "^4.11.5",
     "json-to-pretty-yaml": "^1.2.2",
+    "path": "^0.12.7",
     "punycode": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
