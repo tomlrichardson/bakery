@@ -23,7 +23,7 @@ _inputs:
   images:
     type: array
     comment: Gallery slider will only display the first image in the visual editor. Drag an image to the top to see it on the page, and drag it back into order once finished.
-    structures: _structures.image
     options:
+      structures: _structures.image
       preview:
         icon: image

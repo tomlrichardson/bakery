@@ -57,7 +57,8 @@ _inputs:
   slides:
     type: array
     comment: Drag a slide to the top to work on it in the visual editor, then drag it back into the correct order before saving.
-    structures: _structures.slide
+    options:
+      structures: _structures.slide
   text:
     type: markdown
     options:
