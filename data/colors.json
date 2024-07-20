@@ -4,6 +4,7 @@
   { "name": "Gray", "value": "#808080" },
   { "name": "Light Gray", "value": "#E1E0DC" },
   { "name": "Dark Gray", "value": "#555354" },
-  { "name": "BlackGray", "value": "#101010" },
+  { "name": "Black Gray", "value": "#101010" },
+  { "name": "Off Black", "value": "#2d2d2d" },
   { "name": "Transparent", "value": "transparent" }
 ]

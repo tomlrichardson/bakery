@@ -71,7 +71,7 @@ const block = Astro.props;
   .slider-container {
     max-width: var(--pageContainer);
     margin: 0 auto;
-    padding-block: 48px;
+    padding-block: 24px;
     padding-inline: var(--pagePadding);
     display: flex;
     flex-direction: column;
@@ -121,6 +121,9 @@ const block = Astro.props;
     }
   }
   @media only screen and (min-width: 850px) {
+    .slider-container {
+      padding-block: 48px;
+    }
     .slider-heading {
       font-size: 3rem;
     }

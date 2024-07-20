@@ -81,7 +81,7 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     align-items: center;
     text-align: center;
     max-width: var(--pageContainer);
-    padding-block: 48px;
+    padding-block: 24px;
     padding-inline: var(--pagePadding);
     margin: 0 auto;
     color: white;
@@ -103,7 +103,10 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
 
   .hero__subtitle {
     padding-top: 16px;
-    max-width: 420px;
+    max-width: 72ch;
+    font-size: 1.25rem;
+    font-weight: 200;
+    letter-spacing: 1.5px;
     line-height: 1.75rem;
   }
 
@@ -116,14 +119,14 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     }
   }
   @media screen and (min-width: 768px) {
+    .hero__container {
+      padding-block: 48px;
+    }
     .hero__container h1 {
       font-size: 8rem;
     }
   }
   @media screen and (min-width: 1024px) {
-    .hero__container {
-      padding-block: 96px;
-    }
     .hero__container h1 {
       font-size: 10rem;
     }

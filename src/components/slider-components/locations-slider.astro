@@ -11,14 +11,14 @@ const { locations } = Astro.props;
     locations.map((slide: any) => {
       return (
         <swiper-slide class="slide-container">
-          <div class="swiper-slide-contents">
+          <div class="swiper-slide-contents text-center lg:text-left">
             <img
               class="max-w-[200px] rounded-md"
               src={slide.image.image_path}
               alt={slide.image.alt}
             />
             <h3>{slide.name}</h3>
-            <p>{slide.details}</p>
+            <p>{slide.sells}</p>
             <div class="flex mt-3">
               <span class="location-pin mr-2">
                 <Icon icon={'LocationPin'} />

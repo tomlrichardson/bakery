@@ -35,7 +35,8 @@ export const companies = [
       lng: 170.50064563943752,
     },
     address: '131 High Street, Central Dunedin, Dunedin',
-    sells: 'Wheat, classic sourdough, rye, and baguettes.',
+    sells:
+      'Wheat, classic sourdough, rye, baguettes, and a rotating range of specialty loaves.',
     image: {
       image_path: '/images/companies/taste-nature.jpeg',
       alt: 'Taste Nature Logo',
