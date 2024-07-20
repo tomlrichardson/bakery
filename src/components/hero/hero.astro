@@ -4,8 +4,6 @@ import { Image } from 'astro:assets';
 import Button from '../utility/button.astro';
 
 interface Props {
-  image_path: string;
-  image_alt: string;
   heading: {
     heading_text: string;
     heading_color: string;
@@ -14,6 +12,8 @@ interface Props {
     subheading_text: string;
     subheading_color: string;
   };
+  image_path: string;
+  image_alt: string;
   button: {
     button_text: string;
     button_icon: string;

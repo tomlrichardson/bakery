@@ -13,8 +13,12 @@ header_styles:
   text_color: '#ffffff'
 content_blocks:
   - _bookshop_name: hero
-    title: Body of the Year
-    subtitle: Sourdough Bakery - Dunedin, New Zealand
+    heading:
+      heading_text: Body of the Year
+      heading_color: '#ffffff'
+    subheading:
+      subheading_text: Sourdough Bakery - Dunedin, New Zealand
+      subheading_color: '#ffffff'
     image_path: /src/assets/images/flour-milling-hero.jpg
     image_alt: An image
     button:
@@ -24,12 +28,6 @@ content_blocks:
       background_color: '#2d2d2d'
       hover_brightness: 0.85
       text_color: '#FFFFFF'
-    heading:
-      heading_text: Body of the Year
-      heading_color: '#ffffff'
-    subheading:
-      subheading_text: Sourdough Bakery - Dunedin, New Zealand
-      subheading_color: '#ffffff'
   - _bookshop_name: card-grid
     heading:
       heading_text:

@@ -12,17 +12,21 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  title: Body of the Year
-  subtitle: Sourdough Bakery - Dunedin, New Zealand
+  heading:
+    heading_text: Body of the Year
+    heading_color: '#ffffff'
+  subheading:
+    subheading_text: Sourdough Bakery - Dunedin, New Zealand
+    subheading_color: '#ffffff'
   image_path: /src/assets/images/flour-milling-hero.jpg
   image_alt: An image
   button:
     button_text: Contact us
-    button_icon: CaretDown
+    button_icon: Bread
     button_link: /#contact
     background_color: '#2d2d2d'
     hover_brightness: 0.85
-    text_color: '#ffffff'
+    text_color: '#FFFFFF'
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
