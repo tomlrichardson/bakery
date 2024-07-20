@@ -1,5 +1,5 @@
 ---
-const mapAPIKey = import.meta.env.PUBLIC_API_KEY || '';
+const mapAPIKey = ENV_BOOKSHOP_LIVE ? '' : import.meta.env.PUBLIC_API_KEY;
 ---
 
 {
