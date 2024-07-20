@@ -9,9 +9,11 @@ interface Props {
   title: string;
   subtitle: string;
   button: {
-    text: string;
-    link: string;
+    button_text: string;
+    button_icon: string;
+    button_link: string;
     background_color: string;
+    hover_brightness: number;
     text_color: string;
   };
 }
@@ -30,13 +32,15 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     <h1 class="hero__title">{block.title}</h1>
     <p class="hero__subtitle">{block.subtitle}</p>
     {
-      block.button.text ? (
+      block.button.button_text ? (
         <div class="button">
           <Button
-            link={block.button.link}
-            text={block.button.text}
-            backgroundColor={block.button.background_color}
-            textColor={block.button.text_color}
+            button_link={block.button.button_link}
+            button_text={block.button.button_text}
+            background_color={block.button.background_color}
+            text_color={block.button.text_color}
+            button_icon={block.button.button_icon}
+            hover_brightness={block.button.hover_brightness}
           />
         </div>
       ) : null
@@ -110,7 +114,7 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
   }
 
   .button {
-    padding-top: 40px;
+    padding-top: 48px;
   }
   @media screen and (min-width: 400px) {
     .hero__container h1 {
@@ -123,6 +127,9 @@ const imageSrc = images[block.image_path]?.default ?? block.image_path;
     }
     .hero__container h1 {
       font-size: 8rem;
+    }
+    .button {
+      padding-top: 64px;
     }
   }
   @media screen and (min-width: 1024px) {

@@ -7,11 +7,6 @@ interface Props {
   background_color: string;
   grid_columns: number;
   cards_max_width: number;
-  button: {
-    button_text: string;
-    background_color: string;
-    text_color: string;
-  };
   cards: Array<any>;
 }
 
@@ -48,15 +43,6 @@ const cardsMaxWidth = block.cards_max_width + 'rem';
         })
       }
     </div>
-    {
-      block.button.button_text ? (
-        <button
-          class="button"
-          style={`background-color: ${block.button.background_color}; color: ${block.button.text_color};`}>
-          {block.button.button_text}
-        </button>
-      ) : null
-    }
   </div>
 </section>
 <style

@@ -19,9 +19,11 @@ content_blocks:
     image_path: /src/assets/images/flour-milling-hero.jpg
     image_alt: An image
     button:
-      link: '/#contact'
-      text: Contact Us
+      button_text: Contact us
+      button_icon: CaretDown
+      button_link: /#contact
       background_color: '#2d2d2d'
+      hover_brightness: 0.85
       text_color: '#ffffff'
   - _bookshop_name: card-grid
     background_color: '#fff0f4'
@@ -30,10 +32,6 @@ content_blocks:
       heading_color: '#000000'
     grid_columns: 2
     cards_max_width: 42
-    button:
-      button_text:
-      background_color:
-      text_color:
     cards:
       - _bookshop_name: background-image-card
         heading: Want bread?
