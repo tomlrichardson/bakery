@@ -79,17 +79,13 @@ const textColor = header_styles.text_color;
     transform: rotate(0deg);
     position: relative;
     z-index: 999;
-  }
-  .header__logo-image:hover {
-    transform: rotate(-10deg);
-    transition: rotate 0.5s;
-  }
-  .header__logo-image:not(:hover) {
-    transition: rotate 0.5s;
+    transition: transform 0.125s ease-in-out;
   }
   .header__logo-image {
     transform: rotate(0deg);
-    transition: rotate 0.5s;
+  }
+  .header__logo-image:hover {
+    transform: rotate(-10deg);
   }
 
   .header__nav-links {
