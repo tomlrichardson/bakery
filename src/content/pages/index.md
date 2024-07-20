@@ -71,10 +71,14 @@ content_blocks:
             grayscale: 1
         link: /about/
   - _bookshop_name: contact-form
-    heading: Contact Us
-    subheading: >-
-      Get in touch to order bread, enquire about wholesale, or ask us a
-      question!
+    heading:
+      heading_text: Contact Us
+      heading_color: '#ffffff'
+    subheading:
+      subheading_text: >-
+        Get in touch to order bread, enquire about wholesale, or ask us a
+        question!
+      subheading_color: '#ffffff'
     contact_details:
       - label: Address
         icon: LocationPin

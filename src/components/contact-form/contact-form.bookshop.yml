@@ -9,8 +9,12 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  heading: Contact Us
-  subheading: Get in touch to order bread, enquire about wholesale, or ask us a question!
+  heading:
+    heading_text: Contact Us
+    heading_color: '#ffffff'
+  subheading:
+    subheading_text: Get in touch to order bread, enquire about wholesale, or ask us a question!
+    subheading_color: '#ffffff'
   contact_details:
     - label: Address
       icon: LocationPin
@@ -47,3 +51,19 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
+  text:
+    type: markdown
+    options:
+      bold: true
+      format: p h1 h2 h3 h4
+      italic: true
+      link: true
+      undo: true
+      redo: true
+      removeformat: true
+      copyformatting: true
+      bulletedlist: true
+      numberedlist: true
+      superscript: true
+      subscript: true
+      styles: /css/editor.css

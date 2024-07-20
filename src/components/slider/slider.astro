@@ -24,10 +24,10 @@ const block = Astro.props;
   {
     block.flipped ? (
       <div class="slider-container">
-        <div class="order-2 w-full sm:w-1/2 ">
+        <div class="order-2 sm:order-1 w-full sm:w-1/2 ">
           <SliderComponent slides={block.slides} />
         </div>
-        <div class="slider-text order-1">
+        <div class="slider-text order-1 sm:order-2">
           <SliderHeading
             heading={block.heading}
             subheading={block.subheading}
@@ -36,13 +36,13 @@ const block = Astro.props;
       </div>
     ) : (
       <div class="slider-container">
-        <div class="slider-text">
+        <div class="slider-text order-1">
           <SliderHeading
             heading={block.heading}
             subheading={block.subheading}
           />
         </div>
-        <div class="w-full sm:w-1/2 ">
+        <div class="order-2 w-full sm:w-1/2 ">
           <SliderComponent slides={block.slides} />
         </div>
       </div>

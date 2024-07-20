@@ -3,9 +3,11 @@ spec:
   structures:
     - content_blocks
   label: Map
-  description:
-  icon: 'chrome_reader_mode'
-  tags: []
+  description: Map to be used with Locations Slider
+  icon: 'map'
+  tags:
+    - Map
+    - Use with Locations Slider
 
 # Defines the structure of this component, as well as the default values
 blueprint:

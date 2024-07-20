@@ -55,6 +55,29 @@ _inputs:
           - Text
         subtext:
           - 'Update text content and color.'
+  markdown_content:
+    type: markdown
+    options:
+      bold: true
+      format: p h1 h2 h3 h4
+      italic: true
+      link: true
+      undo: true
+      redo: true
+      removeformat: true
+      copyformatting: true
+      bulletedlist: true
+      numberedlist: true
+      blockquote: true
+      superscript: true
+      subscript: true
+      horizontalrule: true
+      image: true
+      left: align-left
+      center: align-center
+      right: align-right
+      justify: align-justify
+      styles: /css/editor.css
   image:
     options:
       preview:

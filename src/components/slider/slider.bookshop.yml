@@ -57,7 +57,7 @@ _inputs:
   slides:
     type: array
     structures: _structures.slide
-  slides[*]:
+  text:
     type: markdown
     options:
       bold: true
@@ -80,9 +80,10 @@ _inputs:
       right: align-right
       justify: align-justify
       styles: /css/editor.css
-      preview:
-        icon: slideshow
-        text: Slide
-        subtext:
-          - key: text
-          - Update slide text
+  slides[*]:
+    preview:
+      icon: slideshow
+      text: Slide
+      subtext:
+        - key: text
+        - Update slide text
