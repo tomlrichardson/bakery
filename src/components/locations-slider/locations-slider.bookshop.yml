@@ -13,23 +13,29 @@ spec:
 # Defines the structure of this component, as well as the default values
 blueprint:
   heading:
-    heading_text: A rotating range of specialty loaves
+    heading_text: Loaves for sale
     heading_color: '#000000'
   subheading:
-    subheading_text: We sell our core menu and a changing range of specialty loaves, which can be purchased to take home from Taste Nature.
+    subheading_text: Pick up a loaf from our core range to take home from these local legénds.
     subheading_color: '#000000'
-  flipped: false
+  flipped: true
+  show_description: false
   locations:
-    - name: Maggies
-      details: Wheat, classic sourdough, rye, and baguettes.
-      image:
-        src: /images/locations-slider/locations-slider-1.jpg
-        alt: A picture of the outside of Maggies
-      location: '131 High Street, Dunedin'
-      link: /#map
+    - Maggies
+    - The Duck
+    - Vanguard Specialty Coffee
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
+  show_description:
+    type: switch
+  locations:
+    type: multiselect
+    options:
+      values: data.companies
+      value_key: name
+      preview:
+        - key: name

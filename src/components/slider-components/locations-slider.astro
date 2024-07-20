@@ -1,6 +1,6 @@
 ---
 import Icon from '../utility/icon';
-const { locations } = Astro.props;
+const { locations, show_description } = Astro.props;
 const location = locations[0];
 ---
 
@@ -15,7 +15,7 @@ const location = locations[0];
             alt={location.image.alt}
           />
           <h3>{location.name}</h3>
-          <p>{location.sells}</p>
+          {show_description ? <p>{location.description}</p> : null}
           <div class="flex mt-3">
             <span class="location-pin mr-2">
               <Icon icon={'LocationPin'} />
@@ -44,7 +44,7 @@ const location = locations[0];
                 alt={slide.image.alt}
               />
               <h3>{slide.name}</h3>
-              <p>{slide.sells}</p>
+              {show_description ? <p>{slide.description}</p> : null}
               <div class="flex mt-3">
                 <span class="location-pin mr-2">
                   <Icon icon={'LocationPin'} />

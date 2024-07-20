@@ -111,6 +111,8 @@ _inputs:
       paths:
         static: ''
         uploads: 'src/assets/images'
+  flipped:
+    type: switch
   layout:
     hidden: true
   date:
@@ -199,5 +201,7 @@ data_config:
     path: data/icons.json
   colors:
     path: data/colors.json
+  companies:
+    path: data/companies.json
 
 _structures:
