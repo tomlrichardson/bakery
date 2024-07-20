@@ -89,6 +89,14 @@ _inputs:
       preview:
         text:
           - key: name
+  color:
+    type: select
+    options:
+      values: data.colors
+      value_key: value
+      preview:
+        text:
+          - key: name
   background_color:
     type: select
     options:
@@ -205,3 +213,32 @@ data_config:
     path: data/companies.json
 
 _structures:
+  radio_option:
+    values:
+      - value:
+          label:
+          value:
+  contact_details:
+    values:
+      - value:
+          label:
+          color:
+          icon:
+          text:
+  form:
+    values:
+      - value:
+          label:
+          color:
+          name:
+          type:
+          radio_options:
+  image:
+    values:
+      - value:
+          image_path:
+          image_alt:
+  slide:
+    values:
+      - value:
+          text:

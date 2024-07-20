@@ -15,18 +15,18 @@ interface Props {
       icon: string;
       label: string;
       text: string;
+      color: string;
     },
   ];
-  form: {
-    form_fields: [
-      {
-        label: string;
-        type: string;
-        name: string;
-        options: [{ value: string; label: string }];
-      },
-    ];
-  };
+  form: [
+    {
+      label: string;
+      color: string;
+      type: string;
+      name: string;
+      radio_options: [{ value: string; label: string }];
+    },
+  ];
 }
 const block = Astro.props;
 ---
@@ -45,47 +45,45 @@ const block = Astro.props;
       </p>
       <div class="flex flex-col gap-8 mt-8">
         {
-          block.contact_details.map(
-            (item: { icon?: string; label?: string; text?: string }) => {
-              return (
-                <div class="flex flex-col gap-1">
-                  <p class="flex gap-2 items-center font-bold space-between">
-                    {item.icon && (
-                      <span class="w-4">
-                        <Icon icon={item.icon} />
-                      </span>
-                    )}
-                    {item.label}
-                  </p>
-                  <div>
-                    <Markdown content={item.text} />
-                  </div>
+          block.contact_details.map((item) => {
+            return (
+              <div class="flex flex-col gap-1" style={`color: ${item.color}`}>
+                <p class="flex gap-2 items-center font-bold space-between">
+                  {item.icon && (
+                    <span class="w-4">
+                      <Icon icon={item.icon} />
+                    </span>
+                  )}
+                  {item.label}
+                </p>
+                <div>
+                  <Markdown content={item.text} />
                 </div>
-              );
-            }
-          )
+              </div>
+            );
+          })
         }
       </div>
     </div>
     <div class="w-full md:w-1/2 rounded-lg max-w-[32rem]">
       <form method="post" action="/success.html" class="flex flex-col gap-8">
         {
-          block.form.form_fields.map((item) => {
+          block.form.map((item) => {
             return item.type === 'text' ? (
               <div class="text-input-group">
-                <label>{item.label}</label>
+                <label style={`color: ${item.color}`}>{item.label}</label>
                 <input type={item.type} name={item.name} />
               </div>
             ) : item.type === 'textarea' ? (
               <div class="text-input-group">
-                <label>{item.label}</label>
+                <label style={`color: ${item.color}`}>{item.label}</label>
                 <textarea name={item.name} />
               </div>
             ) : item.type === 'radio' ? (
               <div class="check-input-group gap-2">
-                <label>{item.label}</label>
+                <label style={`color: ${item.color}`}>{item.label}</label>
                 <div class="flex flex-col gap-2">
-                  {item.options?.map(
+                  {item.radio_options?.map(
                     (option: { value?: string; label?: string }) => {
                       return (
                         <div class="">

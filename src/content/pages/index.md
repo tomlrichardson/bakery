@@ -83,29 +83,34 @@ content_blocks:
       - label: Address
         icon: LocationPin
         text: '[123 Bakery Street](/where/#map)'
+        color: '#FFFFFF'
       - label: Email
         icon: Envelope
         text: botybakery@gmail.com
+        color: '#FFFFFF'
     form:
-      form_fields:
-        - label: Email Address
-          name: email
-          type: text
-          options: []
-        - label: Name
-          name: name
-          type: text
-          options: []
-        - label: Message
-          name: message
-          type: textarea
-          options: []
-        - label: Type of Enquiry
-          name: subject
-          type: radio
-          options:
-            - label: General
-              value: General Enquiry
-            - label: Wholesale
-              value: Wholesale Enquiry
+      - label: Email Address
+        color: '#FFFFFF'
+        name: email
+        type: text
+        radio_options: []
+      - label: Name
+        color: '#FFFFFF'
+        name: name
+        type: text
+        radio_options: []
+      - label: Message
+        color: '#FFFFFF'
+        name: message
+        type: textarea
+        radio_options: []
+      - label: Type of Enquiry
+        color: '#FFFFFF'
+        name: subject
+        type: radio
+        radio_options:
+          - label: General
+            value: General Enquiry
+          - label: Wholesale
+            value: Wholesale Enquiry
 ---
