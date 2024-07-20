@@ -41,7 +41,7 @@ const imageSrc =
           class="order-2 md:order-1"
           alt={block.image.alt_text}
           widths={[320, 500, 640]}
-          sizes={`(max-width: 640px) 320px, (max-width: 960px) 500px, (max-width: 1280px) 640px`}
+          sizes={`(max-width: 640px) 320px, (max-width: 480px) 500px, (max-width: 1280px) 640px`}
           src={imageSrc}
         />
         <div class="left-right__text order-1 md:order-2">
@@ -90,7 +90,7 @@ const imageSrc =
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding-block: 96px;
+    padding-block: 48px;
     padding-inline: var(--pagePadding);
   }
   .left-right__wrapper img {
@@ -103,7 +103,6 @@ const imageSrc =
     .left-right__wrapper {
       flex-direction: row;
       gap: 4rem;
-      padding-block: 48px;
     }
     .left-right__wrapper img {
       width: 50%;
@@ -113,8 +112,7 @@ const imageSrc =
   }
   @media only screen and (min-width: 1024px) {
     .left-right__wrapper {
-      padding-block: 48px;
-      gap: 10rem;
+      /* gap: 10rem; */
     }
   }
 

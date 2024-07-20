@@ -1,28 +1,6 @@
 // Initialize and add the map
+import { companies } from './companies.js';
 let map;
-const companies = [
-  {
-    id: 'Maggies',
-    location: {
-      lat: -45.874729497809945,
-      lng: 170.50702135478062,
-    },
-  },
-  {
-    id: 'Taste Nature',
-    location: {
-      lat: -45.87816699364225,
-      lng: 170.50064563943752,
-    },
-  },
-  {
-    id: 'The Duck',
-    location: {
-      lat: -45.86893298402782,
-      lng: 170.59791162594448,
-    },
-  },
-];
 
 async function initMap() {
   // Request needed libraries.
@@ -47,8 +25,8 @@ async function initMap() {
     const company = companies[i];
     const marker = new AdvancedMarkerElement({
       map: map,
-      position: company.location,
-      title: company.id,
+      position: company.coords,
+      title: company.name,
     });
   }
 
@@ -66,10 +44,10 @@ function panTo(event, map) {
 
   let latLng = { lat: null, lng: null };
   for (let i = 0; i < companies.length; i++) {
-    if (event.srcElement.id === companies[i].id) {
+    if (event.srcElement.id === companies[i].name) {
       latLng = {
-        lat: companies[i].location.lat,
-        lng: companies[i].location.lng,
+        lat: companies[i].coords.lat,
+        lng: companies[i].coords.lng,
       };
     }
   }

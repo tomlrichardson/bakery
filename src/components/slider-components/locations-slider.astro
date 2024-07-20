@@ -13,17 +13,17 @@ const { locations } = Astro.props;
         <swiper-slide class="slide-container">
           <div class="swiper-slide-contents">
             <img
-              class="max-w-[200px]"
+              class="max-w-[200px] rounded-md"
               src={slide.image.image_path}
               alt={slide.image.alt}
             />
             <h3>{slide.name}</h3>
             <p>{slide.details}</p>
-            <div class="flex">
+            <div class="flex mt-3">
               <span class="location-pin mr-2">
                 <Icon icon={'LocationPin'} />
               </span>
-              <a href="#map" class="flex items-center gap-3">
+              <a href="#map" class="flex items-center gap-3 ">
                 <button class="map-button" id={slide.name}>
                   {slide.address}
                 </button>
@@ -35,3 +35,17 @@ const { locations } = Astro.props;
     })
   }
 </swiper-container>
+
+<style is:global>
+  .location-pin {
+    width: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .map-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

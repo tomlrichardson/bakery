@@ -24,7 +24,7 @@ console.log(locations);
       {
         block.flipped ? (
           <LocationsSliderFallback locations={locations} /> 
-          <div class="slider-text items-end">
+          <div class="slider-text">
             <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
           </div>
         ) : (
@@ -43,7 +43,7 @@ console.log(locations);
             <div class="order-2 w-full sm:order-1 sm:w-1/2">
               <SliderComponent locations={locations} />
             </div>
-            <div class="slider-text items-end order-1 sm:order-2">
+            <div class="slider-text order-1 sm:order-2">
              <LocationsSliderHeading heading={block.heading} subheading={block.subheading} />
             </div>
           ) : (
@@ -61,17 +61,4 @@ console.log(locations);
 }
 </section>
 
-<style is:global>
-
-  .location-pin {
-    width: 1rem;
-    display: block;
-  }
-
-  .map-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-</style>
 
