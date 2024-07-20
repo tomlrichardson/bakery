@@ -4,7 +4,7 @@ const mapAPIKey = ENV_BOOKSHOP_LIVE ? '' : import.meta.env.PUBLIC_API_KEY;
 
 {
   ENV_BOOKSHOP_LIVE ? (
-    <h2 class="text-center">Map doesn't work in the visual editor, but will work as usual on live site.</h2>
+    <h2 class="text-center px-4 text-md bg-slate-100 rounded-md py-[48px]">Map doesn't work in the visual editor, but will work as usual on live site.</h2>
   ) : (
     <section class="map-container">
       <div id="map"></div>

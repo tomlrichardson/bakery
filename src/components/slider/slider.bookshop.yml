@@ -56,6 +56,7 @@ preview:
 _inputs:
   slides:
     type: array
+    comment: Drag a slide to the top to work on it in the visual editor, then drag it back into the correct order before saving.
     structures: _structures.slide
   text:
     type: markdown
@@ -75,10 +76,6 @@ _inputs:
       subscript: true
       horizontalrule: true
       image: true
-      left: align-left
-      center: align-center
-      right: align-right
-      justify: align-justify
       styles: /css/editor.css
   slides[*]:
     preview:

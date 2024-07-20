@@ -73,10 +73,6 @@ _inputs:
       subscript: true
       horizontalrule: true
       image: true
-      left: align-left
-      center: align-center
-      right: align-right
-      justify: align-justify
       styles: /css/editor.css
   image:
     options:
