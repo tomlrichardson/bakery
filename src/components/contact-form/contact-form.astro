@@ -1,6 +1,33 @@
 ---
 import Icon from '../utility/icon';
 import Markdown from '../utility/markdown.astro';
+interface Props {
+  heading: {
+    heading_text: string;
+    heading_color: string;
+  };
+  subheading: {
+    subheading_text: string;
+    subheading_color: string;
+  };
+  contact_details: [
+    {
+      icon: string;
+      label: string;
+      text: string;
+    },
+  ];
+  form: {
+    form_fields: [
+      {
+        label: string;
+        type: string;
+        name: string;
+        options: [{ value: string; label: string }];
+      },
+    ];
+  };
+}
 const block = Astro.props;
 ---
 
@@ -8,9 +35,13 @@ const block = Astro.props;
   <div
     class="contact-form flex flex-col md:flex-row gap-8 px-8 py-[96px] items-center md:justify-between md:items-start">
     <div class="w-full md:w-1/2 max-w-[32rem]">
-      <h2>{block.heading}</h2>
-      <p class="max-w-[24rem]">
-        {block.subheading}
+      <h2 style={`color: ${block.heading.heading_color};`}>
+        {block.heading.heading_text}
+      </h2>
+      <p
+        class="max-w-[24rem]"
+        style={`color: ${block.subheading.subheading_color};`}>
+        {block.subheading.subheading_text}
       </p>
       <div class="flex flex-col gap-8 mt-8">
         {
@@ -39,46 +70,39 @@ const block = Astro.props;
     <div class="w-full md:w-1/2 rounded-lg max-w-[32rem]">
       <form method="post" action="/success.html" class="flex flex-col gap-8">
         {
-          block.form.form_fields.map(
-            (item: {
-              label?: string;
-              type?: string;
-              name?: string;
-              options?: [{ value: string; label: string }];
-            }) => {
-              return item.type === 'text' ? (
-                <div class="text-input-group">
-                  <label>{item.label}</label>
-                  <input type={item.type} name={item.name} />
+          block.form.form_fields.map((item) => {
+            return item.type === 'text' ? (
+              <div class="text-input-group">
+                <label>{item.label}</label>
+                <input type={item.type} name={item.name} />
+              </div>
+            ) : item.type === 'textarea' ? (
+              <div class="text-input-group">
+                <label>{item.label}</label>
+                <textarea name={item.name} />
+              </div>
+            ) : item.type === 'radio' ? (
+              <div class="check-input-group gap-2">
+                <label>{item.label}</label>
+                <div class="flex flex-col gap-2">
+                  {item.options?.map(
+                    (option: { value?: string; label?: string }) => {
+                      return (
+                        <div class="">
+                          <input
+                            type="radio"
+                            name={item.name}
+                            value={option.value}
+                          />
+                          <label>{option.label}</label>
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
-              ) : item.type === 'textarea' ? (
-                <div class="text-input-group">
-                  <label>{item.label}</label>
-                  <textarea name={item.name} />
-                </div>
-              ) : item.type === 'radio' ? (
-                <div class="check-input-group gap-2">
-                  <label>{item.label}</label>
-                  <div class="flex flex-col gap-2">
-                    {item.options?.map(
-                      (option: { value?: string; label?: string }) => {
-                        return (
-                          <div class="">
-                            <input
-                              type="radio"
-                              name={item.name}
-                              value={option.value}
-                            />
-                            <label>{option.label}</label>
-                          </div>
-                        );
-                      }
-                    )}
-                  </div>
-                </div>
-              ) : null;
-            }
-          )
+              </div>
+            ) : null;
+          })
         }
         <!-- <input type="hidden" name="inbox_key" value="contact_inbox" />
       <input

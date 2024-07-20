@@ -38,8 +38,12 @@ content_blocks:
     cards_max_width: 42
     cards:
       - _bookshop_name: background-image-card
-        heading: Want bread?
-        text: Where to find our loaves.
+        heading:
+          heading_text: Want bread?
+          heading_color: '#ffffff'
+        subheading:
+          subheading_text: Where to find our loaves.
+          subheading_color: '#ffffff'
         background_image:
           image_path: /src/assets/images/bakery-shots/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04 2.jpg
           image_alt: 'A bakery shot'
@@ -48,8 +52,12 @@ content_blocks:
             grayscale: 0.2
         link: '/bread/'
       - _bookshop_name: background-image-card
-        heading: About us
-        text: Learn about what we do.
+        heading:
+          heading_text: About us
+          heading_color: '#ffffff'
+        subheading:
+          subheading_text: Learn about what we do.
+          subheading_color: '#ffffff'
         background_image:
           image_path: /src/assets/images/bakery-shots/2114BA8A-DBB7-475E-ACF1-DCA06107A23F.jpg
           image_alt: 'A bakery shot'
@@ -58,8 +66,12 @@ content_blocks:
             grayscale: 1
         link: '/about/'
   - _bookshop_name: contact-form
-    heading: Contact Us
-    subheading: Get in touch to order bread, enquire about wholesale, or ask us a question!
+    heading:
+      heading_text: Contact Us
+      heading_color: '#ffffff'
+    subheading:
+      heading_text: Get in touch to order bread, enquire about wholesale, or ask us a question!
+      heading_color: '#ffffff'
     contact_details:
       - label: Address
         icon: LocationPin
