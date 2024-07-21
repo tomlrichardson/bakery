@@ -50,28 +50,49 @@ collection_groups:
       - data
 file_config:
   - glob: data/colors.json
+    _structures:
+      color:
+        values:
+          - value:
+              name:
+              value:
+            preview:
+              icon: palette
     _inputs:
       $:
         type: array
+        label: Colors
         comment: Set the colors available in the color selectors throughout the site.
-      $[*]:
         options:
-          preview:
-            icon: palette
+          structures: _structures.color
       value:
         type: color
       name:
         type: text
         comment: What is seen in the color selector dropdown.
   - glob: data/companies.json
+    _structures:
+      company:
+        values:
+          - value:
+              name:
+              coords:
+                lat:
+                lng:
+              address:
+              description:
+              image:
+                image_path:
+                alt:
+            preview:
+              icon: add_business
     _inputs:
       $:
         type: array
+        label: Companies
         comment: Set the companies available in the company selectors throughout the site.
-      $[*]:
         options:
-          preview:
-            icon: add_business
+          structures: _structures.company
       coords:
         options:
           preview:
@@ -81,14 +102,6 @@ file_config:
               - subtext:
                   - template: 'Coordinates {coords.lat}, {coords.lng}'
                   - Update company coordinates
-  - glob: data/navigation.json
-    _inputs:
-      $:
-        comment: Used to control the header and footer on the site.
-  - glob: data/site.json
-    _inputs:
-      $:
-        comment: Used to control the overall metadata and SEO information for the site.
 
 _inputs:
   button:
