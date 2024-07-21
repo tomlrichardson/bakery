@@ -11,7 +11,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 const fallbackLocation = locations[0];
 const fallbackLocationImageSrc =
-  fallbackLocation.image.image_path?.default ??
+  images[fallbackLocation.image.image_path]?.default ??
   fallbackLocation.image.image_path;
 ---
 
