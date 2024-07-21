@@ -244,7 +244,8 @@ _structures:
               styles: /css/editor.css
   form:
     values:
-      - value:
+      - label: Form Input
+        value:
           label:
           color:
           name:
@@ -252,6 +253,12 @@ _structures:
           radio_options:
         preview:
           icon: check_box
+          text:
+            - key: label
+            - Form Input
+          subtext:
+            - key: type
+            - Update form input options.
         _inputs:
           label:
             type: text
@@ -280,6 +287,12 @@ _structures:
                   value:
                 preview:
                   icon: check_box
+                  text:
+                    - key: label
+                    - Radio Option
+                  subtext:
+                    - key: value
+                    - Update radio option label and value.
                 _inputs:
                   label:
                     type: text
@@ -294,9 +307,19 @@ _structures:
           image_alt:
         preview:
           icon: image
+          text:
+            - key: image_alt
+            - Image
+          subtext:
+            - key: image_alt
+            - Update image path and alt text.
   slide:
     values:
       - value:
           text:
         preview:
           icon: slideshow
+          text: Slide
+          subtext:
+            - key: text
+            - Update slide text.
