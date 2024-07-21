@@ -63,5 +63,89 @@
       "image_path": "/src/assets/images/companies/buster-greens.jpeg",
       "alt_text": "Buster Greens storefront"
     }
+  },
+  {
+    "name": "Ebb",
+    "coords": {
+      "lat": -45.869597,
+      "lng": 170.504264
+    },
+    "address": "82 Filleul Street, Central Dunedin, Dunedin 9016",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/ebb.jpeg",
+      "alt_text": "Looking at Ebbs counter and display cabinet",
+      "alt": null
+    }
+  },
+  {
+    "name": "No7 Balmac",
+    "coords": {
+      "lat": -45.858067,
+      "lng": 170.500097
+    },
+    "address": "7 Balmacewen Road, Maori Hill, Dunedin 9010",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/no-7-balmac.jpeg",
+      "alt_text": "No7 store front",
+      "alt": null
+    }
+  },
+  {
+    "name": "RDC",
+    "coords": {
+      "lat": -45.868941,
+      "lng": 170.506658
+    },
+    "address": "346 George Street, Central Dunedin, Dunedin 9016",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/rdc.jpg",
+      "alt_text": "RDC Logo",
+      "alt": null
+    }
+  },
+  {
+    "name": "The Corner Store Cafe",
+    "coords": {
+      "lat": -45.874398,
+      "lng": 170.504786
+    },
+    "address": "134 Stuart Street, Central Dunedin, Dunedin 9016",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/corner-store.jpeg",
+      "alt_text": "A man making a coffee, looking out to the tables in the cafe",
+      "alt": null
+    }
+  },
+  {
+    "name": "The Good Food Co",
+    "coords": {
+      "lat": -45.881948,
+      "lng": 170.482561
+    },
+    "address": "172 Eglinton Road, Mornington, Dunedin 9011",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/the-good-food-co.jpeg",
+      "alt_text": "Good Food logo",
+      "alt": null
+    }
+  },
+  {
+    "name": "Tuppence Cafe",
+    "coords": {
+      "lat": -45.88461,
+      "lng": 170.531683
+    },
+    "address": "146 Larnach Road, Waverley, Dunedin 9013",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/tuppence.jpeg",
+      "alt_text": "Tuppence Cafe store front",
+      "alt": null
+    }
   }
 ]
