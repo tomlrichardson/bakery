@@ -220,6 +220,8 @@ _structures:
           color:
           icon:
           text:
+        preview:
+          icon: call
         _inputs:
           label:
             type: text
@@ -248,6 +250,8 @@ _structures:
           name:
           type:
           radio_options:
+        preview:
+          icon: check_box
         _inputs:
           label:
             type: text
@@ -265,6 +269,7 @@ _structures:
                 - radio
           radio_options:
             type: array
+            comment: Used if the input type is 'radio'. This can be left empty if input type is 'text', or 'textarea'.
             options:
               structures: _structures.radio_option
         _structures:
@@ -273,6 +278,8 @@ _structures:
               - value:
                   label:
                   value:
+                preview:
+                  icon: check_box
                 _inputs:
                   label:
                     type: text
@@ -285,7 +292,11 @@ _structures:
       - value:
           image_path:
           image_alt:
+        preview:
+          icon: image
   slide:
     values:
       - value:
           text:
+        preview:
+          icon: slideshow

@@ -60,15 +60,7 @@ _inputs:
     type: array
     options:
       structures: _structures.contact_details
-  contact_details[*]:
-    options:
-      preview:
-        icon: call
   form:
     type: array
     options:
       structures: _structures.form
-  form[*]:
-    options:
-      preview:
-        icon: check_box
