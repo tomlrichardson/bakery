@@ -126,5 +126,7 @@ content_blocks:
       - Maggies
       - The Duck
       - Vanguard Specialty Coffee
+      - Buster Greens
+      - Taste Nature
   - _bookshop_name: map
 ---
