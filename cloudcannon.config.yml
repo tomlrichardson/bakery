@@ -11,6 +11,27 @@ collections_config:
       base: all
       exclude:
         - icons.json
+    _inputs:
+      logo:
+        type: image
+      header:
+        options:
+          preview:
+            text: Header Links
+      header:
+        options:
+          preview:
+            text: Footer Information
+      links:
+        type: array
+        options:
+          structures: _structures.link
+      social:
+        type: array
+        options:
+          structures: _structures.social_link
+      image:
+        type: image
   pages:
     path: src/content/pages
     url: '/[slug]/'
@@ -27,6 +48,48 @@ collection_groups:
   - heading: Data
     collections:
       - data
+file_config:
+  - glob: data/colors.json
+    _inputs:
+      $:
+        type: array
+        comment: Set the colors available in the color selectors throughout the site.
+      $[*]:
+        options:
+          preview:
+            icon: palette
+      value:
+        type: color
+      name:
+        type: text
+        comment: What is seen in the color selector dropdown.
+  - glob: data/companies.json
+    _inputs:
+      $:
+        type: array
+        comment: Set the companies available in the company selectors throughout the site.
+      $[*]:
+        options:
+          preview:
+            icon: add_business
+      coords:
+        options:
+          preview:
+            icon: edit_location
+            text: Coordinates
+            metadata:
+              - subtext:
+                  - template: 'Coordinates {coords.lat}, {coords.lng}'
+                  - Update company coordinates
+  - glob: data/navigation.json
+    _inputs:
+      $:
+        comment: Used to control the header and footer on the site.
+  - glob: data/site.json
+    _inputs:
+      $:
+        comment: Used to control the overall metadata and SEO information for the site.
+  
 _inputs:
   button:
     options:
@@ -103,27 +166,10 @@ _inputs:
   page_size:
     type: number
     comment: The number of collection items to list per page
-  social:
-    options:
-      preview:
-        icon: link
-  links:
-    options:
-      preview:
-        icon: link
   items:
     options:
       preview:
         icon: link
-  social[*].icon:
-    type: select
-    options:
-      values:
-        - ph-facebook-logo
-        - ph-instagram-logo
-        - ph-twitter-logo
-        - ph-github-logo
-        - ph-youtube-logo
   logo_url:
     comment: Link for the logo in the top left of the footer
   copyright:
@@ -162,6 +208,10 @@ _inputs:
     type: select
     options:
       values: data.icons
+  social_icon:
+    type: select
+    options:
+      values: data.icons
   button_link:
     type: url
   hover_brightness:
@@ -186,6 +236,20 @@ data_config:
     path: data/companies.json
 
 _structures:
+  link:
+    values:
+      - value:
+          url:
+          text:
+        preview:
+          icon: link
+  social_link:
+    values:
+      - value:
+          url:
+          social_icon:
+        preview:
+          icon: group
   contact_details:
     values:
       - value:
