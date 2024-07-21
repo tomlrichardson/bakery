@@ -7,34 +7,10 @@ collections_config:
     path: data
     disable_add: true
     disable_add_folder: true
-  posts:
-    path: src/content/blog
-    output: true
-    url: '/blog/[slug]/'
-    _enabled_editors:
-      - content
-      - visual
-    add_options:
-      - name: Add New Post
-        schema: default
-        icon: post_add
-    schemas:
-      default:
-        name: New Post
-        path: schemas/post.md
-    _inputs:
-      title:
-        empty_type: string
-      image:
-        empty_type: string
-      image_alt:
-        empty_type: string
-      author:
-        empty_type: string
-      tags:
-        type: multiselect
-        allow_create: true
-        empty_type: array
+    filter:
+      base: all
+      exclude:
+        - icons.json
   pages:
     path: src/content/pages
     url: '/[slug]/'
@@ -48,9 +24,6 @@ collection_groups:
   - heading: Pages
     collections:
       - pages
-  - heading: Blogging
-    collections:
-      - posts
   - heading: Data
     collections:
       - data
