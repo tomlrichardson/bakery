@@ -87,7 +87,7 @@ file_config:
               description:
               image:
                 image_path:
-                alt:
+                alt_text:
             preview:
               icon: add_business
     _inputs:

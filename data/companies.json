@@ -61,7 +61,7 @@
     "description": null,
     "image": {
       "image_path": "/src/assets/images/companies/buster-greens.jpeg",
-      "image_alt": "Buster Greens storefront"
+      "alt_text": "Buster Greens storefront"
     }
   }
 ]
