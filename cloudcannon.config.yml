@@ -222,6 +222,12 @@ _structures:
           text:
         preview:
           icon: call
+          text:
+            - key: label
+            - Contact Detail
+          subtext:
+            - key: text
+            - Update contact details.
         _inputs:
           label:
             type: text
