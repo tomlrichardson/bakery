@@ -32,6 +32,10 @@ collections_config:
           structures: _structures.social_link
       image:
         type: image
+      lat:
+        type: number
+      lng:
+        type: number
   pages:
     path: src/content/pages
     url: '/[slug]/'

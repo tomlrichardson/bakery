@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
 npx @bookshop/generate
-node utils/generateCompaniesArray.js
