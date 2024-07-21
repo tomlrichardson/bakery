@@ -1,7 +1,17 @@
 ---
 import Icon from '../utility/icon';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 const { locations, show_description } = Astro.props;
-const location = locations[0];
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{jpeg,jpg,png,gif,svg}',
+  { eager: true }
+);
+
+const fallbackLocation = locations[0];
+const fallbackLocationImageSrc =
+  fallbackLocation.image_path?.default ?? fallbackLocation.image_path;
 ---
 
 {
@@ -9,20 +19,22 @@ const location = locations[0];
     <div class="swiper-container swiper-locations">
       <div class="slide-container">
         <div class="swiper-slide-contents text-center lg:text-left">
-          <img
+          <Image
             class="max-w-[200px] rounded-md"
-            src={location.image.image_path}
-            alt={location.image.alt}
+            alt={fallbackLocation.alt_text}
+            widths={[200]}
+            sizes={`(max-width: 640px) 200px`}
+            src={fallbackLocationImageSrc}
           />
-          <h3>{location.name}</h3>
-          {show_description ? <p>{location.description}</p> : null}
+          <h3>{fallbackLocation.name}</h3>
+          {show_description ? <p>{fallbackLocation.description}</p> : null}
           <div class="flex mt-3">
             <span class="location-pin mr-2">
               <Icon icon={'LocationPin'} />
             </span>
             <a href="#map" class="flex items-center gap-3">
-              <button class="map-button" id={location.name}>
-                {location.address}
+              <button class="map-button" id={fallbackLocation.name}>
+                {fallbackLocation.address}
               </button>
             </a>
           </div>
@@ -35,13 +47,17 @@ const location = locations[0];
       loop="true"
       class="swiper-container locations-slider">
       {locations.map((slide: any) => {
+        const imageSrc =
+          images[slide.image.image_path]?.default ?? slide.image.image_path;
         return (
           <swiper-slide class="slide-container">
             <div class="swiper-slide-contents text-center lg:text-left">
-              <img
+              <Image
                 class="max-w-[200px] rounded-md"
-                src={slide.image.image_path}
-                alt={slide.image.alt}
+                alt={slide.image.alt_text}
+                widths={[200]}
+                sizes={`(max-width: 640px) 200px`}
+                src={imageSrc}
               />
               <h3>{slide.name}</h3>
               {show_description ? <p>{slide.description}</p> : null}
