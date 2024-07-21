@@ -50,5 +50,18 @@
       "image_path": "/images/companies/vanguard.webp",
       "alt": "Vanguard Logo"
     }
+  },
+  {
+    "name": "Buster Greens",
+    "coords": {
+      "lat": "45.52003",
+      "lng": " 170.30284"
+    },
+    "address": "466 George Street Dunedin, New Zealand 9016",
+    "description": null,
+    "image": {
+      "image_path": "/src/assets/images/companies/buster-greens.jpeg",
+      "alt": "Buster Greens storefront"
+    }
   }
 ]
