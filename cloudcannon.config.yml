@@ -18,7 +18,7 @@ collections_config:
         options:
           preview:
             text: Header Links
-      header:
+      footer:
         options:
           preview:
             text: Footer Information
@@ -89,7 +89,7 @@ file_config:
     _inputs:
       $:
         comment: Used to control the overall metadata and SEO information for the site.
-  
+
 _inputs:
   button:
     options:
