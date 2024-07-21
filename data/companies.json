@@ -8,8 +8,8 @@
     "address": "46 Stuart Street, Central Dunedin, Dunedin",
     "description": "Wheat, classic sourdough, rye, and baguettes.",
     "image": {
-      "image_path": "/images/companies/maggies.jpg",
-      "alt": "A shot of a rooster with a sign around it's neck saying 'No riff raff', with the entrance to Maggies unfocused in the background."
+      "image_path": "/src/assets/images/companies/maggies.jpg",
+      "alt_text": "A shot of a rooster with a sign around it's neck saying 'No riff raff', with the entrance to Maggies unfocused in the background."
     }
   },
   {
@@ -21,8 +21,8 @@
     "address": "494 Portobello Road, Macandrew Bay, Dunedin",
     "description": "Wheat, classic sourdough, rye, and baguettes.",
     "image": {
-      "image_path": "/images/companies/the-duck.jpeg",
-      "alt": "A shot of the inside of The Duck cafe, looking out to Macandrew Bay on a sunny day in Dunedin."
+      "image_path": "/src/assets/images/companies/the-duck.jpeg",
+      "alt_text": "A shot of the inside of The Duck cafe, looking out to Macandrew Bay on a sunny day in Dunedin."
     }
   },
   {
@@ -34,8 +34,8 @@
     "address": "131 High Street, Central Dunedin, Dunedin",
     "description": "Wheat, classic sourdough, rye, baguettes, and a rotating range of specialty loaves.",
     "image": {
-      "image_path": "/images/companies/taste-nature.jpeg",
-      "alt": "Taste Nature Logo"
+      "image_path": "/src/assets/images/companies/taste-nature.jpeg",
+      "alt_text": "Taste Nature Logo"
     }
   },
   {
@@ -47,8 +47,8 @@
     "address": "329 Princes Street, Central Dunedin, Dunedin",
     "description": "",
     "image": {
-      "image_path": "/images/companies/vanguard.webp",
-      "alt": "Vanguard Logo"
+      "image_path": "/src/assets/images/companies/vanguard.webp",
+      "alt_text": "Vanguard Logo"
     }
   },
   {
@@ -61,7 +61,7 @@
     "description": null,
     "image": {
       "image_path": "/src/assets/images/companies/buster-greens.jpeg",
-      "alt": "Buster Greens storefront"
+      "image_alt": "Buster Greens storefront"
     }
   }
 ]
