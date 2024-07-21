@@ -124,9 +124,14 @@ content_blocks:
     show_description: false
     locations:
       - Maggies
-      - The Duck
+      - The Corner Store Cafe
       - Vanguard Specialty Coffee
+      - The Duck
+      - Ebb
       - Buster Greens
       - Taste Nature
+      - No7 Balmac
+      - RDC
+      - Tuppence Cafe
   - _bookshop_name: map
 ---
