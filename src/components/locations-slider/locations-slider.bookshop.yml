@@ -35,7 +35,7 @@ _inputs:
     type: switch
   locations:
     type: multiselect
-    comment: To be used in conjunction with the map component. Locations link to pins on the map.
+    comment: To be used in conjunction with the map component. Locations link to pins on the map. Add new locations via the [data file](cloudcannon:collections/data/companies.json).
     options:
       values: data.companies
       value_key: name
