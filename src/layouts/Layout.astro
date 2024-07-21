@@ -93,5 +93,12 @@ const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
     <slot />
 
     <Footer />
+    <style is:global>
+      :root {
+        --pageContainer: 1280px;
+        --headerHeight: 64px;
+        --pagePadding: 32px;
+      }
+    </style>
   </body>
 </html>
