@@ -1,6 +1,6 @@
 {
-  "site_title": "Astro Starter",
-  "description": "A starter template for Astro, built by Bookshop components - for CloudCannon CMS.",
-  "image": "",
-  "image_alt": ""
+  "site_title": "BOTY Bakery",
+  "description": "A bakery in Dunedin, New Zealand, specialising in sourdough bread.",
+  "image": "/images/bakery-shots/1ECE93C3-8924-4ADF-8CDB-1A02D6D1CC04.jpg",
+  "image_alt": "Sourdough loaves"
 }

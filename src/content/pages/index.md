@@ -1,7 +1,7 @@
 ---
 title: Home
 seo:
-  page_description: Body of the year bakery
+  page_description:
   canonical_url:
   featured_image:
   featured_image_alt:
