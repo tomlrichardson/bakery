@@ -1,5 +1,5 @@
 ---
-title: Wholesale
+title: About
 seo:
   page_description: ''
   canonical_url: ''
